@@ -1,0 +1,103 @@
+set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
+set clipboard=unnamed
+set nohlsearch
+set ignorecase
+set incsearch
+set number
+set showmatch
+set cursorline
+set scrolloff=3
+
+let mapleader=" "
+
+imap <F2> <Esc>:vsc Edit.ToggleWordWrap<CR>a
+map <F2> :vsc Edit.ToggleWordWrap<CR>
+imap <F3> <Esc>:vsc Edit.ViewWhiteSpace<CR>a
+map <F3> :vsc Edit.ViewWhiteSpace<CR>
+imap <F4> <Esc>:nohls<CR>a
+map <F4> :nohls<CR>
+
+nmap <A-q> <Esc>
+imap <A-q> <Esc>
+
+" From my experience, VAssistX Navigation is better
+" nmap <C-o> :vsc View.NavigateBackward<CR>
+" nmap <C-i> :vsc View.NavigateForward<CR>
+nmap <C-o> :vsc VAssistX.NavigateBack<CR>
+nmap <C-i> :vsc VAssistX.NavigateForward<CR>
+nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
+nmap <C-l> :vsc Window.NextDocumentWindow<CR>
+nmap <C-h> :vsc Window.PreviousDocumentWindow<CR>
+nmap <C-j> :vsc Window.NextSplitPane<CR>
+nmap <C-k> :vsc Window.PreviousSplitPane<CR>
+nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
+
+nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
+
+nmap <Leader>cc :vsc Edit.CommentSelection<CR>
+vmap <Leader>cc :vsc Edit.CommentSelection<CR>
+nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+
+"nmap <Leader>dl :vsc Debug.StepInto<CR>
+"nmap <Leader>dh :vsc Debug.StepOut<CR>
+"nmap <Leader>dj :vsc Debug.StepOver<CR>
+"nmap <Leader>db :vsc Debug.ToggleBreakpoint<CR>
+"nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
+"nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
+
+nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
+nmap <Leader>ff :vsc Edit.FindInFiles<CR>
+nmap <Leader>fi :vsc VAssistX.ListIncludeFiles<CR>
+nmap <Leader>fr :vsc Edit.FindAllReferences<CR>
+nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>ft :vsc VAssistX.FindReferences<CR>
+
+nmap <Leader>g1 :vsc View.FindResults1<CR>
+nmap <Leader>g2 :vsc View.FindResults2<CR>
+nmap <Leader>ge :vsc View.ErrorList<CR>
+nmap <Leader>go :vsc View.Output<CR>
+nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+"nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
+
+nmap <Leader>is :vsc Edit.InsertSnippet<CR>
+vmap <Leader>is :vsc Edit.SurroundWith<CR>
+vmap <Leader>i{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap <Leader>i( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
+
+nmap <Leader>ne :vsc View.NextError<CR>
+nmap <Leader>nr :vsc Edit.GoToNextLocation<CR>
+nmap <Leader>ns  :vsc VAssistX.ScopeNext<CR>
+nmap <Leader>nt :vsc VAssistX.RefResultsNext<CR>
+
+nmap <Leader>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
+
+nmap <Leader>pe :vsc View.PreviousError<CR>
+nmap <Leader>pt :vsc VAssistX.RefResultsPrevious<CR>
+nmap <Leader>ps  :vsc VAssistX.ScopePrevious<CR>
+nmap <Leader>pr :vsc Edit.GoToPrevLocation<CR>
+
+nmap <Leader>ki :vsc Edit.QuickInfo<CR>
+nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
+nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
+
+nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
+nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
+nmap <Leader>rc :vsc VAssistX.CreateImplementation<CR>
+nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
+
+" Same as alternate
+nmap <Leader>t :vsc Window.NextDocumentWindowNav<CR>
+
+nmap <Leader>vs :vsc VAssistX.SortSelectedLines<CR>
+nmap <Leader>vc :vsc VAssistX.CloneFindReferencesResults<CR>
+nmap <Leader>vi :vsc VAssistX.ListIncludeFiles<CR>
+nmap <Leader>vs :vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>vh :vsc Edit.CallHierarchy<CR>
+
+nmap <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
+nmap <Leader>ws  :vsc Window.Split<CR>
+nmap <Leader>wC  :vsc Window.CloseAllDocuments<CR>
+nmap <Leader>wv  <C-w>v
