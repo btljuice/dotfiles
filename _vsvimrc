@@ -85,7 +85,8 @@ nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
 
 nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
 nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
-nmap <Leader>rc :vsc VAssistX.CreateImplementation<CR>
+nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
+nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateFields<CR>
 nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
 
 " Same as alternate
