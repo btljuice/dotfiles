@@ -5,7 +5,7 @@ set clipboard=unnamed
 set nohlsearch
 set ignorecase
 set incsearch
-set number
+set nonumber
 set showmatch
 set cursorline
 set scrolloff=3
@@ -63,6 +63,7 @@ nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
 
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
+nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 vmap <Leader>is :vsc Edit.SurroundWith<CR>
 vmap <Leader>i{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
 vmap <Leader>i( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
