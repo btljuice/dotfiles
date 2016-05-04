@@ -93,13 +93,13 @@ nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
 " Same as alternate
 nmap <Leader>t :vsc Window.NextDocumentWindowNav<CR>
 
-nmap <Leader>vs :vsc VAssistX.SortSelectedLines<CR>
-nmap <Leader>vc :vsc VAssistX.CloneFindReferencesResults<CR>
-nmap <Leader>vi :vsc VAssistX.ListIncludeFiles<CR>
-nmap <Leader>vs :vsc VAssistX.FindSymbolDialog<CR>
-nmap <Leader>vh :vsc Edit.CallHierarchy<CR>
+nmap <Leader>vs : vsc VAssistX.SortSelectedLines<CR>
+nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
+nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
+nmap <Leader>vs : vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>vh : vsc Edit.CallHierarchy<CR>
 
-nmap <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
+nmap       <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>ws  :vsc Window.Split<CR>
 nmap <Leader>wC  :vsc Window.CloseAllDocuments<CR>
 nmap <Leader>wv  <C-w>v
