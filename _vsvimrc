@@ -99,7 +99,7 @@ nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
 nmap <Leader>vs : vsc VAssistX.FindSymbolDialog<CR>
 nmap <Leader>vh : vsc Edit.CallHierarchy<CR>
 
-nmap       <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
+nmap <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>ws  :vsc Window.Split<CR>
-nmap <Leader>wC  :vsc Window.CloseAllDocuments<CR>
+nmap <Leader>wC  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
 nmap <Leader>wv  <C-w>v

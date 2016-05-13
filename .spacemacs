@@ -42,16 +42,22 @@ values."
      smex
      semantic
      dash
+     ;; evil-cleverparens
+     ;; vim-empty-lines
+     skewer-mode
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      ranger
-     (shell :variables shell-default-height 30 shell-default-position 'bottom)
+     (shell :variables shell-default-height 16
+                       shell-default-position 'bottom
+                       shell-default-shell 'shell
+                       shell-enable-smart-eshell nil)
 
      git
      perforce
      version-control
 
-     org
+     ;;org
      markdown
      (spell-checking :variables spell-checking-enable-by-default nil)
      latex
@@ -74,6 +80,7 @@ values."
 
      erc ;; irc layer
      games
+     ;; themes-megapack
 
      ;;;; Interesting layers to try eventually
      ;; wakatime ;; A time tracker in emacs
@@ -295,11 +302,14 @@ values."
    dotspacemacs-whitespace-cleanup nil
    )
 
-  ;; (when (btl/windows-p)
-  ;;   (setenv "PATH" (concat (getenv "PATH") ":c:\\msys64\\mingw64\\bin"))
-  ;;   (setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
-  ;;   ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
-  ;; )
+  (when (btl/windows-p)
+    ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
+    ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
+
+    (setenv "PATH" (concat (getenv "PATH") ";c:\\Program Files\\Everything"))
+    (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
+    (add-to-list 'exec-path "C:/Program Files/Everything/")
+    )
 
   )
 
@@ -310,6 +320,7 @@ values."
                 truncate-lines t
                 )
   (spacemacs|disable-company eshell-mode)
+  (spacemacs|disable-company LaTeX/MPS)
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
@@ -317,6 +328,11 @@ values."
   ;; Also in visual mode
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+  ;; (define-key evil-normal-state-map (kbd "DEL") 'spacemacs/smex)
+
+  ;; (spacemacs/toggle-evil-cleverparens-on)
+  ;; (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
+  ;; (add-hook 'emacs-lisp-hook #'evil-cleverparens-mode)
 )
 
 (defun dotspacemacs/user-init ()
@@ -381,16 +397,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common
-   ((t
-     (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection
-   ((t
-     (:inherit company-tooltip-selection :weight bold :underline nil))))
  '(package-selected-packages
    (quote
-    (zeal-at-point helm-dash helm-flyspell auto-dictionary auctex-latexmk company-auctex auctex ibuffer-projectile p4 restclient xterm-color ws-butler window-numbering web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe toc-org tagedit stickyfunc-enhance srefactor spacemacs-theme spaceline powerline smooth-scrolling smex smeargle slime slim-mode shell-pop scss-mode sass-mode restart-emacs ranger rainbow-delimiters pyvenv pytest pyenv-mode py-yapf powershell popwin pip-requirements persp-mode pcre2el paradox hydra spinner page-break-lines pacmacs orgit org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc jade-mode info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flycheck-pos-tip flycheck pkg-info epl flx-ido flx fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web web-completion-data company-tern dash-functional tern company-statistics company-quickhelp pos-tip company-c-headers company-anaconda company coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed anaconda-mode pythonic f dash s ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup 2048-game quelpa package-build use-package which-key bind-key bind-map evil monokai-theme)))
- '(paradox-github-token t))
+    (py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

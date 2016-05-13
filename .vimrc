@@ -19,11 +19,12 @@ Plug 'tpope/vim-surround' " for cs ys ds commands
 Plug 'tpope/vim-fugitive' " git wrapper
 Plug 'bling/vim-airline'  
 Plug 'altercation/vim-colors-solarized' " colorscheme
+Plug 'kien/ctrlp.vim'
+Plug 'latex-box-team/latex-box'
 
 " Add plugins to &runtimepath
 call plug#end()
 "}}}
-
 
 filetype plugin indent on
 
