@@ -103,3 +103,4 @@ nmap <Leader>wc  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>ws  :vsc Window.Split<CR>
 nmap <Leader>wC  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
 nmap <Leader>wv  <C-w>v
+nmap <Leader>wp  :vsc Window.PinTab<CR>
