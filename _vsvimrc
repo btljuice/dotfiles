@@ -6,6 +6,7 @@ set nohlsearch
 set ignorecase
 set incsearch
 set nonumber
+set nowrap
 set showmatch
 set cursorline
 set scrolloff=3
@@ -23,6 +24,8 @@ nmap <A-q> <Esc>
 imap <A-q> <Esc>
 
 nnoremap Y y$
+nmap j gj
+nmap k gk
 
 " From my experience, VAssistX Navigation is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
