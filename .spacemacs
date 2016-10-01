@@ -78,8 +78,8 @@ values."
      html
      javascript                         ;
 
-     erc ;; irc layer
-     games
+     ;erc ;; irc layer
+     ;games
      ;; themes-megapack
 
      ;;;; Interesting layers to try eventually
@@ -315,7 +315,7 @@ values."
 
 (defun dotspacemacs/user-config ()
   (message "BEGIN dotspacemacs/user-config")
-  (setq projectile-enable-caching t)
+  ;(setq projectile-enable-caching t)
   (setq-default avy-all-windows 'all-frames
                 truncate-lines t
                 )

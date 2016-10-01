@@ -22,6 +22,8 @@ map <F4> :nohls<CR>
 nmap <A-q> <Esc>
 imap <A-q> <Esc>
 
+nnoremap Y y$
+
 " From my experience, VAssistX Navigation is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
 " nmap <C-i> :vsc View.NavigateForward<CR>
@@ -41,12 +43,12 @@ vmap <Leader>cc :vsc Edit.CommentSelection<CR>
 nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 
-"nmap <Leader>dl :vsc Debug.StepInto<CR>
-"nmap <Leader>dh :vsc Debug.StepOut<CR>
-"nmap <Leader>dj :vsc Debug.StepOver<CR>
-"nmap <Leader>db :vsc Debug.ToggleBreakpoint<CR>
-"nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
-"nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
+nmap <Leader>dl :vsc Debug.StepInto<CR>
+nmap <Leader>dh :vsc Debug.StepOut<CR>
+nmap <Leader>dj :vsc Debug.StepOver<CR>
+nmap <Leader>db :vsc Debug.ToggleBreakpoint<CR>
+nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
+nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
 
 nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
 nmap <Leader>ff :vsc Edit.FindInFiles<CR>
@@ -59,7 +61,9 @@ nmap <Leader>g1 :vsc View.FindResults1<CR>
 nmap <Leader>g2 :vsc View.FindResults2<CR>
 nmap <Leader>ge :vsc View.ErrorList<CR>
 nmap <Leader>go :vsc View.Output<CR>
+nmap <Leader>gf :vsc File.OpenContainingFolder<CR>
 nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+nmap <Leader>gvo :vsc VAssistX.VAOutline<CR>
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
 
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
