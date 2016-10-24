@@ -54,6 +54,7 @@ nmap <Leader>dj :vsc Debug.StepOver<CR>
 nmap <Leader>db :vsc Debug.ToggleBreakpoint<CR>
 nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
 nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
+nmap <Leader>d<Space> :vsc Debug.ShowNextStatement<CR>
 
 nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
 nmap <Leader>ff :vsc Edit.FindInFiles<CR>
@@ -98,6 +99,8 @@ nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
 nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
 nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateFields<CR>
 nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
+
+nmap <Leader>_r :source ~/_vsvimrc<CR>
 
 " Same as alternate
 nmap <Leader>t :vsc Window.NextDocumentWindowNav<CR>
