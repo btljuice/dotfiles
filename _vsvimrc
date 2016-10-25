@@ -29,6 +29,9 @@ nnoremap Y y$
 nmap j gj
 nmap k gk
 
+nmap ]] :vsc VAssistX.ScopeNext<CR>
+nmap [[ :vsc VAssistX.ScopePrevious<CR>
+
 " From my experience, VAssistX Navigation is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
 " nmap <C-i> :vsc View.NavigateForward<CR>
@@ -43,10 +46,12 @@ nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 
 nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
 
-nmap <Leader>cc :vsc Edit.CommentSelection<CR>
-vmap <Leader>cc :vsc Edit.CommentSelection<CR>
-nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
-vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+nmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
+vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
+"nmap <Leader>cc :vsc Edit.CommentSelection<CR>
+"vmap <Leader>cc :vsc Edit.CommentSelection<CR>
+"nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+"vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 
 nmap <Leader>dl :vsc Debug.StepInto<CR>
 nmap <Leader>dh :vsc Debug.StepOut<CR>
