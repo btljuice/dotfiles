@@ -46,7 +46,7 @@ nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 
 nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
 
-nmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
+nmap V<Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>k
 vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
 "nmap <Leader>cc :vsc Edit.CommentSelection<CR>
 "vmap <Leader>cc :vsc Edit.CommentSelection<CR>

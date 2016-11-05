@@ -17,10 +17,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree' " directory tree
 Plug 'tpope/vim-surround' " for cs ys ds commands
 Plug 'tpope/vim-fugitive' " git wrapper
-Plug 'bling/vim-airline'  
+Plug 'tpope/vim-repeat'   " To repeat plugin maps
+Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized' " colorscheme
-Plug 'kien/ctrlp.vim'
 Plug 'latex-box-team/latex-box'
+Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar' " Class outliner
+Plug 'airblade/vim-gitgutter'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -121,6 +124,9 @@ nnoremap <c-l> <c-w>l
 " Vimgrep 
 nnoremap <Leader>va :vimgrep <cword> **<CR>
 nnoremap <Leader>vc :vimgrep <cword> % <CR>
+
+nnoremap <Leader>wc <c-w>c
+nnoremap <Leader>ws <c-w>s
 
 " Function Keys
 map <F3> :set invlist<CR>
