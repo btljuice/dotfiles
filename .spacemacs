@@ -423,12 +423,16 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (message "BEGIN dotspacemacs/user-config")
-                                        ;(setq projectile-enable-caching t)
+  ;(setq projectile-enable-caching t)
   (setq-default avy-all-windows 'all-frames
                 truncate-lines t
                 )
   (spacemacs|disable-company eshell-mode)
   (spacemacs|disable-company LaTeX/MPS)
+
+  ;; It seems that (server-start) in .emacs.d/init.el does not work correctly
+  ;; Manually restarting the server here.
+  (server-start)
 
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   ;;(define-key evil-motion-state-map "j" 'evil-next-visual-line)
