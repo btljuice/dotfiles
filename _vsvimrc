@@ -45,6 +45,8 @@ nmap <C-k> :vsc Window.PreviousSplitPane<CR>
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 
 nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
+"Map External Command to Emacs
+nmap <Leader>Ae :vsc Tools.ExternalCommand6<CR>
 
 nmap V<Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>k
 vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>

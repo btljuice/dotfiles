@@ -15,6 +15,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree' " directory tree
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround' " for cs ys ds commands
 Plug 'tpope/vim-fugitive' " git wrapper
 Plug 'tpope/vim-repeat'   " To repeat plugin maps
@@ -26,6 +27,7 @@ Plug 'majutsushi/tagbar' " Class outliner
 Plug 'airblade/vim-gitgutter'
 Plug 'valloric/youcompleteme'
 Plug 'easymotion/vim-easymotion'
+
 
 
 

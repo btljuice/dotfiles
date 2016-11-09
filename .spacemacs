@@ -54,7 +54,7 @@ values."
      emacs-lisp
      git
      markdown
-     ;;org
+     org
      (shell :variables shell-default-height 16
             shell-default-position 'bottom
             shell-default-shell 'shell
@@ -67,15 +67,17 @@ values."
      smex
      semantic
      dash
+
+     evil-snipe
      ;; evil-cleverparens
      ;; vim-empty-lines
-     skewer-mode
+     ;; skewer-mode
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      ranger
+     imenu-list
 
      latex
-
      c-c++
      java
      python
@@ -89,7 +91,9 @@ values."
 
      restclient
      html
-     javascript                         ;
+     javascript
+
+     ;; keyboard-layout ;; for dvorak 
 
      ;erc ;; irc layer
      ;games
@@ -457,7 +461,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
+    (org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot imenu-list evil-cleverparens paredit py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
