@@ -43,12 +43,16 @@ nmap <C-h> :vsc Window.PreviousDocumentWindow<CR>
 nmap <C-j> :vsc Window.NextSplitPane<CR>
 nmap <C-k> :vsc Window.PreviousSplitPane<CR>
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
+nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
 
 nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
+
 "Map External Command to Emacs
 nmap <Leader>Ae :vsc Tools.ExternalCommand6<CR>
+"Map Launch File Explorer
+nmap <Leader>Ax :vsc File.OpenContainingFolder<CR>
 
-nmap V<Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>k
+nmap <Leader>cc V :vsc VAssistX.SelectionToggleLineComment<CR>k
 vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
 "nmap <Leader>cc :vsc Edit.CommentSelection<CR>
 "vmap <Leader>cc :vsc Edit.CommentSelection<CR>
@@ -74,7 +78,6 @@ nmap <Leader>g1 :vsc View.FindResults1<CR>
 nmap <Leader>g2 :vsc View.FindResults2<CR>
 nmap <Leader>ge :vsc View.ErrorList<CR>
 nmap <Leader>go :vsc View.Output<CR>
-nmap <Leader>gf :vsc File.OpenContainingFolder<CR>
 nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 nmap <Leader>gvo :vsc VAssistX.VAOutline<CR>
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
@@ -106,13 +109,12 @@ nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
 nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
 nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateFields<CR>
 nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
+vmap <Leader>rs :vsc VAssistX.SortSelectedLines<CR>
 
 nmap <Leader>_r :source ~/_vsvimrc<CR>
 
-" Same as alternate
-nmap <Leader>t :vsc Window.NextDocumentWindowNav<CR>
+nmap <Leader>tb :vsc Edit.ToggleBookmark<CR>
 
-nmap <Leader>vs : vsc VAssistX.SortSelectedLines<CR>
 nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
 nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
 nmap <Leader>vh : vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>

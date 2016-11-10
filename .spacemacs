@@ -178,9 +178,9 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7)
-                                (bookmarks . 5))
+   dotspacemacs-startup-lists '((recents . 10)
+                                (projects . 5)
+                                (bookmarks . 10))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -353,16 +353,6 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    )
-
-  (when (btl/windows-p)
-    ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
-    ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
-
-    (setenv "PATH" (concat (getenv "PATH") ";c:\\Program Files\\Everything"))
-    (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
-    (add-to-list 'exec-path "C:/Program Files/Everything/")
-    )
-
   )
 
 (defun dotspacemacs/user-init ()
@@ -374,6 +364,16 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
   (message "BEGIN dotspacemacs/user-init")
+
+  (when (btl/windows-p)
+    ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
+    ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
+
+    (setenv "PATH" (concat (getenv "PATH") ";c:\\Program Files\\Everything"))
+    (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
+    (add-to-list 'exec-path "C:/Program Files/Everything/")
+    )
+
 
   (setq-default
    ;; Evil
@@ -433,6 +433,8 @@ you should place your code here."
                 )
   (spacemacs|disable-company eshell-mode)
   (spacemacs|disable-company LaTeX/MPS)
+
+  (setq org-todo-keywords '((sequence "TODO" "WIP" "|" "DONE")))
 
   ;; It seems that (server-start) in .emacs.d/init.el does not work correctly
   ;; Manually restarting the server here.
