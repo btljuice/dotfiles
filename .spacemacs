@@ -16,7 +16,7 @@
 You should not put any user code in this function besides modifying the variable
 values."
 
-  (message "BEGIN dotspacemacs/layers")
+  (message "dotspacemacs/layers BEGIN")
 
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
@@ -124,7 +124,10 @@ values."
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-only)
+
+  (message "dotspacemacs/layers END")
+  )
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -135,7 +138,7 @@ values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
 
-  (message "BEGIN dotspacemacs/init")
+  (message "dotspacemacs/init BEGIN ")
 
   (setq-default
    ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
@@ -353,6 +356,7 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    )
+  (message "dotspacemacs/init END")
   )
 
 (defun dotspacemacs/user-init ()
@@ -363,7 +367,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
-  (message "BEGIN dotspacemacs/user-init")
+  (message "dotspacemacs/user-init BEGIN")
 
   (when (btl/windows-p)
     ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
@@ -417,6 +421,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; SPC-l : layouts
   ;; SPC-y
   ;; SPC-SPC
+
+  (message "dotspacemacs/user-init END")
   )
 
 (defun dotspacemacs/user-config ()
@@ -426,7 +432,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (message "BEGIN dotspacemacs/user-config")
+  (message "dotspacemacs/user-config BEGIN")
   ;(setq projectile-enable-caching t)
   (setq-default avy-all-windows 'all-frames
                 truncate-lines t
@@ -434,7 +440,20 @@ you should place your code here."
   (spacemacs|disable-company eshell-mode)
   (spacemacs|disable-company LaTeX/MPS)
 
-  (setq org-todo-keywords '((sequence "TODO" "WIP" "|" "DONE")))
+  (with-eval-after-load 'org
+    (setq org-todo-keywords '((sequence "TODO" "WIP" "|" "DONE")))
+    (setq spaceline-org-clock-p t)
+    (setq spaceline-org-clock-format-function
+          '(lambda ()
+             (let ((s (org-clock-get-clock-string)))
+               (if (< 40 (length s) )
+                   (concat (substring s 0 40) "..." )
+                 s
+                 )
+               )
+             ))
+    (setq org-agenda-files (list "i:/Users/btljuice/Google Drive/todo.org"))
+    )
 
   ;; It seems that (server-start) in .emacs.d/init.el does not work correctly
   ;; Manually restarting the server here.
@@ -451,6 +470,8 @@ you should place your code here."
   ;; (spacemacs/toggle-evil-cleverparens-on)
   ;; (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
   ;; (add-hook 'emacs-lisp-hook #'evil-cleverparens-mode)
+  
+  (message "dotspacemacs/user-config END")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -463,7 +484,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot imenu-list evil-cleverparens paredit py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
+    (org org-plus-contrib multiple-cursors git-link flyspell-correct-helm flyspell-correct flycheck eyebrowse dumb-jump column-enforce-mode auto-complete auctex anaconda-mode eclim anzu iedit smartparens highlight undo-tree git-gutter yasnippet helm helm-core magit git-commit with-editor async projectile js2-mode company dash org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot imenu-list evil-cleverparens paredit py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

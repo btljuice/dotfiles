@@ -114,6 +114,7 @@ vmap <Leader>rs :vsc VAssistX.SortSelectedLines<CR>
 nmap <Leader>_r :source ~/_vsvimrc<CR>
 
 nmap <Leader>tb :vsc Edit.ToggleBookmark<CR>
+nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
 
 nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
 nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
@@ -124,3 +125,5 @@ nmap <Leader>ws  :vsc Window.Split<CR>
 nmap <Leader>wC  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
 nmap <Leader>wv  <C-w>v
 nmap <Leader>wp  :vsc Window.PinTab<CR>
+
+nmap <Leader>xs :vsc Edit.DeleteHorizontalWhiteSpace<CR>
