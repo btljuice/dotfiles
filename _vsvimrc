@@ -31,6 +31,13 @@ nmap k gk
 
 nmap ]] :vsc VAssistX.ScopeNext<CR>
 nmap [[ :vsc VAssistX.ScopePrevious<CR>
+nmap [b :vsc Window.NextDocumentWindow<CR>
+nmap ]b :vsc Window.PreviousDocumentWindow<CR>
+
+vmap <Leader>s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap <Leader>s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap <Leader>s( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
+vmap <Leader>s) :vsc VAssistX.SurroundSelectionWithParentheses<CR>
 
 " From my experience, VAssistX Navigation is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
@@ -38,8 +45,6 @@ nmap [[ :vsc VAssistX.ScopePrevious<CR>
 nmap <C-o> :vsc VAssistX.NavigateBack<CR>
 nmap <C-i> :vsc VAssistX.NavigateForward<CR>
 nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
-nmap <C-l> :vsc Window.NextDocumentWindow<CR>
-nmap <C-h> :vsc Window.PreviousDocumentWindow<CR>
 nmap <C-j> :vsc Window.NextSplitPane<CR>
 nmap <C-k> :vsc Window.PreviousSplitPane<CR>
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
@@ -85,8 +90,6 @@ nmap <Leader>gvo :vsc VAssistX.VAOutline<CR>
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
 nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 vmap <Leader>is :vsc Edit.SurroundWith<CR>
-vmap <Leader>i{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
-vmap <Leader>i( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
 
 nmap <Leader>ne :vsc View.NextError<CR>
 nmap <Leader>nr :vsc Edit.GoToNextLocation<CR>
@@ -115,6 +118,7 @@ nmap <Leader>_r :source ~/_vsvimrc<CR>
 
 nmap <Leader>tb :vsc Edit.ToggleBookmark<CR>
 nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
+nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
 
 nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
 nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
