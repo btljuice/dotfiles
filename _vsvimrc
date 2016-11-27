@@ -34,10 +34,10 @@ nmap [[ :vsc VAssistX.ScopePrevious<CR>
 nmap [b :vsc Window.NextDocumentWindow<CR>
 nmap ]b :vsc Window.PreviousDocumentWindow<CR>
 
-vmap <Leader>s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
-vmap <Leader>s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
-vmap <Leader>s( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
-vmap <Leader>s) :vsc VAssistX.SurroundSelectionWithParentheses<CR>
+vmap s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap s( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
+vmap s) :vsc VAssistX.SurroundSelectionWithParentheses<CR>
 
 " From my experience, VAssistX Navigation is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
