@@ -441,7 +441,7 @@ you should place your code here."
   (spacemacs|disable-company LaTeX/MPS)
 
   (with-eval-after-load 'org
-    (setq org-todo-keywords '((sequence "TODO" "WIP" "|" "DONE")))
+    (setq org-todo-keywords '((sequence "TODO" "PENDING" "WIP" "|" "DONE" "WONTFIX")))
     (setq spaceline-org-clock-p t)
     (setq spaceline-org-clock-format-function
           '(lambda ()
