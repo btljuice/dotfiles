@@ -8,7 +8,7 @@
 
 set nocompatible
 if s:is_windows
-	set rtp+=~/.vim
+  set rtp+=~/.vim
 endif
 
 " Vim Plug {{{
@@ -25,11 +25,10 @@ Plug 'latex-box-team/latex-box'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar' " Class outliner
 Plug 'airblade/vim-gitgutter'
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 Plug 'easymotion/vim-easymotion'
-
-
-
+Plug 'jceb/vim-orgmode'
+Plug 'skywind3000/asyncrun.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -55,7 +54,7 @@ set nolist
 " set textwidth=78   " Auto wrap
 " set showbreak=\\\\
 
-" Status line 
+" Status line
 set ruler        " Status Line line-col %
 set laststatus=2 " All window will have a statusline
 set history=50   " Cmdline history
@@ -67,7 +66,7 @@ set wildmenu    " Cmd-Line Completion expands in statusline
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set smarttab " Rewinds sw 
+set smarttab " Rewinds sw
 "set softtabstop=2
 set autoindent " Auto indent for files without type
 
@@ -85,7 +84,7 @@ set backupdir=~/.vimcache/backup
 set directory=~/.vimcache/swap
 
 " Completion settings
-set complete-=i " Blocks scans of included folders. 
+set complete-=i " Blocks scans of included folders.
                 " TODO: See if it's still needed with neo-AWESOME-plugins
 set showfulltag
 
@@ -107,6 +106,9 @@ let g:mapleader=" "
 let maploadlleader=" "
 let g:maploadlleader=" "
 
+""" Fugitive + asyncrun.vim cooperation
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+
 """"""" Function
 
 function! DeleteHiddenBuffers()
@@ -127,7 +129,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 
-" Vimgrep 
+" Vimgrep
 nnoremap <Leader>va :vimgrep <cword> **<CR>
 nnoremap <Leader>vc :vimgrep <cword> % <CR>
 
@@ -141,6 +143,3 @@ map <F4> :nohls<CR>
 imap <F4> <Esc>:nohls<CR>a
 map <silent> <F8> :if g:colors_name == "torte"<CR>colorscheme morning<CR>else<CR>colorscheme torte<CR>endif<CR>
 imap <silent> <F8> <Esc>:if g:colors_name == "torte"<CR>colorscheme morning<CR>else<CR>colorscheme torte<CR>endif<CR>a
-
-
-
