@@ -25,7 +25,7 @@ Plug 'latex-box-team/latex-box'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar' " Class outliner
 Plug 'airblade/vim-gitgutter'
-"Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme'
 Plug 'easymotion/vim-easymotion'
 Plug 'jceb/vim-orgmode'
 Plug 'skywind3000/asyncrun.vim'

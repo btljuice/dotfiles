@@ -50,25 +50,26 @@ values."
      ;; ----------------------------------------------------------------
      helm
      (auto-completion :variables auto-completion-return-key-behavior nil)
-     ;; better-defaults
-     emacs-lisp
-     git
-     markdown
-     org
+     smex
+
      (shell :variables shell-default-height 16
             shell-default-position 'bottom
             shell-default-shell 'shell
             shell-enable-smart-eshell nil)
+
+     ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
-     version-control
-
-     perforce
-     smex
      semantic
+
+     version-control
+     git
+     perforce
+
      dash
 
      evil-snipe
+     vinegar
      ;; evil-cleverparens
      ;; vim-empty-lines
      ;; skewer-mode
@@ -77,11 +78,15 @@ values."
      ranger
      imenu-list
 
+     markdown
+     org
+
+     emacs-lisp
+     common-lisp
      latex
      c-c++
      java
      python
-     common-lisp
      lua
 
      shell-scripts
