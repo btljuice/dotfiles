@@ -2,13 +2,20 @@
 
 " detect OS {{{
   let s:is_windows = has('win32') || has('win64')
+  let s:is_windows32 = has('win32')
+  let s:is_windows64 = has('win64')
   let s:is_cygwin = has('win32unix')
   let s:is_macvim = has('gui_macvim')
 "}}}
 
 set nocompatible
+
 if s:is_windows
   set rtp+=~/.vim
+endif
+
+if s:is_windows32
+  let $PATH .= ';c:\python35-32'
 endif
 
 " Vim Plug {{{
