@@ -50,6 +50,8 @@ nmap <C-k> :vsc Window.PreviousSplitPane<CR>
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
 
+nmap <Leader>, :vsc Edit.NavigateTo<CR>
+
 nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
 
 "Map External Command to Emacs
