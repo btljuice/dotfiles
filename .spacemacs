@@ -381,9 +381,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
     ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
 
-    (setenv "PATH" (concat (getenv "PATH") ";c:\\Program Files\\Everything"))
+    (setenv "PATH" (concat ";c:\\Program Files\\Everything"
+                           ";c:\\Program Files\\Git\bin"(getenv "PATH")))
     (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
     (add-to-list 'exec-path "C:/Program Files/Everything/")
+    (add-to-list 'exec-path "C:/Program Files/Git/bin/")
     )
 
 
