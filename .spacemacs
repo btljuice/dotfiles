@@ -465,6 +465,11 @@ you should place your code here."
     (setq org-agenda-files (list "i:/Users/btljuice/Google Drive/todo.org"))
     )
 
+  ; Ledger settings
+  (setq ledger-highlight-xact-under-point nil)
+  (add-to-list 'auto-mode-alist '("\\.dat\\'" . ledger-mode))
+
+  ; jira mode
   (setq-default jiralib-url "https://float4-jira.atlassian.net/secure/Dashboard.jspa")
 
   ;; It seems that (server-start) in .emacs.d/init.el does not work correctly
