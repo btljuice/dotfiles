@@ -11,6 +11,14 @@
   (dolist (hook hooks)
     (add-hook hook fun)))
 
+(defsubst btl/win/binaries64 ()
+  (concat (getenv "GDRIVE") "\\computer\\app\\win\\free\\binaries64\\")
+)
+
+(defsubst btl/win/binaries64-fwd ()
+  (replace-regexp-in-string "\\\\" "/" (btl/win/binaries64))
+)
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -381,13 +389,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
     ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
     ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
 
-    (setenv "PATH" (concat ";c:\\Program Files\\Everything"
-                           ";c:\\Program Files\\Git\bin"(getenv "PATH")))
-    (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
-    (add-to-list 'exec-path "C:/Program Files/Everything/")
-    (add-to-list 'exec-path "C:/Program Files/Git/bin/")
-    )
+      (setenv "PATH" (concat (btl/win/binaries64) "everything;"
+                             (btl/win/binaries64) "git\\cmd;"
+                             (btl/win/binaries64) "ledger;"
+                             (getenv "PATH")))
 
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "everything"))
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "git/cmd"))
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ledger"))
+    )
 
   (setq-default
    ;; Evil
