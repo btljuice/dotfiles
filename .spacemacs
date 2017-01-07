@@ -392,11 +392,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (setenv "PATH" (concat (btl/win/binaries64) "everything;"
                              (btl/win/binaries64) "git\\cmd;"
                              (btl/win/binaries64) "ledger;"
+                             (btl/win/binaries64) "platinum-searcher;"
                              (getenv "PATH")))
 
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "everything"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "git/cmd"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ledger"))
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "platinum-searcher"))
     )
 
   (setq-default
