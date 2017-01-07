@@ -477,7 +477,7 @@ you should place your code here."
 
   ; Ledger settings
   (setq ledger-highlight-xact-under-point nil)
-  (add-to-list 'auto-mode-alist '("\\.dat\\'" . ledger-mode))
+  (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 
   ; jira mode
   (setq-default jiralib-url "https://float4-jira.atlassian.net/secure/Dashboard.jspa")
