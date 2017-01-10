@@ -475,6 +475,7 @@ you should place your code here."
                )
              ))
     (setq org-agenda-files (list "i:/Users/btljuice/Google Drive/todo.org"))
+    (setq org-time-clocksum-use-fractional t)
     )
 
   ; Ledger settings
