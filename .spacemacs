@@ -56,12 +56,14 @@ values."
      ;; ----------------------------------------------------------------
      ;ivy
      helm
-     (auto-completion :variables auto-completion-return-key-behavior nil)
+     (auto-completion :variables auto-completion-return-key-behavior nil
+                                 auto-completion-tab-key-behavior nil
+                                 auto-completion-enable-snippets-in-popup t
+                                 auto-completion-enable-help-tooltip t)
      smex
 
      cscope
      gtags
-
      (shell :variables shell-default-height 16
             shell-default-position 'bottom
             shell-default-shell 'shell
@@ -186,7 +188,7 @@ values."
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
+   dotspacemacs-verbose-loading t
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -401,6 +403,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
                              (btl/win/binaries64) "git\\cmd;"
                              (btl/win/binaries64) "ledger;"
                              (btl/win/binaries64) "platinum-searcher;"
+                             (btl/win/binaries32) "cscope;"
+                             (btl/win/binaries32) "ctags;"
                              (btl/win/binaries32) "gtags;"
                              (getenv "PATH")))
 
@@ -408,6 +412,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "git/cmd"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ledger"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "platinum-searcher"))
+      (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "cscope"))
+      (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "ctags"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "gtags"))
     )
 

@@ -12,30 +12,31 @@ set nocompatible
 
 if s:is_windows
   set rtp+=~/.vim
-endif
-
-if s:is_windows32
-  let $PATH .= ';c:\python35-32'
+  let s:binaries32 = $GDRIVE . '\computer\app\win\free\binaries32\'
+  let $PATH .= ';c:\python35-32;' .  s:binaries32 . 'cscope;' .  s:binaries32 .  'ctags;' .  s:binaries32 . 'gtags'
+  let s:binaries64 = $GDRIVE . '\computer\app\win\free\binaries64\'
+  let $PATH .= ';' . s:binaries64 . 'git\cmd'
+  let $PATH .= ';' 
 endif
 
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree' " directory tree
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround' " for cs ys ds commands
 Plug 'tpope/vim-fugitive' " git wrapper
 Plug 'tpope/vim-repeat'   " To repeat plugin maps
 Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized' " colorscheme
-Plug 'latex-box-team/latex-box'
+"Plug 'latex-box-team/latex-box'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar' " Class outliner
 Plug 'airblade/vim-gitgutter'
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 Plug 'easymotion/vim-easymotion'
-Plug 'jceb/vim-orgmode'
-Plug 'skywind3000/asyncrun.vim'
+"Plug 'jceb/vim-orgmode'
+"Plug 'skywind3000/asyncrun.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -53,6 +54,10 @@ set nonumber     " Line Numbers
 set scrolloff=3 " Always keep 3 lines below or above cursor
 set showmatch   " Briefly Jumps to matching parens
 set matchtime=3 " Matching Time
+set guioptions-=m " Remove menu
+set guioptions-=T " Remove toolbar
+set guioptions-=r " Remove right scrollbar
+set guioptions-=l " Remove left scrollbar
 
 set listchars=eol:$,tab:>-,trail:$
 set nolist
