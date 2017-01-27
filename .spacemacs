@@ -11,6 +11,12 @@
   (dolist (hook hooks)
     (add-hook hook fun)))
 
+(defsubst btl/back->fwdslash (s) (replace-regexp-in-string "\\\\" "/" s))
+
+(defsubst btl/gdrive () (getenv "GDRIVE"))
+(defsubst btl/gdrive-fwd () (btl/back->fwdslash (btl/gdrive)))
+
+
 (defsubst btl/win/binaries32 () (concat (getenv "GDRIVE") "\\computer\\app\\win\\free\\binaries32\\"))
 (defsubst btl/win/binaries64 () (concat (getenv "GDRIVE") "\\computer\\app\\win\\free\\binaries64\\"))
 
@@ -492,7 +498,7 @@ you should place your code here."
                  )
                )
              ))
-    (setq org-agenda-files (list "i:/Users/btljuice/Google Drive/todo.org"))
+    (setq org-agenda-files (list (concat (btl/gdrive-fwd) "/todo.org")))
     (setq org-time-clocksum-use-fractional t)
     )
 
