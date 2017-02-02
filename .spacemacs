@@ -549,14 +549,12 @@ you should place your code here."
      ("#49483E" . 100))))
  '(ledger-reports
    (quote
-    (("bal bnc argent" "\"ledger\" -f \"i:/Users/btljuice/Google Drive/AlexioYFlo/budget/ledger/alexis/alexis.ledger\" bal bnc argent")
-     ("reg mastercard" "ledger ")
-     ("bal \"bnc argent\"" "ledger ")
-     ("bal bnc argent" "ledger ")
+    (("bal bnc argent" "%(binary) -f %(ledger-file) bal bnc argent")
      ("bal" "%(binary) -f %(ledger-file) bal")
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
-     ("account" "%(binary) -f %(ledger-file) reg %(account)"))))
+     ("account" "%(binary) -f %(ledger-file) reg %(account)")
+     ("bal by month" "%(binary) -M --period-sort \"(amount)\" -f %(ledger-file) bal"))))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote

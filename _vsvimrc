@@ -30,9 +30,20 @@ nmap j gj
 nmap k gk
 
 nmap ]] :vsc VAssistX.ScopeNext<CR>
+nmap ]b :vsc Window.PreviousDocumentWindow<CR>
+nmap ]e <Leader>ne
+nmap ]t <Leader>nt
+nmap ]r <Leader>nr
+nmap ]m <Leader>nm
+nmap ]M <Leader>nM
+
 nmap [[ :vsc VAssistX.ScopePrevious<CR>
 nmap [b :vsc Window.NextDocumentWindow<CR>
-nmap ]b :vsc Window.PreviousDocumentWindow<CR>
+nmap [e <Leader>pe
+nmap [t <Leader>pt
+nmap [r <Leader>pr
+nmap [m <Leader>pm
+nmap [M <Leader>pM
 
 vmap s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
 vmap s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
@@ -87,6 +98,7 @@ nmap <Leader>ge :vsc View.ErrorList<CR>
 nmap <Leader>go :vsc View.Output<CR>
 nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 nmap <Leader>gvo :vsc VAssistX.VAOutline<CR>
+nmap <Leader>gb :vsc View.BookmarkWindow<CR>
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
 
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
@@ -97,6 +109,8 @@ nmap <Leader>ne :vsc View.NextError<CR>
 nmap <Leader>nr :vsc Edit.GoToNextLocation<CR>
 nmap <Leader>ns  :vsc VAssistX.ScopeNext<CR>
 nmap <Leader>nt :vsc VAssistX.RefResultsNext<CR>
+nmap <Leader>nm :vsc Edit.NextBookmark<CR>
+nmap <Leader>nM :vsc Edit.NextBookmarkInDocument<CR>
 
 nmap <Leader>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
 
@@ -104,6 +118,8 @@ nmap <Leader>pe :vsc View.PreviousError<CR>
 nmap <Leader>pt :vsc VAssistX.RefResultsPrevious<CR>
 nmap <Leader>ps  :vsc VAssistX.ScopePrevious<CR>
 nmap <Leader>pr :vsc Edit.GoToPrevLocation<CR>
+nmap <Leader>pm :vsc Edit.PreviousBookmark<CR>
+nmap <Leader>pM :vsc Edit.PreviousBookmarkInDocument<CR>
 
 nmap <Leader>ki :vsc Edit.QuickInfo<CR>
 nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
