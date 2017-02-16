@@ -55,9 +55,14 @@ vmap s) :vsc VAssistX.SurroundSelectionWithParentheses<CR>
 " nmap <C-i> :vsc View.NavigateForward<CR>
 nmap <C-o> :vsc VAssistX.NavigateBack<CR>
 nmap <C-i> :vsc VAssistX.NavigateForward<CR>
+
 nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
-nmap <C-j> :vsc Window.NextSplitPane<CR>
-nmap <C-k> :vsc Window.PreviousSplitPane<CR>
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
 
@@ -105,21 +110,7 @@ nmap <Leader>is :vsc Edit.InsertSnippet<CR>
 nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 vmap <Leader>is :vsc Edit.SurroundWith<CR>
 
-nmap <Leader>ne :vsc View.NextError<CR>
-nmap <Leader>nr :vsc Edit.GoToNextLocation<CR>
-nmap <Leader>ns  :vsc VAssistX.ScopeNext<CR>
-nmap <Leader>nt :vsc VAssistX.RefResultsNext<CR>
-nmap <Leader>nm :vsc Edit.NextBookmark<CR>
-nmap <Leader>nM :vsc Edit.NextBookmarkInDocument<CR>
-
 nmap <Leader>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
-
-nmap <Leader>pe :vsc View.PreviousError<CR>
-nmap <Leader>pt :vsc VAssistX.RefResultsPrevious<CR>
-nmap <Leader>ps  :vsc VAssistX.ScopePrevious<CR>
-nmap <Leader>pr :vsc Edit.GoToPrevLocation<CR>
-nmap <Leader>pm :vsc Edit.PreviousBookmark<CR>
-nmap <Leader>pM :vsc Edit.PreviousBookmarkInDocument<CR>
 
 nmap <Leader>ki :vsc Edit.QuickInfo<CR>
 nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
@@ -137,6 +128,8 @@ nmap <Leader>_r :source ~/_vsvimrc<CR>
 nmap <Leader>tb :vsc Edit.ToggleBookmark<CR>
 nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
 nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
+nmap <Leader>th :set hls<CR>
+nmap <Leader>tH :set nohls<CR>
 
 nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
 nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
@@ -147,5 +140,10 @@ nmap <Leader>wD  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
 nmap <Leader>ws  :vsc Window.Split<CR>
 nmap <Leader>wv  <C-w>v
 nmap <Leader>wp  :vsc Window.PinTab<CR>
+
+nmap <Leader>wh <C-w>h
+nmap <Leader>wj <C-w>j
+nmap <Leader>wk <C-w>k
+nmap <Leader>wl <C-w>l
 
 nmap <Leader>xs :vsc Edit.DeleteHorizontalWhiteSpace<CR>
