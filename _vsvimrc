@@ -31,19 +31,19 @@ nmap k gk
 
 nmap ]] :vsc VAssistX.ScopeNext<CR>
 nmap ]b :vsc Window.PreviousDocumentWindow<CR>
-nmap ]e <Leader>ne
-nmap ]t <Leader>nt
-nmap ]r <Leader>nr
-nmap ]m <Leader>nm
-nmap ]M <Leader>nM
+nmap ]e :vsc View.NextError<CR>
+nmap ]t :vsc VAssistX.RefResultsNext<CR>
+nmap ]r :vsc Edit.GoToNextLocation<CR>
+nmap ]m :vsc Edit.NextBookmark<CR>
+nmap ]M :vsc Edit.NextBookmarkInDocument<CR>
 
 nmap [[ :vsc VAssistX.ScopePrevious<CR>
 nmap [b :vsc Window.NextDocumentWindow<CR>
-nmap [e <Leader>pe
-nmap [t <Leader>pt
-nmap [r <Leader>pr
-nmap [m <Leader>pm
-nmap [M <Leader>pM
+nmap [e :vsc View.PreviousError<CR>
+nmap [t :vsc VAssistX.RefResultsPrevious<CR>
+nmap [r :vsc Edit.GoToPrevLocation<CR>
+nmap [m :vsc Edit.PreviousBookmark<CR>
+nmap [M :vsc Edit.PreviousBookmarkInDocument<CR>
 
 vmap s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
 vmap s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
@@ -116,6 +116,8 @@ nmap <Leader>ki :vsc Edit.QuickInfo<CR>
 nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
 nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
 
+nmap <Leader>p4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
+
 nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
 nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
 nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
@@ -130,6 +132,7 @@ nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
 nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
 nmap <Leader>th :set hls<CR>
 nmap <Leader>tH :set nohls<CR>
+nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
 
 nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
 nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
