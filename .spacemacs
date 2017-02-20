@@ -72,8 +72,7 @@ values."
      gtags
      (shell :variables shell-default-height 16
             shell-default-position 'bottom
-            shell-default-shell 'shell
-            shell-enable-smart-eshell nil)
+            shell-default-shell 'shell)
 
      ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -409,6 +408,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                              (btl/win/binaries64) "git\\cmd;"
                              (btl/win/binaries64) "ledger;"
                              (btl/win/binaries64) "platinum-searcher;"
+                             (btl/win/binaries64) "ffmpeg-2.4;"
                              (btl/win/binaries32) "cscope;"
                              (btl/win/binaries32) "ctags;"
                              (btl/win/binaries32) "gtags;"
@@ -418,6 +418,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "git/cmd"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ledger"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "platinum-searcher"))
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ffmpeg-2.4"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "cscope"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "ctags"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "gtags"))
