@@ -117,6 +117,10 @@ nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
 nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
 
 nmap <Leader>p4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
+nmap <Leader>p4t :vsc File.Perforce.P4VS.Timelapse_View<CR>
+nmap <Leader>p4h :vsc File.Perforce.P4VS.Show_History<CR>
+nmap <Leader>p4gr :vsc File.Perforce.P4VS.Revision_Graph<CR>
+nmap <Leader>p4gs :vsc File.Perforce.P4VS.Stream_Graph<CR>
 
 nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
 nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
