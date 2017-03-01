@@ -433,9 +433,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
    ;;                               (tab-mark 9 [9655 9]))
 
    ;; Customize your theme
-
-   ;;backup-directory-alist
    )
+
+  (setq backup-directory-alist '((".*" . "~/.emacs.d/private/backup")))
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode  'whitespace-mode)

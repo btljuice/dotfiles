@@ -68,7 +68,8 @@ nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
 
 nmap <Leader>, :vsc Edit.NavigateTo<CR>
 
-nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
+""nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
+nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
 
 "Map External Command to Emacs
 nmap <Leader>Ae :vsc Tools.ExternalCommand6<CR>
@@ -90,20 +91,23 @@ nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
 nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
 nmap <Leader>d<Space> :vsc Debug.ShowNextStatement<CR>
 
+nmap <Leader>* :vsc VAssistX.FindReferences<CR>
 nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
 nmap <Leader>ff :vsc Edit.FindInFiles<CR>
-nmap <Leader>fi :vsc VAssistX.ListIncludeFiles<CR>
 nmap <Leader>fr :vsc Edit.FindAllReferences<CR>
 nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
 nmap <Leader>ft :vsc VAssistX.FindReferences<CR>
 
-nmap <Leader>g1 :vsc View.FindResults1<CR>
-nmap <Leader>g2 :vsc View.FindResults2<CR>
-nmap <Leader>ge :vsc View.ErrorList<CR>
-nmap <Leader>go :vsc View.Output<CR>
-nmap <Leader>gx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-nmap <Leader>gvo :vsc VAssistX.VAOutline<CR>
-nmap <Leader>gb :vsc View.BookmarkWindow<CR>
+nmap <Leader>gid :vsc Team.Git.CompareWithUnmodified<CR>
+
+nmap <Leader>v1  :vsc View.FindResults1<CR>
+nmap <Leader>v2  :vsc View.FindResults2<CR>
+nmap <Leader>ve  :vsc View.ErrorList<CR>
+nmap <Leader>vo  :vsc View.Output<CR>
+nmap <Leader>vx  :vsc SolutionExplorer.SyncWithActiveDocument<CR>
+nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
+nmap <Leader>vb  :vsc View.BookmarkWindow<CR>
+
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
 
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
@@ -121,6 +125,7 @@ nmap <Leader>p4t :vsc File.Perforce.P4VS.Timelapse_View<CR>
 nmap <Leader>p4h :vsc File.Perforce.P4VS.Show_History<CR>
 nmap <Leader>p4gr :vsc File.Perforce.P4VS.Revision_Graph<CR>
 nmap <Leader>p4gs :vsc File.Perforce.P4VS.Stream_Graph<CR>
+
 
 nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
 nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
