@@ -106,7 +106,11 @@ nmap <Leader>ve  :vsc View.ErrorList<CR>
 nmap <Leader>vo  :vsc View.Output<CR>
 nmap <Leader>vx  :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
-nmap <Leader>vb  :vsc View.BookmarkWindow<CR>
+nmap <Leader>vm  :vsc View.BookmarkWindow<CR>
+nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
+nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
+nmap <Leader>vh : vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
+
 
 "nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
 
@@ -139,16 +143,12 @@ vmap <Leader>sl :vsc VAssistX.SortSelectedLines<CR>
 
 nmap <Leader>_r :source ~/_vsvimrc<CR>
 
-nmap <Leader>tb :vsc Edit.ToggleBookmark<CR>
+nmap <Leader>tm :vsc Edit.ToggleBookmark<CR>
 nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
 nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
 nmap <Leader>th :set hls<CR>
 nmap <Leader>tH :set nohls<CR>
 nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
-
-nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
-nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
-nmap <Leader>vh : vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
 
 nmap <Leader>wd  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>wD  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
