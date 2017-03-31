@@ -77,13 +77,13 @@ values."
      ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
-     semantic
+     ;semantic
      typography
 
      version-control
      git
      perforce
-     jira
+     ;jira
 
      dash
 
@@ -124,7 +124,7 @@ values."
 
      ;erc ;; irc layer
      ;games
-     themes-megapack
+     ;themes-megapack
 
      ;;;; Interesting layers to try eventually
      ;; wakatime ;; A time tracker in emacs
