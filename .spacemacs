@@ -500,7 +500,9 @@ you should place your code here."
                  )
                )
              ))
-    (setq org-agenda-files (list (concat (btl/gdrive-fwd) "/todo.org")))
+    (setq org-agenda-files (list (concat (btl/gdrive-fwd) "/todo.org")
+                                 (concat (btl/gdrive-fwd) "/float4.org")
+                                 (concat (btl/gdrive-fwd) "/personnel.org")))
     (setq org-time-clocksum-use-fractional t)
     )
 
