@@ -422,6 +422,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
                              (btl/win/binaries64) "ledger;"
                              (btl/win/binaries64) "platinum-searcher;"
                              (btl/win/binaries64) "ffmpeg-2.4;"
+                             (btl/win/binaries64) "imagemagick;"
                              (btl/win/binaries64) "ffmpeg\\bin;"
                              (btl/win/binaries32) "cscope;"
                              (btl/win/binaries32) "ctags;"
@@ -433,6 +434,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ledger"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "platinum-searcher"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ffmpeg-2.4"))
+      (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "imagemagick"))
       (add-to-list 'exec-path (concat (btl/win/binaries64-fwd) "ffmpeg/bin"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "cscope"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "ctags"))
