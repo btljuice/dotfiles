@@ -15,13 +15,6 @@ set vsvim_cleanmacros
 
 let mapleader=" "
 
-imap <F2> <Esc>:vsc Edit.ToggleWordWrap<CR>a
-map <F2> :vsc Edit.ToggleWordWrap<CR>
-imap <F3> <Esc>:vsc Edit.ViewWhiteSpace<CR>a
-map <F3> :vsc Edit.ViewWhiteSpace<CR>
-imap <F4> <Esc>:nohls<CR>a
-map <F4> :nohls<CR>
-
 nmap <A-q> <Esc>
 imap <A-q> <Esc>
 
@@ -29,34 +22,42 @@ nnoremap Y y$
 nmap j gj
 nmap k gk
 
-nmap ]] :vsc VAssistX.ScopeNext<CR>
+""nmap ]] :vsc Edit.NextMethod<CR>
+nmap ]] :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+" nmap ]] :vsc VAssistX.ScopeNext<CR>
 nmap ]b :vsc Window.PreviousDocumentWindow<CR>
 nmap ]e :vsc View.NextError<CR>
-nmap ]t :vsc VAssistX.RefResultsNext<CR>
+" nmap ]t :vsc VAssistX.RefResultsNext<CR>
+" nmap ]t :vsc ReSharper.ReSharper_GotoNextBlock<CR>
 nmap ]r :vsc Edit.GoToNextLocation<CR>
 nmap ]m :vsc Edit.NextBookmark<CR>
 nmap ]M :vsc Edit.NextBookmarkInDocument<CR>
 
-nmap [[ :vsc VAssistX.ScopePrevious<CR>
+
+""nmap [[ :vsc Edit.PreviousMethod<CR>
+nmap [[ :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+" nmap [[ :vsc VAssistX.ScopePrevious<CR>
 nmap [b :vsc Window.NextDocumentWindow<CR>
 nmap [e :vsc View.PreviousError<CR>
-nmap [t :vsc VAssistX.RefResultsPrevious<CR>
+" nmap [t :vsc VAssistX.RefResultsPrevious<CR>
 nmap [r :vsc Edit.GoToPrevLocation<CR>
 nmap [m :vsc Edit.PreviousBookmark<CR>
 nmap [M :vsc Edit.PreviousBookmarkInDocument<CR>
 
-vmap s{ :vsc VAssistX.SurroundSelectionWithBraces<CR>
-vmap s} :vsc VAssistX.SurroundSelectionWithBraces<CR>
-vmap s( :vsc VAssistX.SurroundSelectionWithParentheses<CR>
-vmap s) :vsc VAssistX.SurroundSelectionWithParentheses<CR>
+" vmap s :vsc Edit.SurroundWith<CR>
+vmap s :vsc ReSharper.ReSharper_SurroundWith<CR>
 
-" From my experience, VAssistX Navigation is better
+" From my experience (msvc 2013), ReSharper and/or VAssistX is better
 " nmap <C-o> :vsc View.NavigateBackward<CR>
 " nmap <C-i> :vsc View.NavigateForward<CR>
-nmap <C-o> :vsc VAssistX.NavigateBack<CR>
-nmap <C-i> :vsc VAssistX.NavigateForward<CR>
+" nmap <C-o> :vsc VAssistX.NavigateBack<CR>
+" nmap <C-i> :vsc VAssistX.NavigateForward<CR>
+nmap <C-o> :vsc ReSharper.ReSharper_NavigateBackward<CR>
+nmap <C-i> :vsc ReSharper.ReSharper_NavigateForward<CR>
 
-nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
+"nmap <C-]> :vsc ReSharper.ReSharper_GotoImplementations<CR>
+"nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
+nmap <C-[> :vsc ReSharper.ReSharper_GotoDeclaration<CR>
 
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
@@ -66,7 +67,12 @@ nmap <C-l> <C-w>l
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
 
-nmap <Leader>, :vsc Edit.NavigateTo<CR>
+nmap <Leader>, :vsc Resharper.ReSharper_GotoType<CR>
+" nmap <Leader>, :vsc Edit.NavigateTo<CR>
+
+nmap <Leader>; :vsc ReSharper.ReSharper_LineComment<CR>k
+vmap <Leader>; :vsc ReSharper.ReSharper_LineComment<CR>k
+"vmap <Leader>; :vsc Resharper.Resharper_BlockComment<CR>
 
 ""nmap <Leader>a :vsc VAssistX.OpenCorrespondingFile<CR>
 nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
@@ -76,12 +82,12 @@ nmap <Leader>Ae :vsc Tools.ExternalCommand6<CR>
 "Map Launch File Explorer
 nmap <Leader>Ax :vsc File.OpenContainingFolder<CR>
 
-nmap <Leader>cc V :vsc VAssistX.SelectionToggleLineComment<CR>k
-vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
-"nmap <Leader>cc :vsc Edit.CommentSelection<CR>
-"vmap <Leader>cc :vsc Edit.CommentSelection<CR>
-"nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
-"vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+""nmap <Leader>cc V :vsc VAssistX.SelectionToggleLineComment<CR>k
+""vmap <Leader>cc :vsc VAssistX.SelectionToggleLineComment<CR>
+" nmap <Leader>cc :vsc Edit.CommentSelection<CR>
+" vmap <Leader>cc :vsc Edit.CommentSelection<CR>
+" nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+" vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 
 nmap <Leader>dl :vsc Debug.StepInto<CR>
 nmap <Leader>dh :vsc Debug.StepOut<CR>
@@ -91,12 +97,16 @@ nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
 nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
 nmap <Leader>d<Space> :vsc Debug.ShowNextStatement<CR>
 
-nmap <Leader>* :vsc VAssistX.FindReferences<CR>
-nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
+nmap <Leader>* :vsc ReSharper.ReSharper_FindUsages<CR>
+" nmap <Leader>* :vsc VAssistX.FindReferences<CR>
+nmap <Leader>fc :vsc ReSharper.ReSharper_HighlightUsages<CR>
+" nmap <Leader>fc :vsc VAssistX.FindReferencesinFile<CR>
 nmap <Leader>ff :vsc Edit.FindInFiles<CR>
 nmap <Leader>fr :vsc Edit.FindAllReferences<CR>
-nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
-nmap <Leader>ft :vsc VAssistX.FindReferences<CR>
+nmap <Leader>fs :vsc ReSharper.ReSharper_GotoSymbol<CR>
+" nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>ft :vsc ReSharper.ReSharper_FindUsagesAdvanced<CR>
+" nmap <Leader>ft :vsc VAssistX.FindReferences<CR>
 
 nmap <Leader>gid :vsc Team.Git.CompareWithUnmodified<CR>
 
@@ -105,24 +115,29 @@ nmap <Leader>v2  :vsc View.FindResults2<CR>
 nmap <Leader>ve  :vsc View.ErrorList<CR>
 nmap <Leader>vo  :vsc View.Output<CR>
 nmap <Leader>vx  :vsc SolutionExplorer.SyncWithActiveDocument<CR>
-nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
+" nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
 nmap <Leader>vm  :vsc View.BookmarkWindow<CR>
-nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
-nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
+" nmap <Leader>vc : vsc VAssistX.CloneFindReferencesResults<CR>
+nmap <Leader>vi : vsc ReSharper.ReSharper_ViewIncludeGraphs<CR>
+" nmap <Leader>vi : vsc VAssistX.ListIncludeFiles<CR>
 nmap <Leader>vh : vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
 
-
-"nmap gD    :vsc Edit.GoToDeclaration<CR> Does not seem to work
+" Edit.GoToDeclaration does not work
+""nmap gD    :vsc Edit.GoToDeclaration<CR>
 
 nmap <Leader>is :vsc Edit.InsertSnippet<CR>
 nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 vmap <Leader>is :vsc Edit.SurroundWith<CR>
 
-nmap <Leader>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
+nmap <Leader>o :vsc ReSharper.ReSharper_GotoFile<CR>
+" nmap <Leader>o :vsc VAssistX.OpenFileInSolutionDialog<CR>
 
 nmap <Leader>ki :vsc Edit.QuickInfo<CR>
 nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
 nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
+nmap <leader>k* :vsc ReSharper.ReSharper_InspectThis<CR>
+
+nmap <Leader>m :vsc ReSharper.ReSharper_GotoFileMember<CR>
 
 nmap <Leader>p4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
 nmap <Leader>p4t :vsc File.Perforce.P4VS.Timelapse_View<CR>
@@ -130,16 +145,26 @@ nmap <Leader>p4h :vsc File.Perforce.P4VS.Show_History<CR>
 nmap <Leader>p4gr :vsc File.Perforce.P4VS.Revision_Graph<CR>
 nmap <Leader>p4gs :vsc File.Perforce.P4VS.Stream_Graph<CR>
 
+nmap <Leader>pr :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
+nmap <Leader>pR :vsc ReSharper.ReSharper_GotoRelatedFiles<CR>
+nmap <Leader>pw :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
 
-nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
-nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
-nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
-nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateField<CR>
-nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
-vmap <Leader>rx :vsc VAssistX.RefactorExtractMethod<CR>
-nmap <Leader>rs :vsc VAssistX.RefactorChangeSignature<CR>
+nmap <Leader>r* :vsc ReSharper.ReSharper_RefactorThis<CR>
+nmap <Leader>rr :vsc ReSharper.ReSharper_Rename<CR>
+vmap <Leader>rx :vsc ReSharper.ReSharper_ExtractMethod<CR>
+nmap <Leader>rf :vsc ReSharper.ReSharper_EncapsulateField<CR>
+vmap <Leader>rf :vsc ReSharper.ReSharper_EncapsulateField<CR>
+nmap <Leader>rs :vsc ReSharper.ReSharper_ChangeSignature<CR>
 
-vmap <Leader>sl :vsc VAssistX.SortSelectedLines<CR>
+" nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
+" nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
+" nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
+" nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateField<CR>
+" nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
+" vmap <Leader>rx :vsc VAssistX.RefactorExtractMethod<CR>
+" nmap <Leader>rs :vsc VAssistX.RefactorChangeSignature<CR>
+
+" vmap <Leader>sl :vsc VAssistX.SortSelectedLines<CR>
 
 nmap <Leader>_r :source ~/_vsvimrc<CR>
 
@@ -153,12 +178,16 @@ nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
 nmap <Leader>wd  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>wD  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
 nmap <Leader>ws  :vsc Window.Split<CR>
+nmap <Leader>wS  :vsc Window.NewVerticalTabGroup<CR>
 nmap <Leader>wv  <C-w>v
 nmap <Leader>wp  :vsc Window.PinTab<CR>
+nmap <Leader>wf  :vsc Window.Float<CR>
 
 nmap <Leader>wh <C-w>h
 nmap <Leader>wj <C-w>j
 nmap <Leader>wk <C-w>k
 nmap <Leader>wl <C-w>l
+"nmap <Leader>wH :vsc Window.MovetoPreviousTabGroup<cr>
+"nmap <Leader>wL :vsc Window.MovetoNextTabGroup<cr>
 
 nmap <Leader>xs :vsc Edit.DeleteHorizontalWhiteSpace<CR>
