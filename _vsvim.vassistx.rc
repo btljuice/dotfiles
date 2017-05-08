@@ -1,5 +1,5 @@
-nmap [[ :vsc VAssistX.ScopePrevious<CR>
-nmap ]] :vsc VAssistX.ScopeNext<CR>
+nmap [s :vsc VAssistX.ScopePrevious<CR>
+nmap ]s :vsc VAssistX.ScopeNext<CR>
 nmap [t :vsc VAssistX.RefResultsPrevious<CR>
 nmap ]t :vsc VAssistX.RefResultsNext<CR>
 

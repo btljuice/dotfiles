@@ -1,7 +1,7 @@
-nmap [m :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
-nmap ]m :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+nmap [s :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+nmap ]s :vsc ReSharper.ReSharper_GotoNextMethod<CR>
 
-vmap s :vsc ReSharper.ReSharper_SurroundWith<CR>
+"vmap s :vsc ReSharper.ReSharper_SurroundWith<CR>
 
 nmap <C-o> :vsc ReSharper.ReSharper_NavigateBackward<CR>
 nmap <C-i> :vsc ReSharper.ReSharper_NavigateForward<CR>

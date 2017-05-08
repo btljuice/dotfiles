@@ -39,11 +39,11 @@ nmap [k :vsc Edit.PreviousBookmark<CR>
 nmap ]k :vsc Edit.NextBookmark<CR>
 nmap ]K :vsc Edit.NextBookmarkInDocument<CR>
 nmap [K :vsc Edit.PreviousBookmarkInDocument<CR>
-nmap [m :vsc Edit.PreviousMethod<CR>
-nmap ]m :vsc Edit.NextMethod<CR>
+nmap [s :vsc Edit.PreviousMethod<CR>
+nmap ]s :vsc Edit.NextMethod<CR>
 
-nmap [h :vsc Diff.PreviousDifference<CR>
-nmap ]h :vsc Diff.NextDifference<CR>
+" nmap [h :vsc Diff.PreviousDifference<CR>
+" nmap ]h :vsc Diff.NextDifference<CR>
 "nmap [w next/prev window
 
 vmap s :vsc Edit.SurroundWith<CR>
@@ -58,6 +58,7 @@ nmap <C-l> <C-w>l
 
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
+nmap <Leader>6 :vsc Window.NextDocumentWindowNav<CR>
 
 nmap <Leader>, :vsc Edit.NavigateTo<CR>
 
