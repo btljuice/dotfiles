@@ -136,6 +136,7 @@ nmap <Leader>ki :vsc Edit.QuickInfo<CR>
 nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
 nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
 nmap <leader>k* :vsc ReSharper.ReSharper_InspectThis<CR>
+nmap <leader>kf :vsc ReSharper_AltEnter<CR>
 
 nmap <Leader>m :vsc ReSharper.ReSharper_GotoFileMember<CR>
 
