@@ -42,6 +42,9 @@ nmap [K :vsc Edit.PreviousBookmarkInDocument<CR>
 nmap [s :vsc Edit.PreviousMethod<CR>
 nmap ]s :vsc Edit.NextMethod<CR>
 
+nmap <C-k> :vsc Edit.GoToPrevLocation<CR>
+nmap <C-j> :vsc Edit.GoToNextLocation<CR>
+
 " nmap [h :vsc Diff.PreviousDifference<CR>
 " nmap ]h :vsc Diff.NextDifference<CR>
 "nmap [w next/prev window
@@ -50,11 +53,6 @@ vmap s :vsc Edit.SurroundWith<CR>
 
 nmap <C-o> :vsc View.NavigateBackward<CR>
 nmap <C-i> :vsc View.NavigateForward<CR>
-
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 
 nmap <C-c> :vsc Window.CloseDocumentWindow<CR>
 nmap <C-6> :vsc Window.NextDocumentWindowNav<CR>
