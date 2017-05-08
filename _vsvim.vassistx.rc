@@ -1,0 +1,36 @@
+nmap [[ :vsc VAssistX.ScopePrevious<CR>
+nmap ]] :vsc VAssistX.ScopeNext<CR>
+nmap [t :vsc VAssistX.RefResultsPrevious<CR>
+nmap ]t :vsc VAssistX.RefResultsNext<CR>
+
+nmap <C-o> :vsc VAssistX.NavigateBack<CR>
+nmap <C-i> :vsc VAssistX.NavigateForward<CR>
+
+nmap <C-]> :vsc VAssistX.GotoImplementation<CR>
+
+nmap <Leader>/ :vsc VAssistX.FindSymbolDialog<CR>
+
+nmap <Leader>; V :vsc VAssistX.SelectionToggleLineComment<CR>k
+vmap <Leader>; :vsc VAssistX.SelectionToggleLineComment<CR>
+
+nmap <Leader>* :vsc VAssistX.FindReferences<CR>
+
+nmap <Leader>ff :vsc VAssistX.OpenFileInSolutionDialog<CR>
+nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
+
+nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
+
+nmap <Leader>ss :vsc VAssistX.FindReferencesinFile<CR>
+
+nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
+nmap <Leader>vc :vsc VAssistX.CloneFindReferencesResults<CR>
+nmap <Leader>vi :vsc VAssistX.ListIncludeFiles<CR>
+
+nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
+nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
+nmap <Leader>rc :vsc VAssistX.RefactorCreateImplementation<CR>
+nmap <Leader>rf :vsc VAssistX.RefactorEncapsulateField<CR>
+nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
+vmap <Leader>rx :vsc VAssistX.RefactorExtractMethod<CR>
+nmap <Leader>rs :vsc VAssistX.RefactorChangeSignature<CR>
+vmap <Leader>rS :vsc VAssistX.SortSelectedLines<CR>

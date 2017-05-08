@@ -1,0 +1,43 @@
+nmap [m :vsc ReSharper.ReSharper_GotoPrevMethod<CR>
+nmap ]m :vsc ReSharper.ReSharper_GotoNextMethod<CR>
+
+vmap s :vsc ReSharper.ReSharper_SurroundWith<CR>
+
+nmap <C-o> :vsc ReSharper.ReSharper_NavigateBackward<CR>
+nmap <C-i> :vsc ReSharper.ReSharper_NavigateForward<CR>
+
+"nmap <C-[> :vsc ReSharper.ReSharper_GotoDeclaration<CR>
+"nmap <C-]> :vsc ReSharper.ReSharper_GotoImplementations<CR>
+
+nmap <Leader>/ :vsc Resharper.ReSharper_GotoType<CR>
+nmap <CR> :vsc ReSharper_AltEnter<CR>
+nmap <Leader><Leader> gd
+
+nmap <Leader>; :vsc ReSharper.ReSharper_LineComment<CR>k
+vmap <Leader>; :vsc ReSharper.ReSharper_LineComment<CR>k
+"vmap <Leader>; :vsc Resharper.Resharper_BlockComment<CR>
+
+nmap <Leader>* :vsc ReSharper.ReSharper_FindUsages<CR>
+
+nmap <Leader>bb :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
+
+nmap <Leader>ff :vsc ReSharper.ReSharper_GotoFile<CR>
+nmap <Leader>fl :vsc ReSharper.ReSharper_GotoRelatedFiles<CR>
+nmap <Leader>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
+nmap <Leader>fr :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
+nmap <Leader>fs :vsc ReSharper.ReSharper_GotoSymbol<CR>
+
+nmap <Leader>k* :vsc ReSharper.ReSharper_InspectThis<CR>
+nmap <Leader>kf :vsc ReSharper_AltEnter<CR>
+
+nmap <Leader>r* :vsc ReSharper.ReSharper_RefactorThis<CR>
+nmap <Leader>rr :vsc ReSharper.ReSharper_Rename<CR>
+vmap <Leader>rx :vsc ReSharper.ReSharper_ExtractMethod<CR>
+nmap <Leader>rf :vsc ReSharper.ReSharper_EncapsulateField<CR>
+vmap <Leader>rf :vsc ReSharper.ReSharper_EncapsulateField<CR>
+nmap <Leader>rs :vsc ReSharper.ReSharper_ChangeSignature<CR>
+
+nmap <Leader>ss :vsc ReSharper.ReSharper_HighlightUsages<CR>
+nmap <Leader>su :vsc ReSharper.ReSharper_FindUsagesAdvanced<CR>
+
+nmap <Leader>vi :vsc ReSharper.ReSharper_ViewIncludesGraphs<CR>
