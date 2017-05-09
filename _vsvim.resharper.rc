@@ -10,6 +10,7 @@ nmap ]l :vsc ReSharper.ReSharper_NavigateForward<CR>
 
 nmap <Leader>/ :vsc Resharper.ReSharper_GotoType<CR>
 nmap <CR> :vsc ReSharper_AltEnter<CR>
+nmap <Leader><CR> :vsc ReSharper.ReSharper_GotoAction<CR>
 nmap <Leader><Leader> gd
 
 nmap <Leader>; :vsc ReSharper.ReSharper_LineComment<CR>k

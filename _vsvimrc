@@ -33,8 +33,8 @@ nmap [b :vsc Window.NextDocumentWindow<CR>
 nmap ]b :vsc Window.PreviousDocumentWindow<CR>
 nmap [q :vsc View.PreviousError<CR>
 nmap ]q :vsc View.NextError<CR>
-nmap [r :vsc Edit.GoToPrevLocation<CR>
-nmap ]r :vsc Edit.GoToNextLocation<CR>
+map [r :vsc Edit.GoToPrevLocation<CR>
+map ]r :vsc Edit.GoToNextLocation<CR>
 nmap [k :vsc Edit.PreviousBookmark<CR>
 nmap ]k :vsc Edit.NextBookmark<CR>
 nmap ]K :vsc Edit.NextBookmarkInDocument<CR>
@@ -42,8 +42,8 @@ nmap [K :vsc Edit.PreviousBookmarkInDocument<CR>
 nmap [s :vsc Edit.PreviousMethod<CR>
 nmap ]s :vsc Edit.NextMethod<CR>
 
-nmap <C-k> :vsc Edit.GoToPrevLocation<CR>
-nmap <C-j> :vsc Edit.GoToNextLocation<CR>
+map <C-k> :vsc Edit.GoToPrevLocation<CR>
+map <C-j> :vsc Edit.GoToNextLocation<CR>
 
 " nmap [h :vsc Diff.PreviousDifference<CR>
 " nmap ]h :vsc Diff.NextDifference<CR>
@@ -92,6 +92,7 @@ nmap <Leader>g4g :vsc File.Perforce.P4VS.Revision_Graph<CR>
 
 nmap <Leader>v1 :vsc View.FindResults1<CR>
 nmap <Leader>v2 :vsc View.FindResults2<CR>
+nmap <Leader>vs :vsc View.FindSymbolResults<CR>
 nmap <Leader>ve :vsc View.ErrorList<CR>
 nmap <Leader>vo :vsc View.Output<CR>
 nmap <Leader>vx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
