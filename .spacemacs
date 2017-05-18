@@ -575,7 +575,7 @@ you should place your code here."
      ("#49483E" . 100))))
  '(ledger-reports
    (quote
-    (("bal bnc argent acompte" "%(binary) -f %(ledger-file) bal bnc argent acompte")
+    (("bal assets liabilities" "%(binary) -f %(ledger-file) assets liabilities acompte")
      ("bal" "%(binary) -f %(ledger-file) bal")
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")

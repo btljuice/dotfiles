@@ -68,9 +68,15 @@ vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
 
 "Map External Command to Emacs
+" Title : Emacs
+" Command: <path-to>\emacsclientw.exe
+" Arguments: -na runemacs "$(ItemPath)"
+" Initial Dir: $(ItemDir)
 nmap <Leader>Ae :vsc Tools.ExternalCommand6<CR>
 "Map Launch File Explorer
 nmap <Leader>Ax :vsc File.OpenContainingFolder<CR>
+
+nmap <Leader>bd :vsc Window.CloseDocumentWindow<CR>
 
 " TODO Transform this into a new keyboard mapping debug-mode
 nmap <Leader>dl :vsc Debug.StepInto<CR>
@@ -85,10 +91,21 @@ nmap <Leader>sp :vsc Edit.FindInFiles<CR>
 nmap <Leader>sr :vsc Edit.FindAllReferences<CR>
 
 nmap <Leader>gid :vsc Team.Git.CompareWithUnmodified<CR>
-nmap <Leader>g4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
+" nmap <Leader>g4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
+" Title : perforce diff
+" Command: <path-to>\p4.exe
+" Arguments: diff "$(ItemPath)"
+" Initial Dir: $(ItemDir)
+" Set P4DIFF to your favorite differ tool
+nmap <Leader>g4d :vsc Tools.ExternalCommand8<CR>
 nmap <Leader>g4t :vsc File.Perforce.P4VS.Timelapse_View<CR>
 nmap <Leader>g4h :vsc File.Perforce.P4VS.Show_History<CR>
 nmap <Leader>g4g :vsc File.Perforce.P4VS.Revision_Graph<CR>
+" Title : perforce checkout
+" Command: <path-to>\p4.exe
+" Arguments: edit "$(ItemPath)"
+" Initial Dir: $(ItemDir)
+nmap <Leader>g4c :vsc Tools.ExternalCommand7<CR>
 
 nmap <Leader>v1 :vsc View.FindResults1<CR>
 nmap <Leader>v2 :vsc View.FindResults2<CR>
