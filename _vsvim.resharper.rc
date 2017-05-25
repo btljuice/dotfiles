@@ -23,9 +23,11 @@ nmap <Leader>bb :vsc ReSharper.ReSharper_GotoRecentEdits<CR>
 
 nmap <Leader>ff :vsc ReSharper.ReSharper_GotoFile<CR>
 nmap <Leader>fl :vsc ReSharper.ReSharper_GotoRelatedFiles<CR>
-nmap <Leader>fm :vsc ReSharper.ReSharper_GotoFileMember<CR>
 nmap <Leader>fr :vsc ReSharper.ReSharper_GotoRecentFiles<CR>
-nmap <Leader>fs :vsc ReSharper.ReSharper_GotoSymbol<CR>
+
+nmap <Leader>jm :vsc ReSharper.ReSharper_GotoFileMember<CR>
+nmap <Leader>js :vsc ReSharper.ReSharper_GotoSymbol<CR>
+nmap <Leader>jt :vsc ReSharper.ReSharper_GotoText<CR>
 
 nmap <Leader>k* :vsc ReSharper.ReSharper_InspectThis<CR>
 nmap <Leader>kf :vsc ReSharper_AltEnter<CR>
