@@ -32,7 +32,7 @@ nmap <Leader>jt :vsc ReSharper.ReSharper_GotoText<CR>
 nmap <Leader>k* :vsc ReSharper.ReSharper_InspectThis<CR>
 nmap <Leader>kf :vsc ReSharper_AltEnter<CR>
 
-nmap <Leader>r* :vsc ReSharper.ReSharper_RefactorThis<CR>
+map <Leader>r* :vsc ReSharper.ReSharper_RefactorThis<CR>
 nmap <Leader>rr :vsc ReSharper.ReSharper_Rename<CR>
 vmap <Leader>rx :vsc ReSharper.ReSharper_ExtractMethod<CR>
 nmap <Leader>rf :vsc ReSharper.ReSharper_EncapsulateField<CR>
