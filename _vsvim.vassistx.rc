@@ -3,6 +3,11 @@ nmap ]s :vsc VAssistX.ScopeNext<CR>
 nmap [t :vsc VAssistX.RefResultsPrevious<CR>
 nmap ]t :vsc VAssistX.RefResultsNext<CR>
 
+vmap s{ : vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap s} : vsc VAssistX.SurroundSelectionWithBraces<CR>
+vmap s( : vsc VAssistX.SurroundSelectionWithParentheses<CR>
+vmap s) : vsc VAssistX.SurroundSelectionWithParentheses<CR>
+
 nmap <C-o> :vsc VAssistX.NavigateBack<CR>
 nmap <C-i> :vsc VAssistX.NavigateForward<CR>
 
@@ -16,7 +21,9 @@ vmap <Leader>; :vsc VAssistX.SelectionToggleLineComment<CR>
 nmap <Leader>* :vsc VAssistX.FindReferences<CR>
 
 nmap <Leader>ff :vsc VAssistX.OpenFileInSolutionDialog<CR>
-nmap <Leader>fs :vsc VAssistX.FindSymbolDialog<CR>
+
+nmap <Leader>js :vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>jm :vsc VAssistX.ListMethodsInCurrentFile<CR>
 
 nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 

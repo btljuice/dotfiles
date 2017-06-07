@@ -60,12 +60,12 @@ nmap <Leader>6 :vsc Window.NextDocumentWindowNav<CR>
 
 nmap <Leader>, :vsc Edit.NavigateTo<CR>
 
+nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
+
 nmap <Leader>cc :vsc Edit.CommentSelection<CR>
 vmap <Leader>cc :vsc Edit.CommentSelection<CR>
 nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
-
-nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
 
 "Map External Command to Emacs
 " Title : Emacs
@@ -87,10 +87,8 @@ nmap <Leader>dB :vsc Debug.EnableBreakpoint<CR>
 nmap <Leader>d<CR> :vsc Debug.RunToCursor<CR>
 nmap <Leader>d<Space> :vsc Debug.ShowNextStatement<CR>
 
-nmap <Leader>sp :vsc Edit.FindInFiles<CR>
-nmap <Leader>sr :vsc Edit.FindAllReferences<CR>
-
 nmap <Leader>gid :vsc Team.Git.CompareWithUnmodified<CR>
+
 " nmap <Leader>g4d :vsc File.Perforce.P4VS.Diff_Against_Have_Revision<CR>
 " Title : perforce diff
 " Command: <path-to>\p4.exe
@@ -107,6 +105,22 @@ nmap <Leader>g4g :vsc File.Perforce.P4VS.Revision_Graph<CR>
 " Initial Dir: $(ItemDir)
 nmap <Leader>g4c :vsc Tools.ExternalCommand7<CR>
 
+nmap <Leader>is :vsc Edit.InsertSnippet<CR>
+
+nmap <Leader>ki :vsc Edit.QuickInfo<CR>
+nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
+nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
+
+nmap <Leader>sp :vsc Edit.FindInFiles<CR>
+nmap <Leader>sr :vsc Edit.FindAllReferences<CR>
+
+nmap <Leader>tm :vsc Edit.ToggleBookmark<CR>
+nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
+nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
+nmap <Leader>th :set hls<CR>
+nmap <Leader>tH :set nohls<CR>
+nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
+
 nmap <Leader>v1 :vsc View.FindResults1<CR>
 nmap <Leader>v2 :vsc View.FindResults2<CR>
 nmap <Leader>vs :vsc View.FindSymbolResults<CR>
@@ -115,19 +129,6 @@ nmap <Leader>vo :vsc View.Output<CR>
 nmap <Leader>vx :vsc SolutionExplorer.SyncWithActiveDocument<CR>
 nmap <Leader>vm :vsc View.BookmarkWindow<CR>
 nmap <Leader>vh :vsc EditorContextMenus.CodeWindow.ViewCallHierarchy<CR>
-
-nmap <Leader>is :vsc Edit.InsertSnippet<CR>
-
-nmap <Leader>ki :vsc Edit.QuickInfo<CR>
-nmap <Leader>kp :vsc Edit.ParameterInfo<CR>
-nmap <Leader>kk :vsc Edit.PeekDefinition<CR>
-
-nmap <Leader>tm :vsc Edit.ToggleBookmark<CR>
-nmap <Leader>tw :vsc Edit.ViewWhiteSpace<CR>
-nmap <Leader>tl :vsc Edit.ToggleWordWrap<CR>
-nmap <Leader>th :set hls<CR>
-nmap <Leader>tH :set nohls<CR>
-nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
 
 nmap <Leader>wd  :vsc Window.CloseDocumentWindow<CR>
 nmap <Leader>wD  :vsc OtherContextMenus.EasyMDIToolWindow.CloseAllButPinned<CR>
@@ -150,5 +151,5 @@ nmap <Leader>-r :source ~/_vsvimrc<CR>
 nmap <Leader>-v :source ~/_vsvim.vassistx.rc<CR>
 nmap <Leader>-# :source ~/_vsvim.resharper.rc<CR>
 
-source ~/_vsvim.resharper.rc
-"source ~/_vsvim.vassistx.rc
+"source ~/_vsvim.resharper.rc
+source ~/_vsvim.vassistx.rc
