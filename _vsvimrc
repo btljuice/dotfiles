@@ -123,6 +123,7 @@ nmap <Leader>te :vsc OtherContextMenus.ErrorList.ShowIntelliSenseErrors<CR>
 
 nmap <Leader>v1 :vsc View.FindResults1<CR>
 nmap <Leader>v2 :vsc View.FindResults2<CR>
+nmap <Leader>vc :vsc View.ClassView<CR>
 nmap <Leader>vs :vsc View.FindSymbolResults<CR>
 nmap <Leader>ve :vsc View.ErrorList<CR>
 nmap <Leader>vo :vsc View.Output<CR>

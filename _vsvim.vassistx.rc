@@ -22,16 +22,10 @@ nmap <Leader>* :vsc VAssistX.FindReferences<CR>
 
 nmap <Leader>ff :vsc VAssistX.OpenFileInSolutionDialog<CR>
 
-nmap <Leader>js :vsc VAssistX.FindSymbolDialog<CR>
-nmap <Leader>jm :vsc VAssistX.ListMethodsInCurrentFile<CR>
-
 nmap <Leader>ivs :vsc VAssistX.VASnippetInsert<CR>
 
-nmap <Leader>ss :vsc VAssistX.FindReferencesinFile<CR>
-
-nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
-nmap <Leader>vc :vsc VAssistX.CloneFindReferencesResults<CR>
-nmap <Leader>vi :vsc VAssistX.ListIncludeFiles<CR>
+nmap <Leader>js :vsc VAssistX.FindSymbolDialog<CR>
+nmap <Leader>jm :vsc VAssistX.ListMethodsInCurrentFile<CR>
 
 nmap <Leader>rr :vsc VAssistX.RefactorRename<CR>
 nmap <Leader>ri :vsc VAssistX.RefactorAddInclude<CR>
@@ -41,3 +35,10 @@ nmap <Leader>rm :vsc VAssistX.RefactorMoveImplementationToSourceFile<CR>
 vmap <Leader>rx :vsc VAssistX.RefactorExtractMethod<CR>
 nmap <Leader>rs :vsc VAssistX.RefactorChangeSignature<CR>
 vmap <Leader>rS :vsc VAssistX.SortSelectedLines<CR>
+
+nmap <Leader>ss :vsc VAssistX.FindReferencesinFile<CR>
+
+nmap <Leader>tvc :vsc VAssistX.ToggleColoring<CR>
+
+nmap <Leader>vvo :vsc VAssistX.VAOutline<CR>
+nmap <Leader>vi :vsc VAssistX.ListIncludeFiles<CR>
