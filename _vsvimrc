@@ -62,10 +62,13 @@ nmap <Leader>, :vsc Edit.NavigateTo<CR>
 
 nmap <Leader>a :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
 
-nmap <Leader>cc :vsc Edit.CommentSelection<CR>
-vmap <Leader>cc :vsc Edit.CommentSelection<CR>
+nmap <Leader>cl :vsc Edit.CommentSelection<CR>
+vmap <Leader>cl :vsc Edit.CommentSelection<CR>
 nmap <Leader>cu :vsc Edit.UncommentSelection<CR>
 vmap <Leader>cu :vsc Edit.UncommentSelection<CR>
+nmap <Leader>cc :vsc Build.Compile<CR>
+nmap <Leader>cs :vsc Build.BuildSolution<CR>
+nmap <Leader>cp :vsc Build.BuildOnlyProject<CR>
 
 "Map External Command to Emacs
 " Title : Emacs
