@@ -240,7 +240,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -579,7 +579,9 @@ you should place your code here."
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
      ("account" "%(binary) -f %(ledger-file) reg %(account)")
-     ("bal by month" "%(binary) -M --period-sort \"(amount)\" -f %(ledger-file) bal"))))
+     ("account this month" "%(binary) -f %(ledger-file) --period \"this month\" reg %(account)")
+     ("account last month" "%(binary) -f %(ledger-file) --period \"last month\" reg %(account)")
+     )))
  '(magit-diff-use-overlays nil)
  '(package-selected-packages
    (quote
