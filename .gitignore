@@ -1,7 +1,13 @@
 */
 .bash_history
 .gitconfig
+.xsession-errors
+.xsession-errors.old
 .viminfo
+.recently-used
+.fasd
+.lesshst
+*.log
 _viminfo
 p4tickets.txt
 p4trust.txt
