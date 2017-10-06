@@ -1,36 +1,47 @@
+-- vi: et ts=4 sw=4 
 Config { 
-          font ="xft:Fixed-8:bold"
+    font ="xft:Fixed-8:bold",
 -- font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
-        , borderColor = "black"
-        , border = TopB
-        , bgColor = "black"
-        , fgColor = "white"
-        , position = TopW L 100
-        , sepChar = "%"
-        , alignSep = "}{"
-        , template = "%StdinReader% } %coretemp% %multicpu% %memory% %swap% %dynnetwork% { %locks% [%kbd%] %bright% %battery% <fc=#ee9a00>%date%</fc> | %CYUL%"
-        , commands = [ 
-                       Run MultiCpu ["-t","cpu: <total0>% <total1>%", "-p", "2", "-m", "2", "-c", "0", "-L","30","-H","85","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","2"] 10 , Run Memory ["-t","mem: <usedratio>%"] 10 , Run Swap ["-t" , "swap: <usedratio>%"] 10
-                     , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
-                             , "--Low"      , "10000"       -- units: B/s
-                             , "--High"     , "500000"       -- units: B/s
-                             , "--low"      , "green"
-                             , "--normal"   , "orange"
-                             , "--high"     , "red"
-                       ] 10
-                     , Run Weather "CYUL" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
-                     , Run Battery ["-L","50","-H","75","--high","green","--normal","yellow", "--low", "red", "-t", "<acstatus>/<left>%/<timeleft>", "--" , "-O", "<fc=green>AC</fc>", "-o", "<fc=red>BAT</fc>" ] 10
-                     , Run Date "%a %b %d %Y %H:%M" "date" 10
-                     , Run Locks
-                     , Run Kbd [
-                            ("us(dvorak)" , "<fc=blue>DV</fc>")
-                          , ("us"         , "<fc=red>US</fc>")
-                          ]
-                    , Run CoreTemp ["-t", "temp: <core0>C <core1>C",
-               "-L", "40", "-H", "60",
-               "-l", "lightblue", "-n", "gray90", "-h", "red"] 50
-                     , Run StdinReader
---                     , Run Volume "default" "Master" [] 10
-                     , Run Brightness [ "-t", "bri: <percent>%", "--", "-D" , "intel_backlight" ] 10
-        ]
+    borderColor = "black",
+    border = TopB,
+    bgColor = "black",
+    fgColor = "white",
+    position = TopW L 100,
+    sepChar = "%",
+    alignSep = "}{",
+    template = "%StdinReader% } %coretemp% %multicpu% %memory% %swap% %dynnetwork% { %locks% [%kbd%] vol:%myvolume% %bright% %battery% <fc=#ee9a00>%date%</fc> | %CYUL%",
+    commands = [ 
+        Run MultiCpu [ 
+            "-t","cpu: <total0>% <total1>%"
+            , "-p", "2", "-m", "2", "-c", "0","-w","2"
+            , "-L","30","-H","85","-h","#FFB6B0"
+            , "-l","#CEFFAC","-n","#FFFFCC"] 10
+        , Run Memory ["-t","mem: <usedratio>%"] 10
+        , Run Swap ["-t" , "swap: <usedratio>%"] 10
+        , Run DynNetwork [
+            "-t" , "<dev>: <tx>kB/s|<rx>kB/s"
+            , "-L", "10000", "-H", "500000"       -- units: B/s
+            , "-l", "green", "-n", "orange", "-h", "red" ] 10
+        , Run Weather "CYUL" [
+            "-t","<tempC>C"
+            , "-L","18","-H","25"
+            , "-l","lightblue", "-n", "green", "-h","red"] 36000
+        , Run Battery [
+            "-t", "<acstatus>/<left>%/<timeleft>"
+            , "-L","50","-H","75"
+            , "-l", "red", "-n", "yellow", "-h", "green"
+            , "--" , "-O", "<fc=green>AC</fc>", "-o", "<fc=red>BAT</fc>" ] 100
+        , Run Date "%a %b %d %Y %H:%M" "date" 10
+        , Run Locks
+        , Run Kbd [
+            ("ca", "<fc=red>CA</fc>")
+            , ("us", "<fc=red>US</fc>") ]
+        , Run CoreTemp [
+            "-t", "temp: <core0>C <core1>C"
+            , "-L", "40", "-H", "60"
+            , "-l", "lightblue", "-n", "gray90", "-h", "red"] 100
+        , Run StdinReader
+        , Run Brightness [ "-t", "bri: <percent>%", "--", "-D" , "intel_backlight" ] 10
+        , Run Com "getMasterVolume.sh" [] "myvolume" 10
+    ]
 }

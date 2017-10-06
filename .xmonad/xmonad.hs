@@ -23,7 +23,8 @@ myAdditionalKeysP =
   , ("<XF86AudioMute>",        spawn "amixer sset Master toggle")
   , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10") 
   , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10") 
-  , ("M-<Tab>", spawn "setxkbmap us && xmodmap ~/.Xmodmap")
+  , ("M-<F1>", spawn "google-chrome-stable")
+  , ("M-<F2>", spawn "emacs")
   ]
 
 myConfig = desktopConfig
