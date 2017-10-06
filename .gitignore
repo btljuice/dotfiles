@@ -7,8 +7,13 @@
 .recently-used
 .fasd
 .lesshst
+.vimcache/
+.cabal/
+.gnome/
+.ssh/
 *.log
 _viminfo
 p4tickets.txt
 p4trust.txt
+!bin/
 \#*#
