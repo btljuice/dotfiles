@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in *
+for i in `find . -type f ! -path './.gd/*'`
 do
     if [ -f "$i" ]
     then
