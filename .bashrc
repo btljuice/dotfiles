@@ -12,8 +12,10 @@ alias vo="vim -R"
 alias info="info --vi-keys"
 alias du="du -h"
 alias du0="du -d 0 -h"
+alias du1="du -d 1 -h"
+alias v="sf -e vim"
 
 export PATH=$PATH:~/bin
 
-# Only activate when x is available
-setxkbmap -option -option grp:alt_shift_toggle -option ctrl:swapcaps -option terminate:ctrl_alt_bksp -layout us,ca
+# The following command is now set in .xprofile. Could be set in other desktop manager rc as well.
+# setxkbmap -option -option grp:alt_shift_toggle -option ctrl:swapcaps -option terminate:ctrl_alt_bksp -layout us,ca
