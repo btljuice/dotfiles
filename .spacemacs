@@ -354,7 +354,7 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling nil
+   dotspacemacs-smooth-scrolling t
    ;; Control line numbers activation.
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
    ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
@@ -523,7 +523,7 @@ you should place your code here."
       (setq org-agenda-files (list (concat (btl/gdrive-fwd) "/todo.org")
                                    (concat (btl/gdrive-fwd) "/float4.org")
                                    (concat (btl/gdrive-fwd) "/personnel.org"))))
-    (setq org-time-clocksum-use-fractional t)
+    (setq org-duration-format '(("h") (special . 2)))
     )
 
   ; Ledger settings
