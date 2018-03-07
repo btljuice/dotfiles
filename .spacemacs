@@ -77,7 +77,7 @@ values."
      ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
-     ;semantic
+     semantic
      ;typography
 
      version-control

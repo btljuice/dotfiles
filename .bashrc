@@ -14,6 +14,8 @@ alias du="du -h"
 alias du0="du -d 0 -h"
 alias du1="du -d 1 -h"
 alias v="sf -e vim"
+alias yaourt-nodeps="yaourt -Qdtq"
+alias yaourt-update="yaourt -Syu --aur"
 
 export PATH=$PATH:~/bin
 
