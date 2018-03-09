@@ -559,6 +559,7 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
   (define-key evil-normal-state-map (kbd "C-h") 'evil-window-left)
+  (setq-default evil-escape-key-sequence "jk")
   ;; (define-key evil-normal-state-map (kbd "DEL") 'spacemacs/smex)
 
   ;; (spacemacs/toggle-evil-cleverparens-on)
