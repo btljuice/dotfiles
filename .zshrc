@@ -1,16 +1,15 @@
-# Lines configured by zsh-newuser-install
+source /usr/share/zsh/share/antigen.zsh
+
+antigen init .antigenrc
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep nomatch
 unsetopt notify
+
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/btljuice/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+zstyle ':completion:*' rehash true # Rehashes $PATH automatically
 
-source ~/.bash_and_zsh_rc
+source ~/.common-bash-zsh.rc

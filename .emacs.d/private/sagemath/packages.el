@@ -88,6 +88,7 @@ Each entry is either:
       (spacemacs/declare-prefix-for-mode 'sage-shell:sage-mode "ms" "send to REPL")
       (spacemacs/set-leader-keys-for-major-mode 'sage-shell:sage-mode
         "'" 'sage-shell:run-sage ;; TODO: create a sage shell and/or switch to associated shell
+        "?" 'sage-shell:help
         "si" 'sage-shell:run-new-sage
         "sb" 'sage-shell-edit:send-buffer
         "sB" 'sage-shell-edit:send-buffer-and-go

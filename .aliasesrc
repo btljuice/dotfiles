@@ -1,5 +1,4 @@
-export EDITOR=vim
-eval "$(fasd --init auto)"
+#!/bin/bash
 
 alias ls="ls --color"
 alias ll="ls -l"
@@ -11,7 +10,8 @@ alias du="du -h"
 alias du0="du -d 0 -h"
 alias du1="du -d 1 -h"
 alias v="sf -e vim"
-alias yaourt-nodeps="yaourt -Qdtq"
+alias yaourt-nodeps="yaourt -Qdtq --aur"
+alias yaourt-norepo="yaourt -Qmq --aur"
 alias yaourt-update="yaourt -Syu --aur"
-
-export PATH=$PATH:~/bin
+alias yaourt-remove-nodeps="yaourt -Qdtq --aur | yaourt -Rs -"
+alias yaourt-remove-norepo="yaourt -Qmq --aur | yaourt -Rs -"
