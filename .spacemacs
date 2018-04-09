@@ -79,7 +79,7 @@ values."
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (semantic :variables semanticdb-find-default-throttle '(file))
-     ;typography)
+     ;; typography
 
      version-control
      git
@@ -104,6 +104,7 @@ values."
      finance
 
      emacs-lisp
+     scheme
      ;; clojure
      ;common-lisp
      (latex :variables latex-enable-folding t
@@ -517,6 +518,7 @@ you should place your code here."
   (spacemacs|disable-company eshell-mode)
   ;; (spacemacs|disable-company LaTeX/MPS)
   (spacemacs/toggle-highlight-current-line-globally-off)
+  (global-prettify-symbols-mode 1)
   (blink-cursor-mode 1)
 
   (with-eval-after-load 'org
@@ -533,30 +535,33 @@ you should place your code here."
                  )
                )
              ))
-    (setq org-agenda-files '("~/Dropbox/doc/agenda.org"
-                             "~/Dropbox/doc/inbox.org"))
+    (setq org-agenda-files '("~/Dropbox/doc/org"))
     (setq org-capture-templates '(("t" "Todo [inbox]" entry
-                                   (file+headline "~/Dropbox/doc/inbox.org" "Task")
+                                   (file+headline "~/Dropbox/doc/org/inbox.org" "Task")
                                    "* TODO %i%?")
                                   ("e" "Event [inbox]" entry
-                                   (file+headline "~/Dropbox/doc/inbox.org" "Event")
+                                   (file+headline "~/Dropbox/doc/org/inbox.org" "Event")
                                    "* %i%?")
                                   ("n" "Note/Link [inbox]" entry
-                                   (file+headline "~/Dropbox/doc/inbox.org" "Note/Link")
+                                   (file+headline "~/Dropbox/doc/org/inbox.org" "Note/Link")
                                    "* %i%?")
                                   ))
     (setq org-refile-targets '((nil :maxlevel . 9)
-                               ("~/Dropbox/doc/agenda.org" :maxlevel . 9)
-                               ("~/Dropbox/doc/someday.org" :maxlevel . 9)))
+                               ("~/Dropbox/doc/org/agenda.org" :maxlevel . 9)
+                               ("~/Dropbox/doc/org/someday.org" :maxlevel . 9)
+                               ("~/Dropbox/doc/org/objective.org":maxlevel . 9)))
     (setq org-duration-format '(("h") (special . 2)))
     ;; (define-key org-agenda-mode-map "K" 'org-habit-toggle-habits)
     (spacemacs/set-leader-keys-for-major-mode 'org-agenda-mode
       "k" 'org-habit-toggle-habits)
+    (spacemacs/set-leader-keys-for-major-mode 'org-mode
+      "ttl" 'org-toggle-latex-fragment)
+    (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
     )
 
   ; Ledger settings
   (setq ledger-highlight-xact-under-point nil) ; Prevents hightlight of the current transaction
-  (setq ledger-report-links-in-register nil) ; Prevents ledger for prepending transaction linecode. For my specific implementation, it puts the absolute path, which is annoying
+  (setq ledger-report-links-in-register t) ; Prevents ledger for prepending transaction linecode. For my specific implementation, it puts the absolute path, which is annoying
   (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 
   ; jira mode
@@ -594,26 +599,6 @@ you should place your code here."
 ;; auto-generate custom variable definitions.
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(compilation-message-face (quote default))
- '(evil-want-Y-yank-to-eol t)
- '(fci-rule-color "#49483E" t)
- '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
- '(highlight-tail-colors
-   (quote
-    (("#49483E" . 0)
-     ("#679A01" . 20)
-     ("#4BBEAE" . 30)
-     ("#1DB4D0" . 50)
-     ("#9A8F21" . 60)
-     ("#A75B00" . 70)
-     ("#F309DF" . 85)
-     ("#49483E" . 100))))
  '(ledger-reports
    (quote
     (("bal florence " "%(binary) -f %(ledger-file) bal ^florence:")
@@ -631,40 +616,4 @@ you should place your code here."
      ("account" "%(binary) -f %(ledger-file) reg %(account)")
      ("account this month" "%(binary) -f %(ledger-file) --period \"this month\" reg %(account)")
      ("account last month" "%(binary) -f %(ledger-file) --period \"last month\" reg %(account)"))))
- '(magit-diff-use-overlays nil)
- '(package-selected-packages
-   (quote
-    (clojure-snippets clj-refactor inflections edn peg cider-eval-sexp-fu cider seq queue clojure-mode yasnippet-snippets ein request-deferred websocket helm-sage auto-complete-sage ess-smart-equals ess-R-data-view ctable ess julia-mode selectric-mode pdf-tools tablist xkcd rainbow-mode rainbow-identifiers color-identifiers-mode sage-shell-mode deferred solarized-theme rebecca-theme madhat2r-theme exotica-theme org-mime ghub let-alist org-category-capture yapfify uuidgen toc-org powerline slime-company py-isort pug-mode spinner ob-http markdown-mode macrostep livid-mode simple-httpd live-py-mode link-hint json-snatcher json-reformat insert-shebang hydra parent-mode hide-comnt request haml-mode gitignore-mode fringe-helper git-gutter+ pkg-info epl flx evil-visual-mark-mode evil-unimpaired evil-snipe evil-ediff evil goto-chg eshell-z diminish web-completion-data dash-functional tern company-shell pos-tip company-emacs-eclim common-lisp-snippets bind-map bind-key packed pythonic f s avy popup magit-popup org-bullets winum restclient-helm ob-restclient fuzzy company-restclient know-your-http-well org-clock-csv wgrep typo ivy-hydra helm-gtags helm-cscope xcscope ggtags flyspell-correct-ivy counsel-projectile counsel-dash counsel swiper ivy zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme sunny-day-theme subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monochrome-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ledger-mode flycheck-ledger csv-mode org-jira org org-plus-contrib multiple-cursors git-link flyspell-correct-helm flyspell-correct flycheck eyebrowse dumb-jump column-enforce-mode auto-complete auctex anaconda-mode eclim anzu iedit smartparens highlight undo-tree git-gutter yasnippet helm helm-core magit git-commit with-editor async projectile js2-mode company dash org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot imenu-list evil-cleverparens paredit py-yapf zonokai-theme zenburn-theme zeal-at-point xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe use-package twilight-anti-bright-theme tango-2-theme tagedit sublime-themes stickyfunc-enhance srefactor spacemacs-theme spaceline smooth-scrolling smex smeargle slime slim-mode skewer-mode shell-pop scss-mode sass-mode restclient restart-emacs ranger rainbow-delimiters quelpa pyvenv pytest pyenv-mode powershell popwin pip-requirements persp-mode pcre2el paradox page-break-lines pacmacs p4 orgit open-junk-file neotree multi-term move-text monokai-theme molokai-theme mmm-mode markdown-toc magit-gitflow lua-mode lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode ibuffer-projectile hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help erc-yt erc-view-log erc-social-graph erc-image erc-hl-nicks emmet-mode emacs-eclim elisp-slime-nav disaster diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-quickhelp company-c-headers company-auctex company-anaconda coffee-mode cmake-mode clean-aindent-mode clang-format buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile auctex-latexmk ahk-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game)))
- '(paradox-github-token t)
- '(pos-tip-background-color "#A6E22E")
- '(pos-tip-foreground-color "#272822")
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#F92672")
-     (40 . "#CF4F1F")
-     (60 . "#C26C0F")
-     (80 . "#E6DB74")
-     (100 . "#AB8C00")
-     (120 . "#A18F00")
-     (140 . "#989200")
-     (160 . "#8E9500")
-     (180 . "#A6E22E")
-     (200 . "#729A1E")
-     (220 . "#609C3C")
-     (240 . "#4E9D5B")
-     (260 . "#3C9F79")
-     (280 . "#A1EFE4")
-     (300 . "#299BA6")
-     (320 . "#2896B5")
-     (340 . "#2790C3")
-     (360 . "#66D9EF"))))
- '(vc-annotate-very-old-color nil)
- '(weechat-color-list
-   (unspecified "#272822" "#49483E" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0")))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C")))))
+)
