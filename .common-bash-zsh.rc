@@ -3,4 +3,4 @@ export PATH=$PATH:~/bin
 
 eval "$(fasd --init auto)"
 
-source .aliasesrc
+source ~/.aliasesrc

@@ -1,6 +1,6 @@
 source /usr/share/zsh/share/antigen.zsh
 
-antigen init .antigenrc
+antigen init ~/.antigenrc
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
