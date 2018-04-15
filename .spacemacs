@@ -546,6 +546,9 @@ you should place your code here."
                                    (file+headline "~/Dropbox/doc/org/inbox.org" "Note/Link")
                                    "* %i%?")
                                   ))
+    (setq org-agenda-skip-scheduled-if-done t)
+    (setq org-agenda-log-mode-items '(closed state))  ; state and clock possible
+    (setq org-agenda-start-with-log-mode t)
     (setq org-refile-targets '((nil :maxlevel . 9)
                                ("~/Dropbox/doc/org/agenda.org" :maxlevel . 9)
                                ("~/Dropbox/doc/org/someday.org" :maxlevel . 9)
@@ -557,6 +560,8 @@ you should place your code here."
     (spacemacs/set-leader-keys-for-major-mode 'org-mode
       "ttl" 'org-toggle-latex-fragment)
     (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
+    (setq org-log-state-notes-into-drawer "LOGSTATE")
+    (setq org-clock-into-drawer "LOGCLOCK")
     )
 
   ; Ledger settings
