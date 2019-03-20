@@ -1,0 +1,20 @@
+On windows, install the following in the respective directories. The binaries{32,64} folders are mmostly by emacs/spacemacs.
+
+binaries64/
+    git/                  https://git-scm.com/download/win            (portable edition)
+    ledger/               https://www.ledger-cli.org/download.html
+                          https://hledger.org/download.html
+    everything/           https://www.voidtools.com/downloads/        (x64 portable + es.exe)
+    platinum-searcher/    https://github.com/monochromegane/the_platinum_searcher/releases
+binaries32/
+    gtags/                FROM $GDRIVE app/win/free/binaries32
+    ctags/                FROM $GDRIVE app/win/free/binaries32
+    cscope/               FROM $GDRIVE app/win/free/binaries32
+
+
+portable/
+    emacs/       https://www.gnu.org/software/emacs/download.html
+    keepass/     https://keepass.info/download.html
+    ffmpeg/
+    imagemagick/  https://imagemagick.org/script/download.php
+    locate32_x64/ https://locate32.cogit.net/
