@@ -603,16 +603,11 @@ you should place your code here."
 (custom-set-variables
  '(ledger-reports
    (quote
-    (("bal florence " "%(binary) -f %(ledger-file) bal ^florence:")
-     ("bal florence january" "%(binary) -f %(ledger-file) --period \"january\" bal ^florence:")
-     ("bal florence this month" "%(binary) -f %(ledger-file) --period \"this month\" bal ^florence:")
-     ("bal florence last month" "%(binary) -f %(ledger-file) --period \"last month\" bal ^florence:")
-     ("bal alexis" "%(binary) -f %(ledger-file) bal not ^florence:")
-     ("bal assets liabilities" "%(binary) -f %(ledger-file) bal \\(assets or liabilities or acompte\\) and not ^florence:")
-     ("bal income expenses" "%(binary) -f %(ledger-file) bal \\(income or expenses\\) and not ^florence:")
-     ("bal income expenses this month" "%(binary) -f %(ledger-file) --period \"this month\"  bal \\(income or expenses\\) and not ^florence:")
-     ("bal income expenses last month" "%(binary) -f %(ledger-file) --period \"last month\"  bal \\(income or expenses\\) and not ^florence:")
-     ("bal ALL" "%(binary) -f %(ledger-file) bal")
+    (("bal assets liabilities" "%(binary) -f %(ledger-file) bal assets or liabilities or acompte")
+     ("bal income expenses" "%(binary) -f %(ledger-file) bal income or expenses")
+     ("bal income expenses this month" "%(binary) -f %(ledger-file) --period \"this month\"  bal income or expenses")
+     ("bal income expenses last month" "%(binary) -f %(ledger-file) --period \"last month\"  bal income or expenses")
+     ("bal" "%(binary) -f %(ledger-file) bal")
      ("reg" "%(binary) -f %(ledger-file) reg")
      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
      ("account" "%(binary) -f %(ledger-file) reg %(account)")
