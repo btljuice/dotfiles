@@ -46,8 +46,8 @@ filetype plugin indent on
 
 " Syntax Highlight
 syntax on
-colorscheme morning
-"colorscheme torte
+"colorscheme morning
+colorscheme torte
 
 " Display
 set nonumber     " Line Numbers

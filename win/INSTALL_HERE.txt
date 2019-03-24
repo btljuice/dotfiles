@@ -1,8 +1,7 @@
 On windows, install the following in the respective directories. The binaries{32,64} folders are mmostly by emacs/spacemacs.
 
 binaries64/
-    ledger/               https://www.ledger-cli.org/download.html
-                          https://hledger.org/download.html
+
 binaries32/
     gtags/                FROM $GDRIVE app/win/free/binaries32
     cscope/               FROM $GDRIVE app/win/free/binaries32
