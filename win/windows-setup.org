@@ -4,41 +4,54 @@
 ** TODO Check if this can be deprecated with chocolatey applications
 * Application to install
 ** Manually
-**** Avira antivirus
-** *Win7* Through chocolatey as a package manager http://chocolatey.org
+**** *Win7* Avira antivirus
+** Through chocolatey as a package manager http://chocolatey.org
 *** Must have install
-**** vlc
+**** 7zip
+**** ack
 **** acroreader
+**** ag
+**** cmder
+**** ctags
+**** cyberduck.install (remote file transfer)
+**** deluge
+**** dependencywalker (check dll dependencies)
+**** emacs
+**** everything
+**** f.lux.install
+**** ffmpeg
+**** gimp
+**** git.install
+**** git.install
+**** gnuwin32.coreutils.portable
 **** googlechrome
 **** googledrive
-**** veracrypt.install
-**** keepass.install
-**** emacs
-**** vim
-**** git.install
-**** spacesniffer (file space viewer)
-**** ledger (3.1.2)
-**** everything
-**** pt
-**** ag
-**** ack
 **** grep
-**** ctags
-**** gnuwin32.coreutils.portable
+**** intellijidea-community
+**** javaruntime
+**** jdk8
+**** keepass.install
+**** ledger
+**** Lein
+**** mbruler
+**** pt
+**** putty.install
+**** sbt
+**** skype
+**** sourcecodepro
+**** spacesniffer (file space viewer)
+**** veracrypt.install
+**** vim
+**** virtualbox
+**** vlc
 *** Interesting tools
 **** miktex.install
-**** cyberduck.install (remote file transfer)
-**** dependencywalker (check dll dependencies)
 **** screenruler (measure pixels on screen)
 **** locate32 (for file searches)
 **** imagemagick (cli image processing)
-**** ffmpeg (cli video processing)
 **** handbrake.install (video tool)
 **** audacity (audio tool)
-**** gimp (image tool)
 **** spybot
-**** mbruler (measure angle and pixels on screen)
-**** putty.install
 ** TODO *Win10* Investigate the ubuntu shell and package manager
 ** TODO Check Scoop package manager https://scoop.sh/
 
