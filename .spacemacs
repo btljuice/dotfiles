@@ -11,7 +11,13 @@
   (dolist (hook hooks)
     (add-hook hook fun)))
 
-(defsubst btl/back->fwdslash (s) (replace-regexp-in-string "\\\\" "/" s))
+(defun btl/end-string-with (s c)
+  (if (equal (substring s -1) c)
+      s
+    (concat s c)))
+
+(defsubst btl/back->fwdslash (s)
+  (btl/end-string-with (replace-regexp-in-string "\\\\" "/" s) "/"))
 
 (defsubst btl/gdrive () (getenv "GDRIVE"))
 (defsubst btl/gdrive-fwd () (btl/back->fwdslash (btl/gdrive)))
@@ -19,8 +25,10 @@
 (defsubst btl/win/binaries32 () (getenv "USER_APP_BINARIES32"))
 (defsubst btl/win/binaries64 () (getenv "USER_APP_BINARIES64"))
 
-(defsubst btl/win/binaries32-fwd () (replace-regexp-in-string "\\\\" "/" (btl/win/binaries32)))
-(defsubst btl/win/binaries64-fwd () (replace-regexp-in-string "\\\\" "/" (btl/win/binaries64)))
+(defsubst btl/win/binaries32-fwd () (btl/back->fwdslash (btl/win/binaries32)))
+(defsubst btl/win/binaries64-fwd () (btl/back->fwdslash (btl/win/binaries64)))
+
+; TODO (defsubst btl/org-folder () )
 
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
@@ -102,20 +110,24 @@ values."
      org-clock-csv
      finance
 
+     clojure
      emacs-lisp
-     scheme
-     ;; clojure
+     ;scheme
      ;common-lisp
      (latex :variables latex-enable-folding t
                        latex-enable-auto-fill t)
+     sql
+
+     scala
      ;c-c++
+     ; try emacs-cquery
      ;java
      (python :variables python-fill-column 96)
-     ipython-notebook
+     ;ipython-notebook
      ;lua
-     sagemath
+     ;sagemath
      octave
-     ess  ; R
+     ;ess  ; R
 
      shell-scripts
      windows-scripts
@@ -131,7 +143,7 @@ values."
 
      ;erc ;; irc layer
      ;games
-     themes-megapack
+     ;themes-megapack
      ;; xkcd
      selectric
      colors
@@ -426,6 +438,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (message "dotspacemacs/user-init BEGIN")
 
+  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
+  (push '("ensime" . "melpa-stable") package-pinned-packages)
+
   (when (btl/windows-p)
     ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
     ;(custom-set-variables '(helm-ag-base-command "c:\\msys64\\mingw64\\bin\\ag.exe --vimgrep"))
@@ -532,7 +547,7 @@ you should place your code here."
                  )
                )
              ))
-    (setq org-agenda-files '("~/Dropbox/doc/org"))
+    (setq org-agenda-files '("/doc/org"))
     (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                    (file+headline "~/Dropbox/doc/org/inbox.org" "Task")
                                    "* TODO %i%?")
@@ -563,7 +578,7 @@ you should place your code here."
 
   ; Ledger settings
   (setq ledger-highlight-xact-under-point nil) ; Prevents hightlight of the current transaction
-  (setq ledger-report-links-in-register t) ; Prevents ledger for prepending transaction linecode. For my specific implementation, it puts the absolute path, which is annoying
+  (setq ledger-report-links-in-register nil) ; Prevents ledger for prepending transaction linecode. For my specific implementation, it puts the absolute path, which is annoying
   (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
 
   ; jira mode
