@@ -29,7 +29,7 @@ set clipboard=unnamed " Automatically yanks/fetch MS Clipboard
 set history=1000   " Cmdline history
 
 " Reload sources
-nnoremap <Leader>-r :source ~/.ideavimrc<CR>
+nnoremap <leader>-r :source ~/.ideavimrc<cr>
 
 " moving around windows /tabs
 nnoremap <c-h> <c-w>h
@@ -41,21 +41,32 @@ nnoremap <a-k> gt
 
 nnoremap Y y$
 
-noremap ]m :action MoveStatementDown<CR>
-noremap [m :action MoveStatementUp<CR>
-noremap ]e :action MoveLineDown<CR>
-noremap [e :action MoveLineUp<CR>
+noremap ]m :action MoveStatementDown<cr>
+noremap [m :action MoveStatementUp<cr>
+noremap ]e :action MoveLineDown<cr>
+noremap [e :action MoveLineUp<cr>
 
 " Opening files
-nnoremap <Leader>fr :action RecentFiles<CR>
+nnoremap <leader>fr :action RecentFiles<cr>
+nnoremap <leader>ff :action GotoFile<cr>
+
+" jump
+nnoremap <leader>jc :action GotoClass<cr>
+nnoremap <leader>js :action GotoSymbol<cr>
+
+" quick-peek
+nnoremap <leader>ke :action ShowErrorDescription<cr>
 
 " Toggles
-nnoremap <Leader>tw :action EditorToggleShowWhitespaces<CR>
+nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 
 " Debug
-nnoremap <Leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>db :action ToggleLineBreakpoint<cr>
 
 " Comments
-noremap <Leader>; :action CommentByLineComment<CR>
+noremap <leader>; :action CommentByLineComment<cr>
+
+" Views
+nnoremap <leader>vf :action FileStructurePopup<cr>
 
 
