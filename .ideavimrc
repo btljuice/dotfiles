@@ -1,0 +1,61 @@
+" Mouseless Driven Development by Hadi Hariri https://www.youtube.com/watch?v=UH6YVv9js3s
+" Official ideavim plugin https://github.com/JetBrains/ideavim
+" IntelliJ Ref. Card : https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
+" Action List : https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+" All ideavim bindings https://github.com/JetBrains/ideavim/blob/master/src/com/maddyhome/idea/vim/package-info.java
+" Some doc for idea scala projects https://www.jetbrains.com/help/idea/discover-intellij-idea-for-scala.html
+
+" Some .ideavimrc user configs
+"    https://github.com/danidiaz/miscellany
+"    https://github.com/Valloric/dotfiles/blob/master/intellij/ideavimrc
+"    https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
+
+
+" ideavim supported plugins
+set surround
+set multiple-cursors
+
+let mapleader=" "
+
+" Some standard defaults
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set scrolloff=3
+set showmode  " message on statusline to show current mode
+set clipboard=unnamed " Automatically yanks/fetch MS Clipboard
+set history=1000   " Cmdline history
+
+" Reload sources
+nnoremap <Leader>-r :source ~/.ideavimrc<CR>
+
+" moving around windows /tabs
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <a-j> gT
+nnoremap <a-k> gt
+
+nnoremap Y y$
+
+noremap ]m :action MoveStatementDown<CR>
+noremap [m :action MoveStatementUp<CR>
+noremap ]e :action MoveLineDown<CR>
+noremap [e :action MoveLineUp<CR>
+
+" Opening files
+nnoremap <Leader>fr :action RecentFiles<CR>
+
+" Toggles
+nnoremap <Leader>tw :action EditorToggleShowWhitespaces<CR>
+
+" Debug
+nnoremap <Leader>db :action ToggleLineBreakpoint<CR>
+
+" Comments
+noremap <Leader>; :action CommentByLineComment<CR>
+
+
