@@ -56,9 +56,12 @@ nnoremap <leader>js :action GotoSymbol<cr>
 
 " quick-peek
 nnoremap <leader>ke :action ShowErrorDescription<cr>
+nnoremap <leader>kd :action QuickJavaDoc<cr>
 
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
+nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
+nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
