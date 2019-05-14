@@ -1,9 +1,18 @@
-; Inspired by
+; Config Inspired by:
 ;     DONE http://milkbox.net/note/single-file-master-emacs-configuration/
-;     WIP https://github.com/bling/dotemacs
+;     WIP (evil-centric) https://github.com/bling/dotemacs
 ;     TODO https://github.com/purcell/emacs.d/blob/master/init.el
+;     TODO(evil-centric) https://github.com/hlissner/doom-emacs
 ;     TODO https://github.com/bbatsov/prelude
 ;     TODO http://wolfecub.github.io/dotfiles/
+;
+; PACKAGES TO TRY:
+;     use-package
+;
+; TO READ:
+;     https://www.gnu.org/software/emacs/manual/eintr.html
+;     Mastering Emacs - Mickey Petersen
+;     https://www.emacswiki.org/emacs/EmacsNiftyTricks
 ;
 ; Startup summary
 ;     https://www.gnu.org/software/emacs/manual/html_node/elisp/Startup-Summary.html
@@ -27,6 +36,9 @@
 	      (let ((elapsed (float-time (time-subtract (current-time) emacs-start-time))))
 		(message "[Emacs initialized in %.3fs]" elapsed)))))
 
+; TODO : optimize gc-cons-threhold
+; https://emacs.stackexchange.com/questions/34342/is-there-any-downside-to-setting-gc-cons-threshold-very-high-and-collecting-ga
+; http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
 (let ((gc-cons-threshold (* 256 1024 1024))
       (file-name-handler-alist nil)
       (core-directory (concat user-emacs-directory "core/"))
@@ -39,6 +51,7 @@
   (menu-bar-mode)  ; TMP: Enable it for the moment, for inspiration
   (tooltip-mode)   ; Show a tooltip line at the bottom of the screen
   (setq inhibit-startup-screen t)
+  (setq visible-bell nil)
 
   ;;;; custom variables
   (defgroup dotemacs nil
@@ -85,7 +98,11 @@
   ;;;; Package configuration
   (require 'package)
   (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-   ; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (setq package-archive-priorities
+	'(("gnu" . 10)
+	  ("melpa-stable" . 5)
+	  ("melpa" . 0)))
   (package-initialize)
 
   (load (concat core-directory "core-boot"))
@@ -95,6 +112,14 @@
   (when (file-exists-p custom-file)
     (load custom-file))
 
-  (require 'evil)
-  (evil-mode t)
+  ;;;; Load all config then all binding files recursively
+  ;;;; TODO: I like better to manually specify the load/require expression
+  ;;;; TODO: Change load for require
+  (cl-loop for file in
+	   (append (reverse (directory-files-recursively config-directory "\\.el$"))
+		   (reverse (directory-files-recursively bindings-directory "\\.el$")))
+	   do (condition-case ex
+		  (load (file-name-sans-extension file))
+		('error (with-current-buffer "*scratch*"
+			  (insert (format "[INIT ERROR]\n%s\n%s\n\n" file ex))))))
   )
