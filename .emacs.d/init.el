@@ -1,3 +1,4 @@
+; TODO : .emacs.d into a new repository : dotemacs
 ; Config Inspired by:
 ;     DONE http://milkbox.net/note/single-file-master-emacs-configuration/
 ;     WIP (evil-centric) https://github.com/bling/dotemacs

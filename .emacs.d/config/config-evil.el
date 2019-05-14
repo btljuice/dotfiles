@@ -38,9 +38,11 @@
           (const :tag "evil-commentary" evil-commentary))
   :group 'dotemacs-evil)
 
-(setq evil-search-module 'isearch)
-;; (setq evil-search-module 'evil-search)
+;; (setq evil-search-module 'isearch)
+(setq evil-search-module 'evil-search)
 (setq evil-magic 'very-magic)
+(setq evil-find-skip-newlines t)
+(setq evil-want-C-u-scroll t)
 
 (setq evil-emacs-state-cursor '("red" box))
 (setq evil-motion-state-cursor '("orange" box))
@@ -53,7 +55,6 @@
 (add-hook 'evil-jumps-post-jump-hook #'recenter)
 
 (setq evil-want-keybinding nil) ;; evil-collection will provide instead
-
 (require-package 'evil)
 (require 'evil)
 (evil-mode)
@@ -119,8 +120,8 @@
   (require 'evil-magit))
 
 
-(require-package 'evil-avy)
-(evil-avy-mode)
+;; (require-package 'evil-avy)
+;; (evil-avy-mode)
 
 
 (require-package 'evil-matchit)
