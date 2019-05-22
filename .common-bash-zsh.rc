@@ -1,6 +1,16 @@
-export EDITOR=vim
-export PATH=$PATH:~/bin
+#!/bin/bash
 
-eval "$(fasd --init auto)"
+export EDITOR=vim
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # /usr/local/bin is for brew
+    # /usr/local/miniconda3/bin is for the miniconda cask package
+    export PATH=/usr/local/miniconda3/bin:$PATH:/usr/local/bin
+else
+    export PATH=$PATH:~/bin
+fi
+
+
+#eval "$(fasd --init auto)"
 
 source ~/.aliasesrc

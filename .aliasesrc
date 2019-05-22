@@ -1,6 +1,11 @@
 #!/bin/bash
 
-alias ls="ls --color"
+
+# --color Does not seem to work in OS-X
+if [[ "$OSTYPE" != "darwin"* ]]; then
+    alias ls="ls --color"
+fi
+
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ls -la"
@@ -10,6 +15,8 @@ alias du="du -h"
 alias du0="du -d 0 -h"
 alias du1="du -d 1 -h"
 alias v="sf -e vim"
+
+# Arch-linux aliases
 alias yaourt-nodeps="yaourt -Qdtq --aur"
 alias yaourt-norepo="yaourt -Qmq --aur"
 alias yaourt-update="yaourt -Syu --aur"
