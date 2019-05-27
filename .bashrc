@@ -36,7 +36,14 @@ set_prompt() {
 }
 export PS1
 
+[ -f ~/.hopperrc ] && . ~/.hopperrc
+
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# Nvm related configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # The following command is now set in .xprofile. Could be set in other desktop manager rc as well.
 # setxkbmap -option -option grp:alt_shift_toggle -option ctrl:swapcaps -option terminate:ctrl_alt_bksp -layout us,ca

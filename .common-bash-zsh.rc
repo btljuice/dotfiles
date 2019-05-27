@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export EDITOR=vim
+export EDITOR="emacsclient -t"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # /usr/local/bin is for brew
@@ -9,7 +9,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     export PATH=$PATH:~/bin
 fi
-
 
 #eval "$(fasd --init auto)"
 

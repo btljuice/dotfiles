@@ -110,14 +110,14 @@ values."
      org-clock-csv
      finance
 
-     clojure
+     ;;clojure
      emacs-lisp
-     ;scheme
-     ;common-lisp
-     (latex :variables latex-enable-folding t
-                       latex-enable-auto-fill t)
+     ;;scheme
+     ;;common-lisp
+     ;; (latex :variables latex-enable-folding t
+     ;;                   latex-enable-auto-fill t)
      sql
-
+     html
      scala
      ;c-c++
      ; try emacs-cquery
@@ -126,7 +126,7 @@ values."
      ;ipython-notebook
      ;lua
      ;sagemath
-     octave
+     ;; octave
      ;ess  ; R
 
      shell-scripts
@@ -147,7 +147,7 @@ values."
      ;; xkcd
      selectric
      colors
-     pdf-tools
+     ;; pdf-tools
 
      ;;;; Interesting layers to try eventually
      ;; wakatime ;; A time tracker in emacs
@@ -536,7 +536,7 @@ you should place your code here."
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
     (setq org-habit-show-all-today t)
-    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w!)" "|" "DONE(d!)" "CANCELLED(c)" )))
+    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "PENDING(p!)" "|" "DONE(d!)" "CANCELLED(c)" )))
     (setq spaceline-org-clock-p t)
     (setq spaceline-org-clock-format-function
           '(lambda ()
