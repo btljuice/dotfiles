@@ -532,6 +532,9 @@ you should place your code here."
   (spacemacs/toggle-highlight-current-line-globally-on)
   (global-prettify-symbols-mode 1)
   (blink-cursor-mode 1)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 2)
+  (setq-default require-final-newline 'visit-save)
 
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
