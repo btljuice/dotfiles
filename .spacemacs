@@ -535,6 +535,9 @@ you should place your code here."
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq-default require-final-newline 'visit-save)
+  (setq-default case-replace t)
+  (setq-default delete-trailing-lines t)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
