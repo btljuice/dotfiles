@@ -20,8 +20,16 @@ brew cask install slack
 brew cask install emacs
 brew cask install macvim
 brew cask install intellij-idea-ce
-brew install the_silver_searcher
 brew cask install iterm2
+brew cask install sourcetree
+brew cask install spectacle
+
+brew install the_silver_searcher
+brew install ack
+
+brew tap homebrew/cask-fonts
+brew cask install font-source-code-pro
+brew cask install font-source-code-pro-for-powerline
 
 
 #### Debugging tools
@@ -34,7 +42,7 @@ brew install bash-completion
 brew install coreutils
 brew install git
 brew cask install miniconda
-brew cask install homebrew/cask-versions/adoptopenjdk8
+# MANUAL Install Oracles JDK8
 
 brew install scala
 # NOTE: Following scala installation:
@@ -65,10 +73,7 @@ yarn global add bower gulp-cli
 
 brew install nvm
 
-
 # MANUAL - setup the .gitconfig files.
 # git config --global user.name "Alexis Trudeau"
 # git config --global user.email "atrudeau@hopper.com"
 # git config --global core.editor "vim"
-
-

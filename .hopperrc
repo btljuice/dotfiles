@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# TODO Hopper git helper as a command
+# function git_add_hopper_upstream(<repo>)
+#     git remote add hopper git@github.lab.mtl:Hopper/<repo>.git
+#     git remote set-url --push hopper DISABLE
+# endfunction

@@ -72,4 +72,6 @@ noremap <leader>; :action CommentByLineComment<cr>
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
 
+" Shell
+" nnoremap <leader>' : action TODO Go to sbt shell
 

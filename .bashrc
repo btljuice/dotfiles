@@ -23,8 +23,8 @@ set_prompt() {
     # Add git branch to the prompt
     GIT_BRANCH=`git branch 2>/dev/null | grep '^*' | colrm 1 2`
     PS1="$GIT_BRANCH) $PS1 "
-    GIT_REPO=`git remote get-url origin`
-    GIT_REPO=`basename -- $GIT_REPO`
+    GIT_REPO=`git remote get-url origin 2>/dev/null`
+    GIT_REPO=`basename -- $GIT_REPO 2>/dev/null`
     GIT_REPO="${GIT_REPO%.*}"
     PS1="($GIT_REPO:$PS1"
     # Add current directory to the prompt

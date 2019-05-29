@@ -79,8 +79,8 @@ values."
      cscope
      gtags
      (shell :variables shell-default-height 16
-            shell-default-position 'bottom
-            shell-default-shell 'shell)
+            shell-default-position 'top
+            shell-default-shell 'term)
 
      ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -529,14 +529,14 @@ you should place your code here."
                 )
   (spacemacs|disable-company eshell-mode)
   ;; (spacemacs|disable-company LaTeX/MPS)
-  (spacemacs/toggle-highlight-current-line-globally-off)
+  (spacemacs/toggle-highlight-current-line-globally-on)
   (global-prettify-symbols-mode 1)
   (blink-cursor-mode 1)
 
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
     (setq org-habit-show-all-today t)
-    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "PENDING(p!)" "|" "DONE(d!)" "CANCELLED(c)" )))
+    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WIP(w)" "PENDING(p!)" "|" "DONE(d!)" "CANCELLED(c)" )))
     (setq spaceline-org-clock-p t)
     (setq spaceline-org-clock-format-function
           '(lambda ()
