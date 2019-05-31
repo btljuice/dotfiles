@@ -46,6 +46,10 @@ noremap [m :action MoveStatementUp<cr>
 noremap ]e :action MoveLineDown<cr>
 noremap [e :action MoveLineUp<cr>
 
+" Buffers
+nnoremap <leader>bd :action CloseContent<cr>
+nnoremap <leader>bD :action CloseAllUnmodifiedEditors<cr>
+
 " Opening files
 nnoremap <leader>fr :action RecentFiles<cr>
 nnoremap <leader>ff :action GotoFile<cr>
