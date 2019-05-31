@@ -6,6 +6,9 @@
 (defsubst btl/windows-p ()
   (memq system-type '(ms-dos windows-nt)))
 
+(defsubst btl/macos-p ()
+  (memq system-type '(darwin)))
+
 (defsubst btl/add-to-hooks (fun hooks)
   "Add function to hooks"
   (dolist (hook hooks)
@@ -466,6 +469,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "ctags"))
       (add-to-list 'exec-path (concat (btl/win/binaries32-fwd) "gtags"))
     )
+
+  (when (btl/macos-p)
+    (setenv "PATH" (concat (getenv "PATH") ";/usr/local/bin"))
+    (add-to-list 'exec-path "/usr/local/bin"))
 
   (setq-default
    ;; Evil

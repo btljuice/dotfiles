@@ -24,6 +24,7 @@ brew cask install iterm2
 brew cask install sourcetree
 brew cask install spectacle
 
+brew install fasd
 brew install the_silver_searcher
 brew install ack
 

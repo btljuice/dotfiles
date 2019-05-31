@@ -10,6 +10,6 @@ else
     export PATH=$PATH:~/bin
 fi
 
-#eval "$(fasd --init auto)"
+eval "$(fasd --init auto)"
 
 source ~/.aliasesrc
