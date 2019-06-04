@@ -28,6 +28,7 @@ brew install fasd
 brew install the_silver_searcher
 brew install ack
 brew install pt
+brew install ripgrep
 
 brew tap homebrew/cask-fonts
 brew cask install font-source-code-pro
