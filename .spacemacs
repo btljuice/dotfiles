@@ -83,7 +83,7 @@ values."
      gtags
      (shell :variables shell-default-height 16
             shell-default-position 'top
-            shell-default-shell 'term)
+            shell-default-shell 'ansi-term)
 
      ;; better-defaults ; For emacs key-bindings only
      (spell-checking :variables spell-checking-enable-by-default nil)

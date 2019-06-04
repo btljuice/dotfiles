@@ -27,6 +27,7 @@ brew cask install spectacle
 brew install fasd
 brew install the_silver_searcher
 brew install ack
+brew install pt
 
 brew tap homebrew/cask-fonts
 brew cask install font-source-code-pro
