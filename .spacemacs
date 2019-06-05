@@ -79,13 +79,15 @@ values."
                                  auto-completion-enable-sort-by-usage t)
      smex
 
-     cscope
-     gtags
      (shell :variables shell-default-height 16
             shell-default-position 'top
             shell-default-shell 'ansi-term)
+     fasd
 
-     ;; better-defaults ; For emacs key-bindings only
+     cscope
+     gtags
+     dash
+
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      (semantic :variables semanticdb-find-default-throttle '(file))
@@ -96,8 +98,7 @@ values."
      ;perforce
      ;jira
 
-     dash
-
+     ;; better-defaults ; For emacs key-bindings only
      evil-snipe
      vinegar
      evil-cleverparens
@@ -134,13 +135,13 @@ values."
 
      shell-scripts
      windows-scripts
-     ;autohotkey
+     autohotkey
      vimscript
      csv
 
      restclient
-     ;html
-     ;javascript
+     html
+     javascript
 
      ;; keyboard-layout ;; for dvorak
 
@@ -150,16 +151,12 @@ values."
      ;; xkcd
      selectric
      colors
+     ;; (colors :variables
+     ;;         colors-enable-rainbow-identifiers t)
      ;; pdf-tools
 
      ;;;; Interesting layers to try eventually
      ;; wakatime ;; A time tracker in emacs
-     ;; fasd ;; Quickly access files through shell
-     ;; cscope
-     ;; :gtags
-     ;; (colors :variables
-     ;;         colors-enable-rainbow-identifiers t)
-     ;;;;
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
