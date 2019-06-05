@@ -1,0 +1,51 @@
+# Environment
+:london_url = localhost:7080
+
+POST http://:london_url/api/v1/query
+Content-Type: application/json
+
+{
+  "query": {
+    "origin_type": "airport",
+    "origin": "LAX",
+    "destination_type": "airport",
+    "destination": "BCN",
+    "departure_date": "2019-10-16",
+		"return_date": "2019-11-02",
+    "filters": {
+			"max_stops": 2,
+			"exclude_validating_carriers": [],
+			"exclude_marketing_carriers": []
+		},
+		"user_information": {
+			"ipAddress": "107.77.227.18",
+			"userCountry": "United States"
+		},
+		"passengers": {
+			"ADT": 1
+		}
+  },
+  "provider": {
+    "ShopProviderConfig": "Travelfusion",
+    "base": {
+			"ProviderBase": "TravelfusionProvider",
+			"pcc": "2G5K",
+			"gds": {
+				"TravelportGds": "Apollo"
+			}
+		}
+  },
+  "pointOfSale": {
+    "country": "US",
+    "currency": "USD"
+  },
+  "shopContext": {
+		"ticketlessCarriers": [],
+		"blacklists": {
+			"validatingCarriers": [],
+			"marketingCarriers": [],
+			"airports": []
+		}
+	},
+	"log_retention": "Forever"
+}

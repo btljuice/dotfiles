@@ -29,6 +29,8 @@ brew install the_silver_searcher
 brew install ack
 brew install pt
 brew install ripgrep
+brew install global # --with-pygments --with-ctags
+brew install cscope
 
 brew tap homebrew/cask-fonts
 brew cask install font-source-code-pro
@@ -38,12 +40,14 @@ brew cask install font-source-code-pro-for-powerline
 #### Debugging tools
 brew cask install charles
 brew cask install postman
+brew cask install insomnia
 
 #### Software requirements for hopper development
 brew install bash
 brew install bash-completion
 brew install coreutils
 brew install git
+
 brew cask install miniconda
 # MANUAL Install Oracles JDK8
 
@@ -75,8 +79,3 @@ brew install yarn
 yarn global add bower gulp-cli
 
 brew install nvm
-
-# MANUAL - setup the .gitconfig files.
-# git config --global user.name "Alexis Trudeau"
-# git config --global user.email "atrudeau@hopper.com"
-# git config --global core.editor "vim"

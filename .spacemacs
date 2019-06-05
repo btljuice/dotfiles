@@ -138,7 +138,7 @@ values."
      vimscript
      csv
 
-     ;restclient
+     restclient
      ;html
      ;javascript
 
@@ -544,7 +544,8 @@ you should place your code here."
   (setq-default require-final-newline 'visit-save)
   (setq-default case-replace t)
   (setq-default delete-trailing-lines t)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (setq-default show-trailing-whitespace t)
+  ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
