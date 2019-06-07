@@ -1,0 +1,66 @@
+# Environment
+:lexington_url = localhost:7076
+
+# 'Shop'
+:origin = "LHR"
+:destination = "BCN"
+:departure_date = "2019-07-01"
+# :return_date = "2019-07-07"
+PUT http://:lexington_url/api/v1/fareQuery
+Content-Type: application/json
+
+{
+	"ShopQuery": "Filtered",
+	"route": {
+		"origin": {
+			"regionType": "airport",
+			"code": :origin
+		},
+		"destination": {
+			"regionType": "airport",
+			"code": :destination
+		}
+	},
+	"passengers": {
+		"ADT": 1
+	},
+	"departureDate": :departure_date ,
+	"tripFilter": {
+		"TripFilter": "NoFilter"
+	},
+	"inclusion": { "baggage": true },
+	"retention": "Forever"
+}
+
+# 'Shop2'
+:origin2 = "FLL"
+:destination2 = "GHC"
+:departure_date2 = "2019-07-01"
+# :return_date = "2019-07-07"
+PUT http://:lexington_url/api/v1/fareQuery
+Content-Type: application/json
+
+{
+	"ShopQuery": "Filtered",
+	"route": {
+		"origin": {
+			"regionType": "airport",
+			"code": :origin2
+		},
+		"destination": {
+			"regionType": "airport",
+			"code": :destination2
+		}
+	},
+	"passengers": {
+		"ADT": 1
+	},
+	"departureDate": :departure_date2 ,
+	"tripFilter": {
+		"TripFilter": "NoFilter"
+	},
+	"inclusion": { "baggage": true },
+	"retention": "Forever"
+}
+
+

@@ -1,0 +1,60 @@
+# Environment
+# :darmstadt_url = localhost:7077
+:darmstadt_server_url = ca2-p1r02-srv026.ca2.internal.zone:11975
+:darmstadt_configuration_server_url = ca2-p1r02-srv009.ca2.internal.zone:11962
+
+# Shop
+:origin = FLL
+:origin_type = airport
+:destination = GHC
+:destination_type = airport
+:outbound = 2019-07-01
+GET http://:darmstadt_server_url/api/v1/shop?origin=:origin&origin_type=:origin_type&destination=:destination&destination_type=:destination_type&outbound=:outbound
+
+# List ShopProviders
+GET http://:darmstadt_configuration_server_url/api/v1/shopProviders/list
+
+# Get a ShopProvider
+# :origin = airport/OWB
+# :destination = country/2FZZ
+:origin = airport/DEL
+:destination = airport/VNS
+GET http://:darmstadt_configuration_server_url/api/v1/shopProviders?origin=:origin&destination=:destination
+
+# Add a ShopProvider
+# :origin_code = "FLL"
+# :origin_kind = "airport"
+# :destination_code = "GHC"
+# :destination_kind = "airport"
+# POST http://:darmstadt_configuration_server_url/api/v1/shopProviders
+# Content-Type: application/json
+# {
+#   "market": {
+#     "origin": {
+#       "kind": :origin_kind ,
+#       "code": :origin_code ,
+#       "location": "specific"
+#     },
+#     "destination": {
+#       "kind": :destination_kind ,
+#       "code": :destionation_code ,
+#       "location": "specific"
+#     }
+#   },
+#   "value": {
+#     "providers": [
+#       {
+#         "provider": {
+#           "base": null,
+#           "ShopProviderConfig": "Travelfusion"
+#         },
+#         "mergeStrategy": {
+#           "priority": 1,
+#           "ShopMergeStrategy": "ConstantPriority"
+#         }
+#       }
+#     ]
+#   },
+#   "definedBy": "amorse",
+#   "definedOn": "2019-01-22T21:38:33.329Z"
+# }

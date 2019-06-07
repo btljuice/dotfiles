@@ -1,17 +1,22 @@
 # Environment
 :london_url = localhost:7080
 
+# POST Shop
+:origin = "FLL"
+:destination = "GHC"
+:departure_date = "2019-07-01"
+# :return_date = "2019-07-07"
+# TODO: Add provider parameters
 POST http://:london_url/api/v1/query
 Content-Type: application/json
 
 {
   "query": {
     "origin_type": "airport",
-    "origin": "LAX",
+    "origin": :origin ,
     "destination_type": "airport",
-    "destination": "BCN",
-    "departure_date": "2019-10-16",
-		"return_date": "2019-11-02",
+    "destination": :destination ,
+    "departure_date": :departure_date ,
     "filters": {
 			"max_stops": 2,
 			"exclude_validating_carriers": [],

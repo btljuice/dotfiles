@@ -618,6 +618,7 @@ you should place your code here."
   (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook (lambda () (semantic-mode -1)) 1)
+  (add-hook 'term-mode (lambda () (setq show-trailing-whitespace nil)) 1)
   (add-hook 'python-mode-hook #'evil-cleverparens-mode)
 
   (message "dotspacemacs/user-config END")

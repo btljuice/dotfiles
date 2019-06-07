@@ -1,0 +1,8 @@
+# Environment
+# Integration
+:swansea_url = swansea-integration.dcc2.svc.ca2.internal.zone
+
+# PUT Get Airlines
+PUT http://:swansea_url/api/v1/airlines/get
+Content-Type: application/json
+# TODO: Add provider parameters
