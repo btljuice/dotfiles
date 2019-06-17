@@ -2,8 +2,8 @@
 :lexington_url = localhost:7076
 
 # 'Shop'
-:origin = "LHR"
-:destination = "BCN"
+:origin = "FLL"
+:destination = "GHC"
 :departure_date = "2019-07-01"
 # :return_date = "2019-07-07"
 PUT http://:lexington_url/api/v1/fareQuery
@@ -29,7 +29,11 @@ Content-Type: application/json
 		"TripFilter": "NoFilter"
 	},
 	"inclusion": { "baggage": true },
-	"retention": "Forever"
+	"retention": "Forever",
+  "userInformation": {
+        "ipAddress": "107.77.227.18",
+        "userCountry": "United States"
+    }
 }
 
 # 'Shop2'

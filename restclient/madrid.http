@@ -1,18 +1,15 @@
 # Environment
-# :london_url = localhost:7080
-:london_url = ca2-p1r03-srv033.ca2.internal.zone:11904
-
+:madrid_url = localhost:7081
+# :madrid_url = ca2-p1r03-srv024.ca2.internal.zone:11988
 # POST Shop
-:origin = "FLL"
-:destination = "GHC"
+:origin = "LHR"
+:destination = "JFK"
 :departure_date = "2019-07-01"
-# :return_date = "2019-07-07"
 # TODO: Add provider parameters
-POST http://:london_url/api/v1/query
+POST http://:madrid_url/api/v1/query
 Content-Type: application/json
 
 {
-  "query": {
     "origin_type": "airport",
     "origin": :origin ,
     "destination_type": "airport",

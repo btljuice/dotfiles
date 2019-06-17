@@ -536,6 +536,7 @@ you should place your code here."
   (spacemacs/toggle-highlight-current-line-globally-on)
   (global-prettify-symbols-mode 1)
   (blink-cursor-mode 1)
+  (auto-fill-mode -1)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq-default require-final-newline 'visit-save)
@@ -620,6 +621,10 @@ you should place your code here."
   (add-hook 'emacs-lisp-mode-hook (lambda () (semantic-mode -1)) 1)
   (add-hook 'term-mode (lambda () (setq show-trailing-whitespace nil)) 1)
   (add-hook 'python-mode-hook #'evil-cleverparens-mode)
+
+  ;; TODO Move to a hopper specific location
+  (add-to-list 'auto-mode-alist '("\\.conf\\'" . conf-javaprop-mode))
+  (add-hook 'conf-javaprop-mode-hook #'hs-minor-mode)
 
   (message "dotspacemacs/user-config END")
   )

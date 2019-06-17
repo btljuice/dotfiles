@@ -23,6 +23,8 @@ brew cask install intellij-idea-ce
 brew cask install iterm2
 brew cask install sourcetree
 brew cask install spectacle
+brew cask install honer
+brew cask install mactex
 
 brew install fasd
 brew install the_silver_searcher

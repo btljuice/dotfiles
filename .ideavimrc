@@ -72,6 +72,8 @@ nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
 
 " Searches
+nnoremap <leader><leader> :action SearchEverywhere<cr>
+nnoremap <leader>/ :action FindInPath<cr>
 nnoremap <leader>su :action FindUsages<cr>
 
 " Comments

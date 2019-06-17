@@ -1,14 +1,14 @@
-# Environment
-# :london_url = localhost:7080
-:london_url = ca2-p1r03-srv033.ca2.internal.zone:11904
+### Environment
+:atlanta_url = localhost:7081
+# :atlanta_url = ca2-p1r01-srv009.ca2.internal.zone:11992
 
 # POST Shop
-:origin = "FLL"
-:destination = "GHC"
+:origin = "MEL"
+:destination = "LAX"
 :departure_date = "2019-07-01"
 # :return_date = "2019-07-07"
 # TODO: Add provider parameters
-POST http://:london_url/api/v1/query
+POST http://:atlanta_url/api/v1/query
 Content-Type: application/json
 
 {
@@ -20,8 +20,8 @@ Content-Type: application/json
     "departure_date": :departure_date ,
     "filters": {
 			"max_stops": 2,
-			"exclude_validating_carriers": [],
-			"exclude_marketing_carriers": []
+			"exclude_validating_carriers": ["O1"],
+			"exclude_marketing_carriers": ["O1"]
 		},
 		"user_information": {
 			"ipAddress": "107.77.227.18",
@@ -32,12 +32,12 @@ Content-Type: application/json
 		}
   },
   "provider": {
-    "ShopProviderConfig": "Travelfusion",
+    "ShopProviderConfig": "Travelport",
     "base": {
-			"ProviderBase": "TravelfusionProvider",
-			"pcc": "2G5K",
+			"ProviderBase": "TravelportProvider",
+			"pcc": "8Z2T",
 			"gds": {
-				"TravelportGds": "Apollo"
+				"TravelportGds": "Galileo"
 			}
 		}
   },
@@ -55,3 +55,4 @@ Content-Type: application/json
 	},
 	"log_retention": "Forever"
 }
+

@@ -2,6 +2,7 @@
 Dropbox/
 Google Drive/
 !bin/
+!restclient/
 .cabal/
 .gnome/
 .ssh/

@@ -1,0 +1,36 @@
+# Environment
+:newark_url = localhost:7070
+
+# Prediction / Get Tickets
+:origin = "FLL"
+:destination = "GHC"
+:departure_date = "2019-07-01"
+POST http://:newark_url/api/v2/prediction
+Content-Type: application/json
+# Need to steal this from the frontend simulator
+H-Request: H4sIAHKh/lwAA52TWY+qSBiG/wu33WgVO96VgC2uNKIC42SCUCAii0C50On/fgpPTiZz1xlCgPqKvM/7LfXF4EeF6zTHRdswI2YqNCb6c03hxtlZ5yXq1EUn8yiLyMzZbFFn6+A871aqa88qSdhlAffWGcvD8AHEDw45lzMMQNFKcfZ2k5KEK+tK3G1VgTtlihh54BjrVzt3M1Stdhrc+7frPG+ctOKz/Ye3THcPwwiez6Wn8Y2/vyabxN0dg8wHE3wvGouYVv7ZSqWY3is3B5ObstC67az0VHuHb8a+yvLjWTdXthd3djZL4o/OXPBXfmVZ58V6PHay+xPaPnw6eWft1/JhuDW9eXSOONIWvN7k/t6FK0T4iYyu0sQk2bQiZ3uX2Xt5lpIPI5tXGU22fTNdcqpU9Q1pq+IwVPIEKPapXSKMn5Urpjtzfq8ya/9ZJI8yguvPwzB/42H8adpg2h2GkvMggkRsCd0VbzU9DHeH4dVNU2OfN5ofTa9JbB2GKbzOgoZUD1/EJ3y+zh+Bm+WqN18+Vh632ITd3qRi5+1GbnNQRmsMDVkyfDdWMtezSDaxmrgIYTrV9NxZiSTcdwW6XWulCbbgcuLvbSZo/LisVdPx9afmqJ+b0IHnh2fZN3g/jldtA+VJVah3lMyL5qgliodI6lmxUobaguS+wZEGRrfj+ulNqi2x0B0h5p1JIzpVaftkRl/MDddNWhb955Gkl2hF8iOumRF4Z27BhWA6e+KABwPAfL8zEb6lITajPqhrCgcVnRV0xNOHorGIFzl2zI0lpEEDGYZKUUFVvX4Py3xwKis60oP4kiYnOtTvDGlw/dqNYpkPBJljeTHiWOEoqKwCA56NJagoR1kO4kju+VWNY1zjIsRNbzgkdb+geTDbjU4FL2UYXHrLuPhnu6GBlh4gvyz6EMrpcQqDw3BZFm2Ng0svWOMrwU37MsHxlKYqBiuCMWAFHuqsKokiq0gTTaDpGEDuGU1ww5HZ4pxa+Ovr3yVVsHFCS9ln1rRBi3uLbZC8XtQHjeVVzwFQZYHEAt6BcASlEScMZFVmgTACrypv/khufqswy7JpbRzSpjHf3+//ZWpBXae0hz+Fig4URjwYCfIAKMr/hOo4DsilXaRF9gMwpcgsDx0ARq97AAD4Kfhv2sM6CLO0SDTaN/z43StN54wJBzR2rIh0BJGGWNXQaQ2BLKKxykkcP2a+fwFTU7BTRQUAAA==
+{
+	"alertKey": {
+		"filter": {
+			"TripFilter": "NoFilter"},
+		"grouping": {
+			"TripGrouping": "DateGrouping",
+			"route": {
+				"destination": {
+					"code": :destination ,
+					"regionType": "airport"
+				},
+				"origin": {
+					"code": :origin ,
+					"regionType": "airport"
+				}
+			},
+			"departureDate": :departure_date
+		}
+	},
+	"isOnboarding": false,
+	"shopPassengers": {
+		"Adult": 1
+	},
+	"autoWatch": false
+}

@@ -6,3 +6,7 @@
 PUT http://:swansea_url/api/v1/airlines/get
 Content-Type: application/json
 # TODO: Add provider parameters
+
+# PUT Get Locations
+PUT http://:swansea_url/api/v1/locations/get
+Content-Type: application/json
