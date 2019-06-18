@@ -36,7 +36,7 @@ set_prompt() {
 }
 export PS1
 
-[ -f ~/.hopperrc ] && . ~/.hopperrc
+[ -f ~/my-hopper/.hopperrc ] && . ~/my-hopper/.hopperrc
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
