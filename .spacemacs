@@ -468,7 +468,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
     )
 
   (when (btl/macos-p)
-    (setenv "PATH" (concat (getenv "PATH") ";/usr/local/bin"))
+    (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
     (add-to-list 'exec-path "/usr/local/bin"))
 
   (setq-default
@@ -592,6 +592,19 @@ you should place your code here."
   (setq ledger-highlight-xact-under-point nil) ; Prevents hightlight of the current transaction
   (setq ledger-report-links-in-register nil) ; Prevents ledger for prepending transaction linecode. For my specific implementation, it puts the absolute path, which is annoying
   (add-to-list 'auto-mode-alist '("\\.ledger\\'" . ledger-mode))
+  (setq ledger-reports
+     '(("bal assets liabilities" "%(binary) -f %(ledger-file) bal assets or liabilities or acompte")
+      ("bal income expenses" "%(binary) -f %(ledger-file) bal income or expenses")
+      ("bal income expenses this month" "%(binary) -f %(ledger-file) --period \"this month\"  bal income or expenses")
+      ("bal income expenses last month" "%(binary) -f %(ledger-file) --period \"last month\"  bal income or expenses")
+      ("bal" "%(binary) -f %(ledger-file) bal")
+      ("reg" "%(binary) -f %(ledger-file) reg")
+      ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
+      ("account" "%(binary) -f %(ledger-file) reg %(account)")
+      ("account this month" "%(binary) -f %(ledger-file) --period \"this month\" reg %(account)")
+      ("account last month" "%(binary) -f %(ledger-file) --period \"last month\" reg %(account)")))
+
+
 
   ; jira mode
   ;; (setq-default jiralib-url "https://float4-jira.atlassian.net/secure/Dashboard.jspa")
@@ -626,23 +639,8 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.conf\\'" . conf-javaprop-mode))
   (add-hook 'conf-javaprop-mode-hook #'hs-minor-mode)
 
+  (setq custom-file "~/.spacemacs.custom.el")
+  (load-file custom-file)
+
   (message "dotspacemacs/user-config END")
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-
-(custom-set-variables
- '(ledger-reports
-   (quote
-    (("bal assets liabilities" "%(binary) -f %(ledger-file) bal assets or liabilities or acompte")
-     ("bal income expenses" "%(binary) -f %(ledger-file) bal income or expenses")
-     ("bal income expenses this month" "%(binary) -f %(ledger-file) --period \"this month\"  bal income or expenses")
-     ("bal income expenses last month" "%(binary) -f %(ledger-file) --period \"last month\"  bal income or expenses")
-     ("bal" "%(binary) -f %(ledger-file) bal")
-     ("reg" "%(binary) -f %(ledger-file) reg")
-     ("payee" "%(binary) -f %(ledger-file) reg @%(payee)")
-     ("account" "%(binary) -f %(ledger-file) reg %(account)")
-     ("account this month" "%(binary) -f %(ledger-file) --period \"this month\" reg %(account)")
-     ("account last month" "%(binary) -f %(ledger-file) --period \"last month\" reg %(account)"))))
-)
