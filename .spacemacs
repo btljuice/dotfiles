@@ -79,7 +79,7 @@ values."
                                  auto-completion-enable-sort-by-usage t)
      smex
 
-     (shell :variables shell-default-height 16
+     (shell :variables shell-default-height 33
             shell-default-position 'top
             shell-default-shell 'ansi-term)
      fasd

@@ -41,10 +41,12 @@ nnoremap <a-k> gt
 
 nnoremap Y y$
 
-noremap ]m :action MoveStatementDown<cr>
-noremap [m :action MoveStatementUp<cr>
-noremap ]e :action MoveLineDown<cr>
-noremap [e :action MoveLineUp<cr>
+nnoremap ]m :action MoveStatementDown<cr>
+nnoremap [m :action MoveStatementUp<cr>
+nnoremap ]e :action MoveLineDown<cr>
+nnoremap [e :action MoveLineUp<cr>
+nnoremap ]q :action GotoNextError<cr>
+nnoremap [q :action GotoPreviousError<cr>
 
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
