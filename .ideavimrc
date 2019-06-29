@@ -64,6 +64,7 @@ nnoremap <leader>js :action GotoSymbol<cr>
 nnoremap <leader>ke :action ShowErrorDescription<cr>
 nnoremap <leader>kd :action QuickJavaDoc<cr>
 nnoremap <leader>ku :action ShowUsages<cr>
+" nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
@@ -83,6 +84,10 @@ noremap <leader>; :action CommentByLineComment<cr>
 
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
+
+" Refactor
+" nnoremap ,a :action ShowIntentionActions<cr>
+" nnoremap ,r :action ShowIntentionActions<cr>
 
 " Shell
 " nnoremap <leader>' : action TODO Go to sbt shell

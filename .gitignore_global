@@ -1,0 +1,7 @@
+*~
+.DS_Store
+.ensime
+.ensime_cache/
+.sbt-hydra-history
+ensime.sbt
+project/.ensime
