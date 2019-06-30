@@ -86,8 +86,12 @@ noremap <leader>; :action CommentByLineComment<cr>
 nnoremap <leader>vf :action FileStructurePopup<cr>
 
 " Refactor
-" nnoremap ,a :action ShowIntentionActions<cr>
-" nnoremap ,r :action ShowIntentionActions<cr>
+nnoremap <leader>a :action ShowIntentionActions<cr>
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
+
+" Git
+nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
+nnoremap <leader>gd :action Vcs.ShowDiffWithLocal<cr>
 
 " Shell
 " nnoremap <leader>' : action TODO Go to sbt shell
