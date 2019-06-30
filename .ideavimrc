@@ -93,6 +93,16 @@ nnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Vcs.ShowDiffWithLocal<cr>
 
+" Compile
+nnoremap <leader>cc :action Compile<cr>
+nnoremap <leader>cp :action CompileProject<cr>
+nnoremap <leader>cr :action CompileDirty<cr>
+
+" Runtime
+nnoremap <leader>ll :action Run<cr>
+nnoremap <leader>ld :action Debug<cr>
+nnoremap <leader>ls :action Stop<cr>
+
 " Shell
 " nnoremap <leader>' : action TODO Go to sbt shell
 
