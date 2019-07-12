@@ -559,7 +559,8 @@ you should place your code here."
                  )
                )
              ))
-    (setq org-agenda-files '("/doc/org"))
+    ;; org-agenda-files should be customized instead
+    ;; (setq org-agenda-files '("/doc/org"))
     (setq org-capture-templates '(("t" "Todo [inbox]" entry
                                    (file+headline "~/Dropbox/doc/org/inbox.org" "Task")
                                    "* TODO %i%?")
@@ -571,7 +572,7 @@ you should place your code here."
                                    "* %i%?")
                                   ))
     (setq org-agenda-skip-scheduled-if-done t)
-    (setq org-agenda-log-mode-items '(closed state))  ; state and clock possible
+    (setq org-agenda-log-mode-items '(closed state clock))  ; state and clock possible
     (setq org-agenda-start-with-log-mode t)
     (setq org-refile-targets '((nil :maxlevel . 9)
                                ("~/Dropbox/doc/org/agenda.org" :maxlevel . 9)

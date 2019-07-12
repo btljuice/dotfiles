@@ -5,7 +5,7 @@ export EDITOR="emacsclient -t"
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # /usr/local/bin is for brew
     # /usr/local/miniconda3/bin is for the miniconda cask package
-    export PATH=/usr/local/miniconda3/bin:$PATH:/usr/local/bin
+    export PATH=/usr/local/bin:/usr/local/miniconda3/bin:$PATH:~/bin
 else
     export PATH=$PATH:~/bin
 fi

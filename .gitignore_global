@@ -5,3 +5,7 @@
 .sbt-hydra-history
 ensime.sbt
 project/.ensime
+tags
+GPATH
+GRTAGS
+GTAGS

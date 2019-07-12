@@ -39,6 +39,12 @@ nnoremap <c-l> <c-w>l
 nnoremap <a-j> gT
 nnoremap <a-k> gt
 
+nnoremap <leader>wd <C-w>c
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+
 nnoremap Y y$
 
 nnoremap ]m :action MoveStatementDown<cr>
@@ -84,6 +90,8 @@ noremap <leader>; :action CommentByLineComment<cr>
 
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
+" TODO: TypeHierarchy
+" TODO: FileStructure (no popup)
 
 " Refactor
 nnoremap <leader>a :action ShowIntentionActions<cr>
@@ -92,6 +100,7 @@ nnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Vcs.ShowDiffWithLocal<cr>
+nnoremap <leader>gb :action Annotate<cr>
 
 " Compile
 nnoremap <leader>cc :action Compile<cr>
