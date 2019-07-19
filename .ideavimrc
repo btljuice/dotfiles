@@ -44,6 +44,8 @@ nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>ws <C-w>s
 
 nnoremap Y y$
 
@@ -79,6 +81,11 @@ nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
+nnoremap <leader>dj :action StepOver<cr>
+nnoremap <leader>dh :action StepOut<cr>
+nnoremap <leader>dl :action StepInto<cr>
+nnoremap <leader>dd :action Resume<cr>
+nnoremap <leader>d<cr> :action RunToCursor<cr>
 
 " Searches
 nnoremap <leader><leader> :action SearchEverywhere<cr>
