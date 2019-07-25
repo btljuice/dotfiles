@@ -27,6 +27,8 @@ set scrolloff=3
 set showmode  " message on statusline to show current mode
 set clipboard=unnamed " Automatically yanks/fetch MS Clipboard
 set history=1000   " Cmdline history
+set nonumber
+
 
 " Reload sources
 nnoremap <leader>-r :source ~/.ideavimrc<cr>
@@ -49,8 +51,8 @@ nnoremap <leader>ws <C-w>s
 
 nnoremap Y y$
 
-nnoremap ]m :action MoveStatementDown<cr>
-nnoremap [m :action MoveStatementUp<cr>
+nnoremap ]] :action MethodDown<cr>
+nnoremap [[ :action MethodUp<cr>
 nnoremap ]e :action MoveLineDown<cr>
 nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
@@ -85,7 +87,11 @@ nnoremap <leader>dj :action StepOver<cr>
 nnoremap <leader>dh :action StepOut<cr>
 nnoremap <leader>dl :action StepInto<cr>
 nnoremap <leader>dd :action Resume<cr>
+nnoremap <leader>de :action ShowExecutionPoint<cr>
 nnoremap <leader>d<cr> :action RunToCursor<cr>
+
+noremap <leader>ee :action QuickEvaluateExpression<cr>
+nnoremap <leader>eE :action EvaluateExpression<cr>
 
 " Searches
 nnoremap <leader><leader> :action SearchEverywhere<cr>
@@ -96,13 +102,14 @@ nnoremap <leader>su :action FindUsages<cr>
 noremap <leader>; :action CommentByLineComment<cr>
 
 " Views
-nnoremap <leader>vf :action FileStructurePopup<cr>
-" TODO: TypeHierarchy
+" nnoremap <leader>vf :action FileStructurePopup<cr>
+nnoremap <leader>vh :action TypeHierarchy<cr>
 " TODO: FileStructure (no popup)
 
 " Refactor
 nnoremap <leader>a :action ShowIntentionActions<cr>
 nnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
+vnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
 
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>

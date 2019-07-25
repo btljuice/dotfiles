@@ -147,7 +147,7 @@ values."
 
      ;erc ;; irc layer
      ;games
-     ;themes-megapack
+     themes-megapack
      ;; xkcd
      selectric
      colors
