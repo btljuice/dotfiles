@@ -53,6 +53,8 @@ nnoremap Y y$
 
 nnoremap ]] :action MethodDown<cr>
 nnoremap [[ :action MethodUp<cr>
+nnoremap ]h :action VcsShowNextChangeMarker<cr>
+nnoremap [h :action VcsShowPrevChangeMarker<cr>
 nnoremap ]e :action MoveLineDown<cr>
 nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
@@ -61,6 +63,8 @@ nnoremap [q :action GotoPreviousError<cr>
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
 nnoremap <leader>bD :action CloseAllUnmodifiedEditors<cr>
+nnoremap <leader>bP :action CloseAllUnpinnedEditors<cr>
+nnoremap <leader>bp :action PinActiveTab<cr>
 
 " Opening files
 nnoremap <leader>fr :action RecentFiles<cr>
@@ -69,6 +73,7 @@ nnoremap <leader>ff :action GotoFile<cr>
 " jump
 nnoremap <leader>jc :action GotoClass<cr>
 nnoremap <leader>js :action GotoSymbol<cr>
+nnoremap <leader>ja :action GotoAction<cr>
 
 " quick-peek
 nnoremap <leader>ke :action ShowErrorDescription<cr>
@@ -113,8 +118,10 @@ vnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
 
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
-nnoremap <leader>gd :action Vcs.ShowDiffWithLocal<cr>
+nnoremap <leader>gd :action Compare.LastVersion<cr>
 nnoremap <leader>gb :action Annotate<cr>
+nnoremap <leader>gj :action VcsShowNextChangeMarker<cr>
+nnoremap <leader>gk :action VcsShowPrevChangeMarker<cr>
 
 " Compile
 nnoremap <leader>cc :action Compile<cr>
