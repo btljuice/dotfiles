@@ -79,12 +79,14 @@ nnoremap <leader>ja :action GotoAction<cr>
 nnoremap <leader>ke :action ShowErrorDescription<cr>
 nnoremap <leader>kd :action QuickJavaDoc<cr>
 nnoremap <leader>ku :action ShowUsages<cr>
+nnoremap <leader>kp :action ParameterInfo<cr>
 " nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
 nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
+nnoremap <leader>th :action HighlightUsagesInFile<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
