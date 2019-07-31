@@ -80,13 +80,16 @@ nnoremap <leader>ke :action ShowErrorDescription<cr>
 nnoremap <leader>kd :action QuickJavaDoc<cr>
 nnoremap <leader>ku :action ShowUsages<cr>
 nnoremap <leader>kp :action ParameterInfo<cr>
+nnoremap <leader>kh :action Scala.ShowImplicitArguments<cr>
 " nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
 nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
-nnoremap <leader>th :action HighlightUsagesInFile<cr>
+nnoremap <leader>tu :action HighlightUsagesInFile<cr>
+nnoremap <leader>th :action Scala.ShowImplicits<cr>
+nnoremap <leader>tH :action Scala.ExpandImplicits<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
@@ -110,7 +113,7 @@ noremap <leader>; :action CommentByLineComment<cr>
 
 " Views
 " nnoremap <leader>vf :action FileStructurePopup<cr>
-nnoremap <leader>vh :action TypeHierarchy<cr>
+nnoremap <leader>vt :action TypeHierarchy<cr>
 " TODO: FileStructure (no popup)
 
 " Refactor
