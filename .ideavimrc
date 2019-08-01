@@ -25,7 +25,7 @@ set smartcase
 
 set scrolloff=3
 set showmode  " message on statusline to show current mode
-set clipboard=unnamed " Automatically yanks/fetch MS Clipboard
+set clipboard=unnamed,ideaput " Automatically yanks/fetch MS Clipboard
 set history=1000   " Cmdline history
 set nonumber
 
@@ -48,6 +48,7 @@ nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
+nnoremap <leader>wm <C-w>o
 
 nnoremap Y y$
 
@@ -90,6 +91,7 @@ nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
 nnoremap <leader>tu :action HighlightUsagesInFile<cr>
 nnoremap <leader>th :action Scala.ShowImplicits<cr>
 nnoremap <leader>tH :action Scala.ExpandImplicits<cr>
+nnoremap <leader>tl :set number!<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
