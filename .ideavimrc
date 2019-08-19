@@ -114,8 +114,10 @@ nnoremap <leader>su :action FindUsages<cr>
 noremap <leader>; :action CommentByLineComment<cr>
 
 " Views
-" nnoremap <leader>vf :action FileStructurePopup<cr>
+nnoremap <leader>vf :action FileStructurePopup<cr>
 nnoremap <leader>vt :action TypeHierarchy<cr>
+nnoremap <leader>vc :action CallHierarchy<cr>
+nnoremap <leader>vm :action MethodHierarchy<cr>
 " TODO: FileStructure (no popup)
 
 " Refactor
