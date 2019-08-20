@@ -87,10 +87,10 @@ nnoremap <leader>kh :action Scala.ShowImplicitArguments<cr>
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
-nnoremap <leader>ti :action EditorToggleShowIndentLines<cr>
-nnoremap <leader>tu :action HighlightUsagesInFile<cr>
-nnoremap <leader>th :action Scala.ShowImplicits<cr>
-nnoremap <leader>tH :action Scala.ExpandImplicits<cr>
+nnoremap <leader>t<tab> :action EditorToggleShowIndentLines<cr>
+nnoremap <leader>t/ :action HighlightUsagesInFile<cr>
+nnoremap <leader>ti :action Scala.ShowImplicits<cr>
+nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
 nnoremap <leader>tl :set number!<cr>
 
 " Debug
