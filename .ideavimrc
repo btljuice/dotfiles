@@ -97,7 +97,7 @@ nnoremap <leader>t/ :action HighlightUsagesInFile<cr>
 nnoremap <leader>ti :action Scala.ShowImplicits<cr>
 nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
 nnoremap <leader>tn :set number!<cr>
-nnoremap <leader>tl :action EditoToggleUseSoftWraps<cr>
+nnoremap <leader>tl :action EditorToggleUseSoftWraps<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
