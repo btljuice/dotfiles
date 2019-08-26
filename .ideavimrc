@@ -96,7 +96,8 @@ nnoremap <leader>t<tab> :action EditorToggleShowIndentLines<cr>
 nnoremap <leader>t/ :action HighlightUsagesInFile<cr>
 nnoremap <leader>ti :action Scala.ShowImplicits<cr>
 nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
-nnoremap <leader>tl :set number!<cr>
+nnoremap <leader>tn :set number!<cr>
+nnoremap <leader>tl :action EditoToggleUseSoftWraps<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
@@ -108,7 +109,7 @@ nnoremap <leader>de :action ShowExecutionPoint<cr>
 nnoremap <leader>d<cr> :action RunToCursor<cr>
 
 noremap <leader>ee :action QuickEvaluateExpression<cr>
-nnoremap <leader>eE :action EvaluateExpression<cr>
+noremap <leader>eE :action EvaluateExpression<cr>
 
 " Searches
 nnoremap <leader><leader> :action SearchEverywhere<cr>
