@@ -79,14 +79,13 @@ nnoremap <leader>js :action GotoSymbol<cr>
 nnoremap <leader>ja :action GotoAction<cr>
 nnoremap <leader>jk :action GotoSuperMethod<cr>
 nnoremap <leader>jj :action GotoImplementation<cr>
-nnoremap <leader>jJ :action QuickImplementations<cr>
 
 " quick-peek
 nnoremap <leader>ke :action ShowErrorDescription<cr>
-nnoremap <leader>kd :action QuickJavaDoc<cr>
+nnoremap <leader>kd :action QuickImplementations<cr>
 nnoremap <leader>ku :action ShowUsages<cr>
 nnoremap <leader>kp :action ParameterInfo<cr>
-nnoremap <leader>kh :action Scala.ShowImplicitArguments<cr>
+nnoremap <leader>ki :action Scala.ShowImplicitArguments<cr>
 " nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
 " Toggles
