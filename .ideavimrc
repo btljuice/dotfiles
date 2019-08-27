@@ -33,7 +33,7 @@ set nonumber
 " Reload sources
 nnoremap <leader>-r :source ~/.ideavimrc<cr>
 
-vremap K <C-S>p
+vremap K <C-S>p  " FIXME
 
 " moving around windows /tabs
 nnoremap <c-h> <c-w>h
@@ -63,15 +63,44 @@ nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
 nnoremap [q :action GotoPreviousError<cr>
 
+" Comments
+noremap <leader>; :action CommentByLineComment<cr>
+
+" Shell
+" nnoremap <leader>' : action TODO Go to sbt shell
+
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
 nnoremap <leader>bD :action CloseAllUnmodifiedEditors<cr>
 nnoremap <leader>bP :action CloseAllUnpinnedEditors<cr>
 nnoremap <leader>bp :action PinActiveTab<cr>
 
+" Compile
+nnoremap <leader>cc :action Compile<cr>
+nnoremap <leader>cp :action CompileProject<cr>
+nnoremap <leader>cr :action CompileDirty<cr>
+
+" Debug
+nnoremap <leader>db :action ToggleLineBreakpoint<cr>
+nnoremap <leader>dj :action StepOver<cr>
+nnoremap <leader>dh :action StepOut<cr>
+nnoremap <leader>dl :action StepInto<cr>
+nnoremap <leader>dd :action Resume<cr>
+nnoremap <leader>de :action ShowExecutionPoint<cr>
+nnoremap <leader>d<cr> :action RunToCursor<cr>
+
+" Evaluation + REPL
+noremap <leader>ee :action QuickEvaluateExpression<cr>
+noremap <leader>eE :action EvaluateExpression<cr>
+
 " Opening files
 nnoremap <leader>fr :action RecentFiles<cr>
 nnoremap <leader>ff :action GotoFile<cr>
+
+" Git
+nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
+nnoremap <leader>gd :action Compare.LastVersion<cr>
+nnoremap <leader>gb :action Annotate<cr>
 
 " jump
 nnoremap <leader>jc :action GotoClass<cr>
@@ -88,6 +117,20 @@ nnoremap <leader>kp :action ParameterInfo<cr>
 nnoremap <leader>ki :action Scala.ShowImplicitArguments<cr>
 " nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
+" Runtime
+nnoremap <leader>ll :action Run<cr>
+nnoremap <leader>ld :action Debug<cr>
+nnoremap <leader>ls :action Stop<cr>
+
+" Searches
+nnoremap <leader><leader> :action SearchEverywhere<cr>
+nnoremap <leader>/ :action FindInPath<cr>
+nnoremap <leader>su :action FindUsages<cr>
+
+" Refactor
+noremap <leader>r :action Refactorings.QuickListPopupAction<cr>
+nnoremap <leader>a :action ShowIntentionActions<cr>
+
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
@@ -98,55 +141,9 @@ nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
 nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tl :action EditorToggleUseSoftWraps<cr>
 
-" Debug
-nnoremap <leader>db :action ToggleLineBreakpoint<cr>
-nnoremap <leader>dj :action StepOver<cr>
-nnoremap <leader>dh :action StepOut<cr>
-nnoremap <leader>dl :action StepInto<cr>
-nnoremap <leader>dd :action Resume<cr>
-nnoremap <leader>de :action ShowExecutionPoint<cr>
-nnoremap <leader>d<cr> :action RunToCursor<cr>
-
-noremap <leader>ee :action QuickEvaluateExpression<cr>
-noremap <leader>eE :action EvaluateExpression<cr>
-
-" Searches
-nnoremap <leader><leader> :action SearchEverywhere<cr>
-nnoremap <leader>/ :action FindInPath<cr>
-nnoremap <leader>su :action FindUsages<cr>
-
-" Comments
-noremap <leader>; :action CommentByLineComment<cr>
-
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
 nnoremap <leader>vt :action TypeHierarchy<cr>
 nnoremap <leader>vc :action CallHierarchy<cr>
 nnoremap <leader>vm :action MethodHierarchy<cr>
 " TODO: FileStructure (no popup)
-
-" Refactor
-nnoremap <leader>a :action ShowIntentionActions<cr>
-nnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
-vnoremap <leader>r :action Refactorings.QuickListPopupAction<cr>
-
-" Git
-nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
-nnoremap <leader>gd :action Compare.LastVersion<cr>
-nnoremap <leader>gb :action Annotate<cr>
-nnoremap <leader>gj :action VcsShowNextChangeMarker<cr>
-nnoremap <leader>gk :action VcsShowPrevChangeMarker<cr>
-
-" Compile
-nnoremap <leader>cc :action Compile<cr>
-nnoremap <leader>cp :action CompileProject<cr>
-nnoremap <leader>cr :action CompileDirty<cr>
-
-" Runtime
-nnoremap <leader>ll :action Run<cr>
-nnoremap <leader>ld :action Debug<cr>
-nnoremap <leader>ls :action Stop<cr>
-
-" Shell
-" nnoremap <leader>' : action TODO Go to sbt shell
-
