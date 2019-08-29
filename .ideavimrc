@@ -33,7 +33,9 @@ set nonumber
 " Reload sources
 nnoremap <leader>-r :source ~/.ideavimrc<cr>
 
-vremap K <C-S>p  " FIXME
+" FIXME "vnoremap K <C-S-p>
+" FIXME remap H :action GuiDesigner.ExpandSelection<cr>
+" FIXME vnoremap L :action GuiDesigner.ShrinkSelection<cr>
 
 " moving around windows /tabs
 nnoremap <c-h> <c-w>h
@@ -100,6 +102,7 @@ nnoremap <leader>ff :action GotoFile<cr>
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Compare.LastVersion<cr>
+nnoremap <leader>gD :action Git.CompareWithBranch<cr>
 nnoremap <leader>gb :action Annotate<cr>
 
 " jump
@@ -115,6 +118,7 @@ nnoremap <leader>kd :action QuickImplementations<cr>
 nnoremap <leader>ku :action ShowUsages<cr>
 nnoremap <leader>kp :action ParameterInfo<cr>
 nnoremap <leader>ki :action Scala.ShowImplicitArguments<cr>
+nnoremap <leader>kc :action EditorContextInfo<cr>
 " nnoremap <leader>km :action FINDME_ContextInfo<cr>
 
 " Runtime
@@ -146,4 +150,5 @@ nnoremap <leader>vf :action FileStructurePopup<cr>
 nnoremap <leader>vt :action TypeHierarchy<cr>
 nnoremap <leader>vc :action CallHierarchy<cr>
 nnoremap <leader>vm :action MethodHierarchy<cr>
+nnoremap <leader>vv :action SelectIn<cr>
 " TODO: FileStructure (no popup)
