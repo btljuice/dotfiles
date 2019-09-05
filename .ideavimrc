@@ -45,16 +45,9 @@ nnoremap <c-l> <c-w>l
 nnoremap <a-j> gT
 nnoremap <a-k> gt
 
-nnoremap <leader>wd <C-w>c
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wl <C-w>l
-nnoremap <leader>wv <C-w>v
-nnoremap <leader>ws <C-w>s
-nnoremap <leader>wm :action HideAllWindows<cr>
-
 nnoremap Y y$
+
+noremap mm :action ToggleBookmarkWithMnemonic<cr>
 
 nnoremap ]] :action MethodDown<cr>
 nnoremap [[ :action MethodUp<cr>
@@ -67,6 +60,7 @@ nnoremap [q :action GotoPreviousError<cr>
 
 " Comments
 noremap <leader>; :action CommentByLineComment<cr>
+
 
 " Shell
 " nnoremap <leader>' : action TODO Go to sbt shell
@@ -111,6 +105,7 @@ nnoremap <leader>js :action GotoSymbol<cr>
 nnoremap <leader>ja :action GotoAction<cr>
 nnoremap <leader>jk :action GotoSuperMethod<cr>
 nnoremap <leader>jj :action GotoImplementation<cr>
+nnoremap <leader>jt :action GotoTypeDeclaration<cr>
 
 " quick-peek
 nnoremap <leader>ke :action ShowErrorDescription<cr>
@@ -151,4 +146,15 @@ nnoremap <leader>vt :action TypeHierarchy<cr>
 nnoremap <leader>vc :action CallHierarchy<cr>
 nnoremap <leader>vm :action MethodHierarchy<cr>
 nnoremap <leader>vv :action SelectIn<cr>
+nnoremap <leader>vb :action ShowBookmarks<cr>
 " TODO: FileStructure (no popup)
+
+nnoremap <leader>wd <C-w>c
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wm :action HideAllWindows<cr>
+
