@@ -487,6 +487,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'makefile-mode  'whitespace-mode)
+  (add-hook 'markdown-mode 'auto-fill-mode)
 
   (let ((comint-hooks '(eshell-mode-hook
                         term-mode-hook
@@ -538,6 +539,7 @@ you should place your code here."
   (global-prettify-symbols-mode 1)
   (blink-cursor-mode 1)
   (auto-fill-mode -1)
+  (setq-default fill-column 120)
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2)
   (setq-default require-final-newline 'visit-save)

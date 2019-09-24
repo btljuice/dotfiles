@@ -33,19 +33,28 @@ set nonumber
 " Reload sources
 nnoremap <leader>-r :source ~/.ideavimrc<cr>
 
-" FIXME "vnoremap K <C-S-p>
+vnoremap K <c-s-p>
+nnoremap Y y$
 " FIXME remap H :action GuiDesigner.ExpandSelection<cr>
 " FIXME vnoremap L :action GuiDesigner.ShrinkSelection<cr>
 
+
 " moving around windows /tabs
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+nnoremap <c-l> <c-w>w
+" nnoremap <c-j> gT
+" nnoremap <c-k> gt
+" nnoremap <m-j> gT
+" nnoremap <m-k> gt
+
+nnoremap <a-h> :action PreviousOccurence<cr>
+nnoremap <a-l> :action NextOccurence<cr>
 nnoremap <a-j> gT
 nnoremap <a-k> gt
 
-nnoremap Y y$
+nnoremap <m-j> :action MoveElementLeft<cr>
+nnoremap <m-k> :action MoveElementRight<cr>
+nnoremap <m-h> :action MoveStatementUp<cr>
+nnoremap <m-l> :action MoveStatementDown<cr>
 
 noremap mm :action ToggleBookmarkWithMnemonic<cr>
 
@@ -57,6 +66,8 @@ nnoremap ]e :action MoveLineDown<cr>
 nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
 nnoremap [q :action GotoPreviousError<cr>
+
+noremap <leader><leader> :action SearchEverywhere<cr>
 
 " Comments
 noremap <leader>; :action CommentByLineComment<cr>
@@ -92,12 +103,15 @@ noremap <leader>eE :action EvaluateExpression<cr>
 " Opening files
 nnoremap <leader>fr :action RecentFiles<cr>
 nnoremap <leader>ff :action GotoFile<cr>
+nnoremap <leader>fm :action RecentChangedFiles<cr>
 
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Compare.LastVersion<cr>
 nnoremap <leader>gD :action Git.CompareWithBranch<cr>
 nnoremap <leader>gb :action Annotate<cr>
+
+map <leader>h :action AceAction<cr>
 
 " jump
 nnoremap <leader>jc :action GotoClass<cr>
@@ -122,7 +136,6 @@ nnoremap <leader>ld :action Debug<cr>
 nnoremap <leader>ls :action Stop<cr>
 
 " Searches
-nnoremap <leader><leader> :action SearchEverywhere<cr>
 nnoremap <leader>/ :action FindInPath<cr>
 nnoremap <leader>su :action FindUsages<cr>
 
@@ -156,5 +169,6 @@ nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
+nnoremap <leader>ww <C-w>w
 nnoremap <leader>wm :action HideAllWindows<cr>
 
