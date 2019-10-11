@@ -89,6 +89,7 @@ nnoremap <leader>cr :action CompileDirty<cr>
 
 " Debug
 nnoremap <leader>db :action ToggleLineBreakpoint<cr>
+nnoremap <leader>dB :action ToggleBreakpointEnabled<cr>
 nnoremap <leader>dj :action StepOver<cr>
 nnoremap <leader>dh :action StepOut<cr>
 nnoremap <leader>dl :action StepInto<cr>

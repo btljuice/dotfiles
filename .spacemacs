@@ -245,6 +245,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
+                         solarized-light
                          spacemacs-dark
                          spacemacs-light
                          sanityinc-solarized-dark
@@ -642,6 +643,16 @@ you should place your code here."
   ;; TODO Move to a hopper specific location
   (add-to-list 'auto-mode-alist '("\\.conf\\'" . conf-javaprop-mode))
   (add-hook 'conf-javaprop-mode-hook #'hs-minor-mode)
+
+  (add-to-list 'hs-special-modes-alist
+               '(nxml-mode
+                 "<!--\\|<[^/>]*[^/]>"
+                 "-->\\|</[^/>]*[^/]>"
+
+                 "<!--"
+                 sgml-skip-tag-forward
+                 nil))
+  (add-hook 'nxml-mode-hook 'hs-minor-mode)
 
   (setq custom-file "~/.spacemacs.custom.el")
   (load-file custom-file)
