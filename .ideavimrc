@@ -10,6 +10,10 @@
 "    https://github.com/Valloric/dotfiles/blob/master/intellij/ideavimrc
 "    https://github.com/saaguero/ideavimrc/blob/master/.ideavimrc
 
+" Trick
+" :actionlist <regex> to find the commands containing <regex>
+" :action <cmd> to try the command
+
 
 " ideavim supported plugins
 set surround
@@ -153,6 +157,7 @@ nnoremap <leader>ti :action Scala.ShowImplicits<cr>
 nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
 nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tl :action EditorToggleUseSoftWraps<cr>
+nnoremap <leader>tr :action ToogleFunctionReturnType<cr>
 
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
