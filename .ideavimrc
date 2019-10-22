@@ -78,7 +78,7 @@ noremap <leader>; :action CommentByLineComment<cr>
 
 
 " Shell
-" nnoremap <leader>' : action TODO Go to sbt shell
+nnoremap <leader>' :action Activatesbt-shell-toolwindowToolWindow<cr>
 
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
@@ -140,6 +140,9 @@ nnoremap <leader>ll :action Run<cr>
 nnoremap <leader>ld :action Debug<cr>
 nnoremap <leader>ls :action Stop<cr>
 
+" Project
+nnoremap <leader>pC :action CloseProject<cr>
+
 " Searches
 nnoremap <leader>/ :action FindInPath<cr>
 nnoremap <leader>su :action FindUsages<cr>
@@ -166,6 +169,7 @@ nnoremap <leader>vc :action CallHierarchy<cr>
 nnoremap <leader>vm :action MethodHierarchy<cr>
 nnoremap <leader>vv :action SelectIn<cr>
 nnoremap <leader>vb :action ShowBookmarks<cr>
+nnoremap <leader>vB :action ViewBreakpoints<cr>
 " TODO: FileStructure (no popup)
 
 nnoremap <leader>wd <C-w>c
@@ -177,4 +181,3 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>ww <C-w>w
 nnoremap <leader>wm :action HideAllWindows<cr>
-
