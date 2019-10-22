@@ -50,10 +50,10 @@ nnoremap <c-l> <c-w>w
 " nnoremap <m-j> gT
 " nnoremap <m-k> gt
 
-nnoremap <a-h> :action PreviousOccurence<cr>
-nnoremap <a-l> :action NextOccurence<cr>
-nnoremap <a-j> gT
-nnoremap <a-k> gt
+nnoremap <a-k> :action PreviousOccurence<cr>
+nnoremap <a-j> :action NextOccurence<cr>
+nnoremap <a-h> gT
+nnoremap <a-l> gt
 
 nnoremap <m-j> :action MoveElementLeft<cr>
 nnoremap <m-k> :action MoveElementRight<cr>
