@@ -81,6 +81,7 @@ noremap <leader><leader> :action SearchEverywhere<cr>
 
 " Comments
 noremap <leader>; :action CommentByLineComment<cr>
+noremap <leader>= :action ReformatCode<cr>
 
 
 " Shell
@@ -156,7 +157,7 @@ nnoremap <leader>su :action FindUsages<cr>
 
 " Refactor
 noremap <leader>r :action Refactorings.QuickListPopupAction<cr>
-nnoremap <leader>a :action ShowIntentionActions<cr>
+noremap <leader>a :action ShowIntentionActions<cr>
 
 " Toggles
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
