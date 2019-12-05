@@ -71,12 +71,6 @@ nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
 nnoremap [q :action GotoPreviousError<cr>
 
-nnoremap z1 :action ExpandAllToLevel1<cr>
-nnoremap z2 :action ExpandAllToLevel2<cr>
-nnoremap z3 :action ExpandAllToLevel3<cr>
-nnoremap z4 :action ExpandAllToLevel4<cr>
-nnoremap z5 :action ExpandAllToLevel5<cr>
-
 noremap <leader><leader> :action SearchEverywhere<cr>
 
 " Comments
@@ -189,3 +183,9 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>ww <C-w>w
 nnoremap <leader>wm :action HideAllWindows<cr>
+
+nmap <leader>za :action ExpandAllToLevel1<cr>
+nmap <leader>zb :action ExpandAllToLevel2<cr>
+nmap <leader>zc :action ExpandAllToLevel3<cr>
+nmap <leader>zd :action ExpandAllToLevel4<cr>
+nmap <leader>ze :action ExpandAllToLevel5<cr>
