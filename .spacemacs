@@ -129,7 +129,7 @@ values."
      html
      (scala :variables scala-backend 'scala-metals
             scala-auto-insert-asterisk-in-comments t
-            scala-use-unicode-arrows t
+            ;; scala-use-unicode-arrows t
             scala-auto-start-backend t)
      ;; (c-c++ :variables c-c++-enable-clang-support t)
      ; try emacs-cquery
@@ -314,8 +314,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai
-                         solarized-light
+   dotspacemacs-themes '(solarized-light
+                         monokai
                          spacemacs-light
                          spacemacs-dark)
 
@@ -333,7 +333,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Menlo" ; "Source Code Pro"
                                :size 12
                                :weight normal
                                :width normal)
@@ -595,7 +595,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (message "dotspacemacs/user-init BEGIN")
 
-  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
+  ;; (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
 
   (when (btl/windows-p)
     ;(setq-default exec-path (append exec-path '("c:\\msys64\\mingw64\\bin")))
@@ -710,6 +710,8 @@ you should place your code here."
   (setq-default show-trailing-whitespace t)
   ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+  (setq magit-repository-directories '(("~/code/" . 1)))
+
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
     (setq org-habit-show-all-today t)
@@ -794,17 +796,11 @@ you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
   ;; (define-key evil-normal-state-map (kbd "DEL") 'spacemacs/smex)
 
-  (spacemacs/toggle-evil-cleverparens-on)
-  (add-hook 'lisp-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook (lambda () (semantic-mode -1)) 1)
-  (add-hook 'term-mode (lambda () (setq show-trailing-whitespace nil)) 1)
-  (add-hook 'python-mode-hook #'evil-cleverparens-mode)
-
   ;; TODO Move to a hopper specific location
   (add-to-list 'auto-mode-alist '("\\.conf\\'" . conf-javaprop-mode))
   (add-hook 'conf-javaprop-mode-hook #'hs-minor-mode)
 
+  ;; To fold xml files and probably something about comments
   (add-to-list 'hs-special-modes-alist
                '(nxml-mode
                  "<!--\\|<[^/>]*[^/]>"
