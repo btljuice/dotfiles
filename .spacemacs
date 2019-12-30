@@ -715,7 +715,7 @@ you should place your code here."
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)
     (setq org-habit-show-all-today t)
-    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WIP(w)" "PENDING(p)" "|" "DONE(d)" "CANCELLED(c)" )))
+    (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WIP(w)" "PENDING(p)" "REVIEW(r)" "|" "DONE(d)" "CANCELLED(c)" )))
     (setq spaceline-org-clock-p t)
     (setq spaceline-org-clock-format-function
           '(lambda ()

@@ -47,18 +47,16 @@ nnoremap Y y$
 nnoremap <c-l> <c-w>w
 " nnoremap <c-j> gT
 " nnoremap <c-k> gt
-" nnoremap <m-j> gT
-" nnoremap <m-k> gt
 
 nnoremap <a-k> :action PreviousOccurence<cr>
 nnoremap <a-j> :action NextOccurence<cr>
 nnoremap <a-h> gT
 nnoremap <a-l> gt
 
-nnoremap <m-j> :action MoveElementLeft<cr>
-nnoremap <m-k> :action MoveElementRight<cr>
-nnoremap <m-h> :action MoveStatementUp<cr>
-nnoremap <m-l> :action MoveStatementDown<cr>
+" nnoremap <m-j>
+" nnoremap <m-k>
+" nnoremap <m-h>
+" nnoremap <m-l>
 
 noremap mm :action ToggleBookmarkWithMnemonic<cr>
 
@@ -70,6 +68,10 @@ nnoremap ]e :action MoveLineDown<cr>
 nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
 nnoremap [q :action GotoPreviousError<cr>
+nnoremap ]a :action MoveElementRight<cr>
+nnoremap [a :action MoveElementLeft<cr>
+" nnoremap ]s :action MoveStatementDown<cr>
+" nnoremap [s :action MoveStatementUp<cr>
 
 noremap <leader><leader> :action SearchEverywhere<cr>
 
@@ -77,9 +79,6 @@ noremap <leader><leader> :action SearchEverywhere<cr>
 noremap <leader>; :action CommentByLineComment<cr>
 noremap <leader>= :action ReformatCode<cr>
 
-
-" Shell
-nnoremap <leader>' :action Activatesbt-shell-toolwindowToolWindow<cr>
 
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
@@ -189,3 +188,6 @@ nmap <leader>zb :action ExpandAllToLevel2<cr>
 nmap <leader>zc :action ExpandAllToLevel3<cr>
 nmap <leader>zd :action ExpandAllToLevel4<cr>
 nmap <leader>ze :action ExpandAllToLevel5<cr>
+
+" Shell
+nnoremap <leader>' :action Activatesbt-shell-toolwindowToolWindow<cr>
