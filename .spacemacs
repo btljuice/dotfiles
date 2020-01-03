@@ -711,6 +711,7 @@ you should place your code here."
   ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
   (setq magit-repository-directories '(("~/code/" . 1)))
+  (setq magit-diff-refine-hunk 'all)
 
   (with-eval-after-load 'org
     (add-to-list 'org-modules 'org-habit)

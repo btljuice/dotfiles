@@ -112,7 +112,7 @@ nnoremap <leader>fm :action RecentChangedFiles<cr>
 
 " Git
 nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
-nnoremap <leader>gd :action Compare.LastVersion<cr>
+nnoremap <leader>gd :action Compare.SameVersion<cr>
 nnoremap <leader>gD :action Git.CompareWithBranch<cr>
 nnoremap <leader>gb :action Annotate<cr>
 
