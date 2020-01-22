@@ -115,6 +115,8 @@ nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Compare.SameVersion<cr>
 nnoremap <leader>gD :action Git.CompareWithBranch<cr>
 nnoremap <leader>gb :action Annotate<cr>
+nnoremap <leader>gl :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Clipboard<cr>
+nnoremap <leader>gL :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Browser<cr>
 
 map <leader>h :action AceAction<cr>
 
