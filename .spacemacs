@@ -150,6 +150,7 @@ values."
      restclient
      html
      javascript
+     swift
 
      ;; keyboard-layout ;; for dvorak
 

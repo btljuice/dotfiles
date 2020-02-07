@@ -17,3 +17,63 @@ source ~/.aliasesrc
 function cleanTargetDirectory() {
     find . -type d -iname target -exec rm -rf \{} \;
 }
+
+function repos_rg() {
+    # TODO: recursively find .git directories and only rg within them...
+    cd ~/code
+    for i in `ls -d */`; do rg "$*" $i; done
+    cd -
+}
+
+function repos_ls() {
+    pushd ~/code
+    for i in `ls -d */`; do
+        cd $i
+        BRANCH=`git branch --show-current`
+        STATUS=`git status --porcelain`
+        if [ -z "$STATUS" ]; then
+            echo "$i$BRANCH is clean"
+        else
+            echo "$i$BRANCH is unclean"
+        fi
+        cd ..
+    done
+    popd
+}
+
+function repos_checkout_masters() {
+    pushd ~/code
+    for i in `ls -d */`; do
+        cd $i
+        BRANCH=`git branch --show-current`
+        STATUS=`git status --porcelain`
+        if [ -z "$STATUS" ]; then
+          if [ $BRANCH != "master" ]; then
+            git checkout master
+          fi
+        else
+            echo "$i$BRANCH is unclean"
+        fi
+        cd ..
+    done
+    popd
+}
+
+function repos_pull_masters() {
+    pushd ~/code
+    for i in `ls -d */`; do
+      cd $i
+      BRANCH=`git branch --show-current`
+      STATUS=`git status --porcelain`
+      if [ -z "$STATUS" ]; then
+          git checkout master
+          git pull --rebase hopper master
+          git checkout $BRANCH
+      else
+          echo "$i$BRANCH is unclean"
+      fi
+      cd ..
+    done
+    popd
+}
+

@@ -115,8 +115,8 @@ nnoremap <leader>gg :action Vcs.QuickListPopupAction<cr>
 nnoremap <leader>gd :action Compare.SameVersion<cr>
 nnoremap <leader>gD :action Git.CompareWithBranch<cr>
 nnoremap <leader>gb :action Annotate<cr>
-nnoremap <leader>gl :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Clipboard<cr>
-nnoremap <leader>gL :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Browser<cr>
+noremap <leader>gl :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Clipboard<cr>
+noremap <leader>gL :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Browser<cr>
 
 map <leader>h :action AceAction<cr>
 
@@ -158,12 +158,14 @@ noremap <leader>a :action ShowIntentionActions<cr>
 nnoremap <leader>tw :action EditorToggleShowWhitespaces<cr>
 nnoremap <leader>tn :action EditorToggleShowLineNumbers<cr>
 nnoremap <leader>t<tab> :action EditorToggleShowIndentLines<cr>
-nnoremap <leader>t/ :action HighlightUsagesInFile<cr>
+nnoremap <leader>th :action HighlightUsagesInFile<cr>
+nnoremap <leader>t/ :noh<cr>
 nnoremap <leader>ti :action Scala.ShowImplicits<cr>
 nnoremap <leader>tI :action Scala.ExpandImplicits<cr>
 nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tl :action EditorToggleUseSoftWraps<cr>
 nnoremap <leader>tr :action ToogleFunctionReturnType<cr>
+nnoremap <leader>tt :action ToggleTypeHints<cr>
 
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
