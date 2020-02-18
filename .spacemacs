@@ -127,10 +127,10 @@ values."
      ;;                   latex-enable-auto-fill t)
      ;; sql
      html
-     (scala :variables scala-backend 'scala-metals
+     (scala :variables scala-backend nil
             scala-auto-insert-asterisk-in-comments t
             ;; scala-use-unicode-arrows t
-            scala-auto-start-backend t)
+            scala-auto-start-backend nil)
      ;; (c-c++ :variables c-c++-enable-clang-support t)
      ; try emacs-cquery
      ;java

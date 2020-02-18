@@ -18,10 +18,10 @@ function cleanTargetDirectory() {
     find . -type d -iname target -exec rm -rf \{} \;
 }
 
-function repos_rg() {
+function rrg() {
     # TODO: recursively find .git directories and only rg within them...
     cd ~/code
-    for i in `ls -d */`; do rg "$*" $i; done
+    for i in `ls -d */`; do rg $@ $i; done
     cd -
 }
 
@@ -32,7 +32,9 @@ function repos_ls() {
         BRANCH=`git branch --show-current`
         STATUS=`git status --porcelain`
         if [ -z "$STATUS" ]; then
-            echo "$i$BRANCH is clean"
+            if [ "$*" == "-a" ] || [ "$BRANCH" != "master" ]; then
+                echo "$i$BRANCH is clean"
+            fi
         else
             echo "$i$BRANCH is unclean"
         fi
