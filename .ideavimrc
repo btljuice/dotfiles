@@ -31,7 +31,7 @@ set scrolloff=3
 set showmode  " message on statusline to show current mode
 set clipboard=unnamed,ideaput " Automatically yanks/fetch MS Clipboard
 set history=1000   " Cmdline history
-set nonumber
+set number
 
 
 " Reload sources
@@ -143,7 +143,7 @@ nnoremap <leader>ld :action Debug<cr>
 nnoremap <leader>ls :action Stop<cr>
 
 " Project
-nnoremap <leader>pC :action CloseProject<cr>
+nnoremap <leader>pc :action CloseProject<cr>
 nnoremap <leader>pp :action ManageRecentProjects<cr>
 
 " Searches
