@@ -31,7 +31,7 @@ set scrolloff=3
 set showmode  " message on statusline to show current mode
 set clipboard=unnamed,ideaput " Automatically yanks/fetch MS Clipboard
 set history=1000   " Cmdline history
-set number
+set nonumber
 
 
 " Reload sources
