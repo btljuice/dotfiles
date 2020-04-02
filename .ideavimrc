@@ -166,6 +166,9 @@ nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tl :action EditorToggleUseSoftWraps<cr>
 nnoremap <leader>tr :action ToogleFunctionReturnType<cr>
 nnoremap <leader>tt :action ToggleTypeHints<cr>
+nnoremap <leader>t+ :action EditorIncreaseFontSize<cr>
+nnoremap <leader>t- :action EditorDecreaseFontSize<cr>
+nnoremap <leader>t= :action EditorResetFontSize<cr>
 
 " Views
 nnoremap <leader>vf :action FileStructurePopup<cr>
