@@ -65,6 +65,7 @@ function repos_pull_masters() {
     pushd ~/code
     for i in `ls -d */`; do
       cd $i
+      echo "repo $i"
       BRANCH=`git branch --show-current`
       STATUS=`git status --porcelain`
       if [ -z "$STATUS" ]; then
