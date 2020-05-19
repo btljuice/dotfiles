@@ -15,7 +15,7 @@ eval "$(fasd --init auto)"
 source ~/.aliasesrc
 
 function cleanTargetDirectory() {
-    find . -type d -iname target -exec rm -rf \{} \;
+    find . -type d -iname target -exec rm -rf \{\} \;
 }
 
 function rrg() {

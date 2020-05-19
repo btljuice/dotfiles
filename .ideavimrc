@@ -60,10 +60,10 @@ nnoremap <a-l> gt
 
 noremap mm :action ToggleBookmarkWithMnemonic<cr>
 
-nnoremap ]] :action MethodDown<cr>
-nnoremap [[ :action MethodUp<cr>
-nnoremap ]h :action VcsShowNextChangeMarker<cr>
-nnoremap [h :action VcsShowPrevChangeMarker<cr>
+nnoremap ]h :action MethodDown<cr>
+nnoremap [h :action MethodUp<cr>
+nnoremap ]] :action VcsShowNextChangeMarker<cr>
+nnoremap [[ :action VcsShowPrevChangeMarker<cr>
 nnoremap ]e :action MoveLineDown<cr>
 nnoremap [e :action MoveLineUp<cr>
 nnoremap ]q :action GotoNextError<cr>
