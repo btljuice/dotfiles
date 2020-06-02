@@ -71,6 +71,7 @@ function repos_pull_masters() {
       if [ -z "$STATUS" ]; then
           git checkout master
           git pull --rebase hopper master
+          git push origin master
           git checkout $BRANCH
       else
           echo "$i$BRANCH is unclean"
