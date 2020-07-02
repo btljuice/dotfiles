@@ -128,6 +128,7 @@ values."
      ;;                   latex-enable-auto-fill t)
      ;; sql
      html
+     json
      (scala :variables scala-backend nil
             scala-auto-insert-asterisk-in-comments t
             ;; scala-use-unicode-arrows t
