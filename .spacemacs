@@ -75,7 +75,7 @@ values."
      ;; ----------------------------------------------------------------
      ;ivy
      helm
-     treemacs
+     ;; treemacs
      (auto-completion :variables auto-completion-return-key-behavior nil
                                  auto-completion-tab-key-behavior nil
                                  auto-completion-enable-snippets-in-popup t

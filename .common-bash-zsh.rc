@@ -30,6 +30,18 @@ function rrg() {
     cd -
 }
 
+function rrgq() {
+    # TODO: recursively find .git directories and only rg within them...
+    cd ~/code
+    for i in `ls -d */`
+    do
+        if [ "$i" != "Helpers2/" ] && [ "$i" != "Brooklyn2/" ] && rg -q "$@" $i; then
+            echo $i
+        fi
+    done
+    cd -
+}
+
 function repos_ls() {
     pushd ~/code
     for i in `ls -d */`; do
