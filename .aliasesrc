@@ -6,6 +6,7 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     alias ls="ls --color"
 else
     alias ls="ls -G"
+    alias idea="/Applications/IntelliJ\ IDEA\ CE.app/Contents/MacOS/idea"
 fi
 
 alias ll="ls -l"
@@ -25,3 +26,4 @@ alias yaourt-norepo="yaourt -Qmq --aur"
 alias yaourt-update="yaourt -Syu --aur"
 alias yaourt-remove-nodeps="yaourt -Qdtq --aur | yaourt -Rs -"
 alias yaourt-remove-norepo="yaourt -Qmq --aur | yaourt -Rs -"
+
