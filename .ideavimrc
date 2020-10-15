@@ -87,7 +87,7 @@ nnoremap <leader>bP :action CloseAllUnpinnedEditors<cr>
 nnoremap <leader>bp :action PinActiveTab<cr>
 
 " Compile
-nnoremap <leader>cc :action Compile<cr>
+nnoremap <leader>cc :action CompileFile<cr>
 nnoremap <leader>cp :action CompileProject<cr>
 nnoremap <leader>cr :action CompileDirty<cr>
 
