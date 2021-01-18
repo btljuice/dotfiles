@@ -17,7 +17,12 @@
 
 " ideavim supported plugins
 set surround
-set multiple-cursors
+set argtextobj  " for the aa, ia text object
+set ReplaceWithRegister
+set exchange
+set easymotion
+
+" set multiple-cursors
 
 let mapleader=" "
 
@@ -73,18 +78,18 @@ nnoremap [a :action MoveElementLeft<cr>
 " nnoremap ]s :action MoveStatementDown<cr>
 " nnoremap [s :action MoveStatementUp<cr>
 
-noremap <leader><leader> :action SearchEverywhere<cr>
+" noremap <leader><leader> :action SearchEverywhere<cr>
 
 " Comments
 noremap <leader>; :action CommentByLineComment<cr>
 noremap <leader>= :action ReformatCode<cr>
 
-
 " Buffers
 nnoremap <leader>bd :action CloseContent<cr>
 nnoremap <leader>bD :action CloseAllUnmodifiedEditors<cr>
-nnoremap <leader>bP :action CloseAllUnpinnedEditors<cr>
-nnoremap <leader>bp :action PinActiveTab<cr>
+nnoremap <leader>bP :action CloseAllToTheRight<cr>
+nnoremap <leader>bR :action CloseAllReadonly<cr>
+nnoremap <leader>bp :action PinActiveTabToggle<cr>
 
 " Compile
 nnoremap <leader>cc :action CompileFile<cr>
