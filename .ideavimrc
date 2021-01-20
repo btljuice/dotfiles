@@ -49,14 +49,14 @@ nnoremap Y y$
 
 
 " moving around windows /tabs
+nnoremap <c-j> gT
+nnoremap <c-k> gt
 nnoremap <c-l> <c-w>w
-" nnoremap <c-j> gT
-" nnoremap <c-k> gt
 
 nnoremap <a-k> :action PreviousOccurence<cr>
 nnoremap <a-j> :action NextOccurence<cr>
-nnoremap <a-h> gT
-nnoremap <a-l> gt
+" nnoremap <a-h> gT
+" nnoremap <a-l> gt
 
 " nnoremap <m-j>
 " nnoremap <m-k>
