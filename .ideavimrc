@@ -21,6 +21,7 @@ set argtextobj  " for the aa, ia text object
 set ReplaceWithRegister
 set exchange
 set easymotion
+set ideajoin
 
 " set multiple-cursors
 

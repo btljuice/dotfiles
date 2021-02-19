@@ -68,7 +68,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     haskell
+     (haskell :variables haskell-completion-backend 'ghci)
      sql
      yaml
      ;; ----------------------------------------------------------------
