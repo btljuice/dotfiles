@@ -13,6 +13,7 @@
 " Trick
 " :actionlist <regex> to find the commands containing <regex>
 " :action <cmd> to try the command
+" Look for 'Track action ids' pressing Shift-Shift. Helps finding the action key
 
 
 " ideavim supported plugins
@@ -53,6 +54,7 @@ nnoremap Y y$
 nnoremap <c-j> gT
 nnoremap <c-k> gt
 nnoremap <c-l> <c-w>w
+nnoremap <c-h> :action MoveEditorToOppositeTabGroup<cr>
 
 nnoremap <a-k> :action PreviousOccurence<cr>
 nnoremap <a-j> :action NextOccurence<cr>
