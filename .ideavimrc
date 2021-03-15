@@ -206,3 +206,5 @@ nmap <leader>ze :action ExpandAllToLevel5<cr>
 
 " Shell
 nnoremap <leader>' :action Activatesbt-shell-toolwindowToolWindow<cr>
+nnoremap <leader>. :action Scala.RunConsole<cr>
+
