@@ -126,7 +126,7 @@ nnoremap <leader>gb :action Annotate<cr>
 noremap <leader>gl :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Clipboard<cr>
 noremap <leader>gL :action uk.co.ben_gibson.git.link.UI.Action.Menu.MenuAction.Browser<cr>
 
-map <leader>h :action AceAction<cr>
+map gs :action AceAction<cr>
 
 " jump
 nnoremap <leader>jc :action GotoClass<cr>
