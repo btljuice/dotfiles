@@ -15,6 +15,7 @@
 " :action <cmd> to try the command
 " Look for 'Track action ids' pressing Shift-Shift. Helps finding the action key
 
+let mapleader=" "
 
 " ideavim supported plugins
 set surround
@@ -26,7 +27,6 @@ set ideajoin
 
 " set multiple-cursors
 
-let mapleader=" "
 
 " Some standard defaults
 set hlsearch
